@@ -2,5 +2,13 @@ html, body {
 	font-family: 'Oxygen', sans-serif;
 }
 .btn-custom {
-	font-weight: bold;
+	background-color: #442D65;
+	border-color: #775BA3;
+}
+.btn-custom:hover {
+	background-color: #775BA3;
+	border-color: #775BA3;
+}
+img {
+	vertical-align: inherit;
 }
