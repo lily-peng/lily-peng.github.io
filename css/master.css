@@ -5,7 +5,7 @@ html, body {
 	background-color: #442D65;
 	border-color: #775BA3;
 }
-.btn-custom:hover {
+.btn-custom:hover, .btn-custom:focus, .btn-custom:active {
 	background-color: #775BA3;
 	border-color: #775BA3;
 }
