@@ -1,6 +1,14 @@
 html, body {
 	font-family: 'Oxygen', sans-serif;
 }
+#home-container {
+	margin: 40px;
+}
+#main-header {
+	display: block;
+	text-align: center;
+}
+
 .btn-custom {
   color: #fff;
   background-color: #442D65;
@@ -43,6 +51,7 @@ fieldset[disabled] .btn-custom.active {
   background-color: #fff;
 }
 
+/* For Interactive Cinemagraphs */
 img {
 	vertical-align: inherit;
 }
