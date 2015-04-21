@@ -1,0 +1,10 @@
+/* Custom Stylesheet */
+
+html, body {
+	font-family: 'Oxygen', sans-serif;
+}
+
+/* For Interactive Cinemagraphs */
+img {
+	vertical-align: inherit;
+}
