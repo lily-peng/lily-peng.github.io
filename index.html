@@ -19,7 +19,6 @@
 
 		<script src="js/vendor/modernizr.js"></script>
 		<script src="js/jquery-2.1.3.min.js"></script>
-		<script src="js/transition.js"></script>
 	</head>
 	<body>
 		<div class="row">
@@ -38,9 +37,10 @@
 		</div>
 
 
-		<div class="pt-wrapper">
+		<div class="pt-wrapper" id="swipe">
 			<div class="pt-trigger-container">
-				<button class="pt-trigger" data-animation="46" data-goto="-1">Go to next page</button>
+				<button id="nextButton" class="pt-trigger" data-animation="46" data-goto="-1">Go to next page</button>
+				<button id="prevButton" class="pt-trigger" data-animation="47" data-goto="-2">Go to previous page</button>
 			</div>
 
 			<div class="pt-page pt-page-1">
@@ -119,7 +119,11 @@
 			</div>
 		</footer>
 
-		<script>
+		<script src="js/hammer.min.js"></script>
+		<script src="js/transition.js"></script>
+		<script src="js/swipe.js"></script>
+
+		<!--script>
 			document.write('<script src=' +
 			('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
 			'.js><\/script>')
@@ -131,7 +135,7 @@
 		<script>
 			$(document).foundation();
 			doc.setAttribute('data-useragent', navigator.userAgent);
-		</script>
+		</script-->
 
 		<!--div class="row">
 			<h1>Lily Peng</h1>
