@@ -1,6 +1,6 @@
 /* Custom Stylesheet */
 html * {
-	font-family: 'Oxygen', sans-serif !important;
+	font-family: 'Oxygen', sans-serif;
 }
 
 /* For Interactive Cinemagraphs */
@@ -13,17 +13,15 @@ body {
 }
 
 .button {
-	color: #8E44AD;
+	margin: 0;
 }
-.button-group li {
+/*.button-group li {
 	padding-top: 3%;
 }
 .button-group a {
-	/*color: rgba(0,0,0,1);*/
 	background-color: transparent;
 }
 .button-group a:hover {
-	/*color: rgba(0,0,0,0.4);*/
 	color: red;
 	background-color: transparent;
 }
@@ -34,7 +32,7 @@ body {
 	.button-group {
 		float: right;
 	}
-}
+}*/
 .namelogo {
 	padding: 20px 10px 0px 10px;
 }
@@ -120,8 +118,12 @@ hr {
 	opacity: 0.8;
 }
 
-.fi-mail, .fi-social-github, .fi-social-linkedin {
+.fi-mail, .fi-social-github, .fi-social-linkedin, .fi-social-steam {
 	font-size: -webkit-xxx-large;
+}
+
+.fa.fa-cutlery, .fa.fa-arrow-circle-left, .fa.fa-arrow-circle-right {
+	font-size: xx-large;
 }
 
 footer {
@@ -130,4 +132,8 @@ footer {
 footer a:hover {
 	color: rgba(0,0,0,0.4);
 	background-color: transparent;
+}
+#vert-center {
+	display: inline-block;
+	vertical-align: middle;
 }

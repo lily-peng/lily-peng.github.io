@@ -36,8 +36,12 @@ var PageTransitions = (function () {
             $wrapperDiv.children('.pt-page').eq(startPageIndex).addClass('pt-page-current');
         });
 
-        // Adding click event to .pt-trigger
-        $('.pt-trigger').click(function() {
+        // Adding click event to trigger buttons
+        $('#nextButton').click(function() {
+            $pageTrigger = $(this);
+            Animate($pageTrigger);
+        });
+        $('#prevButton').click(function() {
             $pageTrigger = $(this);
             Animate($pageTrigger);
         });
