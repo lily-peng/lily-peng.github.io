@@ -116,21 +116,21 @@ a {
 }
 
 a:link {
-  //color: lightcoral;
+  //color: $second-text-color;
   color: $text-color;
 }
 
 a:visited {
-  //color: lightcoral;
+  //color: $second-text-color;
   color: $text-color;
 }
 
 a:hover {
-  //color: lightcoral;
-  color: $text-color;
+  color: $second-text-color;
+  //color: $text-color;
 }
 
 a:active {
-  //color: lightcoral;
+  //color: $second-text-color;
   color: $text-color;
 }
