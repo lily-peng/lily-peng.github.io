@@ -135,7 +135,7 @@ body {
 .basefont, h1, h2, .text h3, h4, h5, p, span, body {
   font-family: "Oxygen", sans-serif;
   letter-spacing: 0.05em;
-  color: lightcoral;
+  color: #333333;
 }
 
 p {
@@ -161,6 +161,9 @@ a {
   font-weight: 700;
   letter-spacing: 0.1em;
 }
+.header .menu a {
+  color: lightcoral;
+}
 
 .projects {
   max-width: 1440px;
@@ -171,7 +174,6 @@ a {
   font-size: 2.5em;
   font-weight: 700;
   line-height: 1.5em;
-  color: lightcoral;
 }
 
 .card {
@@ -208,21 +210,31 @@ a {
 .about [class*=col-] .job {
   font-weight: 700;
 }
+.about [class*=col-] i {
+  color: lightcoral;
+}
+
+.copyright i {
+  color: lightcoral;
+}
+.copyright p {
+  font-weight: 700;
+}
 
 a:link {
-  color: lightcoral;
+  color: #333333;
 }
 
 a:visited {
-  color: lightcoral;
+  color: #333333;
 }
 
 a:hover {
-  color: lightcoral;
+  color: #333333;
 }
 
 a:active {
-  color: lightcoral;
+  color: #333333;
 }
 
 /*# sourceMappingURL=main.css.map */

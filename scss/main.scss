@@ -3,8 +3,8 @@
 
 // Scss Variables
 $bg-color: #fff4e9; // cream color
-//$text-color: #333333; // light black
-$text-color: lightcoral;
+$text-color: #333333; // light black
+$second-text-color: lightcoral;
 
 // .block__element--modifier
 
@@ -46,6 +46,9 @@ a {
     text-align: center;
     font-weight: 700;
     letter-spacing: 0.1em;
+    a {
+      color: $second-text-color;
+    }
   }
 }
 
@@ -58,7 +61,7 @@ a {
   font-size: 2.5em;
   font-weight: 700;
   line-height: 1.5em;
-  color: lightcoral;
+  //color: $second-text-color;
 }
 
 .card {
@@ -81,7 +84,7 @@ a {
 .about {
   max-width: 90%;
   margin: auto;
-  border-top: 2px dashed lightcoral;
+  border-top: 2px dashed $second-text-color;
   .row {
     padding-top: 1.5em;
   }
@@ -97,21 +100,37 @@ a {
     .job {
       font-weight: 700;
     }
+    i {
+      color: $second-text-color;
+    }
+  }
+}
+
+.copyright {
+  i {
+    color: $second-text-color;
+  }
+  p {
+    font-weight: 700;
   }
 }
 
 a:link {
-  color: lightcoral;
+  //color: lightcoral;
+  color: $text-color;
 }
 
 a:visited {
-  color: lightcoral;
+  //color: lightcoral;
+  color: $text-color;
 }
 
 a:hover {
-  color: lightcoral;
+  //color: lightcoral;
+  color: $text-color;
 }
 
 a:active {
-  color: lightcoral;
+  //color: lightcoral;
+  color: $text-color;
 }
