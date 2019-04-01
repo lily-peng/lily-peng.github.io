@@ -1,0 +1,117 @@
+@charset "UTF-8";
+@import "layout";
+
+// Scss Variables
+$bg-color: #fff4e9; // cream color
+//$text-color: #333333; // light black
+$text-color: lightcoral;
+
+// .block__element--modifier
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  max-width: 1290px;
+  background-color: $bg-color;
+  margin: 0 auto;
+}
+
+.basefont, h1, h2, .text h3, h4, h5, p, span, body {
+  font-family: 'Oxygen', sans-serif;
+  letter-spacing: 0.05em;
+  color: $text-color;
+}
+
+p {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  justify-content: center;
+  margin: 20px;
+  overflow: hidden;
+  padding: 0px;
+  .name {
+    float: left;
+  }
+  .menu {
+    float: right;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+  }
+}
+
+.projects {
+  max-width: 1440px;
+  padding-bottom: 3em;
+}
+
+.role {
+  font-size: 2.5em;
+  font-weight: 700;
+  line-height: 1.5em;
+  color: lightcoral;
+}
+
+.card {
+  color: blue;
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  &:hover {
+
+  }
+  &__title {
+    font-weight: 700;
+  }
+  &__subtitle {
+    font-style: italic;
+  }
+}
+
+.about {
+  max-width: 90%;
+  margin: auto;
+  border-top: 2px dashed lightcoral;
+  .row {
+    padding-top: 1.5em;
+  }
+
+  [class*="col-"] {
+    padding: 0;
+    p {
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-align: left;
+      font-size: 1.5em;
+    }
+    .job {
+      font-weight: 700;
+    }
+  }
+}
+
+a:link {
+  color: lightcoral;
+}
+
+a:visited {
+  color: lightcoral;
+}
+
+a:hover {
+  color: lightcoral;
+}
+
+a:active {
+  color: lightcoral;
+}

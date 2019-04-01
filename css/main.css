@@ -1,0 +1,228 @@
+/* For mobile phones: */
+[class*=col-] {
+  width: 100%;
+  float: left;
+  padding: 15px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+@media only screen and (min-width: 768px) {
+  /* For tablets: */
+  .role {
+    font-size: 2em;
+  }
+
+  .col-s-1 {
+    width: 8.33%;
+  }
+
+  .col-s-2 {
+    width: 16.66%;
+  }
+
+  .col-s-3 {
+    width: 25%;
+  }
+
+  .col-s-4 {
+    width: 33.33%;
+  }
+
+  .col-s-5 {
+    width: 41.66%;
+  }
+
+  .col-s-6 {
+    width: 50%;
+  }
+
+  .col-s-7 {
+    width: 58.33%;
+  }
+
+  .col-s-8 {
+    width: 66.66%;
+  }
+
+  .col-s-9 {
+    width: 75%;
+  }
+
+  .col-s-10 {
+    width: 83.33%;
+  }
+
+  .col-s-11 {
+    width: 91.66%;
+  }
+
+  .col-s-12 {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  /* For desktop: */
+  .col-1 {
+    width: 8.33%;
+  }
+
+  .col-2 {
+    width: 16.66%;
+  }
+
+  .col-3 {
+    width: 25%;
+  }
+
+  .col-4 {
+    width: 33.33%;
+  }
+
+  .col-5 {
+    width: 41.66%;
+  }
+
+  .col-6 {
+    width: 50%;
+  }
+
+  .col-7 {
+    width: 58.33%;
+  }
+
+  .col-8 {
+    width: 66.66%;
+  }
+
+  .col-9 {
+    width: 75%;
+  }
+
+  .col-10 {
+    width: 83.33%;
+  }
+
+  .col-11 {
+    width: 91.66%;
+  }
+
+  .col-12 {
+    width: 100%;
+  }
+}
+/* Extra large devices (large laptops and desktops, 1440px and up) */
+@media only screen and (min-width: 2560px) {
+  body {
+    font-size: 2em;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  max-width: 1290px;
+  background-color: #fff4e9;
+  margin: 0 auto;
+}
+
+.basefont, h1, h2, .text h3, h4, h5, p, span, body {
+  font-family: "Oxygen", sans-serif;
+  letter-spacing: 0.05em;
+  color: lightcoral;
+}
+
+p {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  justify-content: center;
+  margin: 20px;
+  overflow: hidden;
+  padding: 0px;
+}
+.header .name {
+  float: left;
+}
+.header .menu {
+  float: right;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.projects {
+  max-width: 1440px;
+  padding-bottom: 3em;
+}
+
+.role {
+  font-size: 2.5em;
+  font-weight: 700;
+  line-height: 1.5em;
+  color: lightcoral;
+}
+
+.card {
+  color: blue;
+}
+.card img {
+  max-width: 100%;
+  height: auto;
+}
+.card__title {
+  font-weight: 700;
+}
+.card__subtitle {
+  font-style: italic;
+}
+
+.about {
+  max-width: 90%;
+  margin: auto;
+  border-top: 2px dashed lightcoral;
+}
+.about .row {
+  padding-top: 1.5em;
+}
+.about [class*=col-] {
+  padding: 0;
+}
+.about [class*=col-] p {
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-align: left;
+  font-size: 1.5em;
+}
+.about [class*=col-] .job {
+  font-weight: 700;
+}
+
+a:link {
+  color: lightcoral;
+}
+
+a:visited {
+  color: lightcoral;
+}
+
+a:hover {
+  color: lightcoral;
+}
+
+a:active {
+  color: lightcoral;
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-    <head>   
+    <head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,7 +10,7 @@
 		<center>
         <img src="http://i.imgur.com/FggwihY.png"></img>
         </center>
-        
+
         <style>
             body
             {
@@ -18,7 +18,7 @@
             background-repeat:repeat;
             }
         </style>
-        
+
         <script type="text/javascript" language="Javascript/1.2">
             var snd = new Audio('https://dl.dropboxusercontent.com/u/43182979/shortwater2.mp3');
             var wind = new Audio('https://dl.dropboxusercontent.com/u/43182979/shortwind2.mp3');
@@ -26,7 +26,7 @@
             var founta = new Audio('https://dl.dropboxusercontent.com/u/43182979/founta.mp3');
             var stream = new Audio('https://dl.dropboxusercontent.com/u/43182979/another%20fount.mp3');
             var mouth = new Audio('https://dl.dropboxusercontent.com/u/43182979/mouth.mp3');
-            
+
             var imageArray = [
                 "http://farm8.staticflickr.com/7303/9344193314_88d20e1f5c_o.gif",
                 "http://i.imgur.com/Qvi5VU7.gif",
@@ -40,21 +40,21 @@
                 "http://i.imgur.com/vfhxDoZ.gif",
                 "http://i.imgur.com/v4E6kbo.gif"
                 ];
-            
+
             function preload(src) {
                 var image = new Image();
                 image.src = src;
             }
-            
+
             for (var i = 0; i < imageArray.length; i++) preload(imageArray[i]);
-            
+
             function mouseOn() {
                 document.images["d"].src = "http://farm8.staticflickr.com/7303/9344193314_88d20e1f5c_o.gif";
                 document.images["e"].src = "http://i.imgur.com/Qvi5VU7.gif";
                 document.images["f"].src = "http://i.imgur.com/a85qhwk.gif";
                 snd.loop = true;
                 snd.play();
-                
+
             }
             function mouseOff() {
                 document.images["d"].src = "http://i.imgur.com/CjGB0on.gif";
@@ -89,7 +89,7 @@
                 document.images["c"].src = "http://i.imgur.com/nxLej0t.gif";
                 founta.pause();
             }
-            
+
             function bigJetOn() {
                 document.images["big1"].src = "http://i1282.photobucket.com/albums/a521/lpeng32/bigjet1_zps366ca957.gif";
                 document.images["big2"].src = "http://i.imgur.com/2oMVUwX.gif";
@@ -137,9 +137,9 @@
                 document.images["lots"].src = "http://i.imgur.com/2SqgkCr.gif";
                 fount.pause();
             }
-            
+
         </script>
-        
+
     </head>
     <body>
         <div id="cinema" style="width:640px";>
@@ -151,7 +151,7 @@
             <img class="e" name="e" src="http://i.imgur.com/m8mXGSL.gif" onmouseover="mouseOn();" onmouseout="mouseOff();" /></img>
             <img class="f" name="f" src="http://i.imgur.com/BtiTjRh.gif" onmouseover="mouseOn();" onmouseout="mouseOff();" /></img>
         </div>
-        
+
         <div id="second" style="width:640px";>
             <img class="bgg" src="http://i.imgur.com/4NAf1mt.gif"></img>
             <img class="big1" name = "big1" src="http://i.imgur.com/lGVAdgl.gif" onmouseover="bigJetOn();" onmouseout="bigJetOff();" /></img>
@@ -162,12 +162,12 @@
             <img class="lots" name="lots" src="http://i.imgur.com/2SqgkCr.gif" onmouseover="lotsOn();" onmouseout="lotsOff();" /></img>
         </div>
         <style type="text/css">
-            
+
             #cinema {
                 position:relative;
                 margin: 0 auto;
             }
-            
+
             .bg {
                 position:relative;
                 outline-style:solid;
@@ -176,7 +176,7 @@
                 width:640px;
                 height:480px;
             }
-            
+
             .a {
                 position:absolute;
                 z-index:1;
@@ -189,7 +189,7 @@
                 position:absolute;
                 top: 201px;
                 left:184px;
-                width:150px; 
+                width:150px;
                 height:82px;
             }
             .c {
@@ -220,12 +220,12 @@
                 width:262px;
                 height:70px;
             }
-            
+
             #second {
                 position:relative;
                 margin: 0 auto;
             }
-            
+
             .bgg {
                 position:relative;
                 outline-style:solid;
@@ -234,7 +234,7 @@
                 width:640px;
                 height:480px;
             }
-            
+
             .big1 {
                 position:absolute;
                 top: 0px;
@@ -277,13 +277,13 @@
                 width:118px;
                 height:186px;
             }
-            
+
             a:link {
               color: white;
               background-color: transparent ;
               text-decoration: underline;
             }
-            
+
             a:visited {
               color: white;
               background-color: transparent ;
@@ -292,20 +292,20 @@
             a:hover {
               color: rgb(240,0,253);
             }
-            
-            
+
+
         </style>
-        
-        
+
+
 
         <p style="color:white;font-style:italic;text-align:right">by Lily Peng, July 2013</p>
         <p></p>
-        <center><p style="font-style: normal;color:white;"><a href="/about.html">About</a> <b>&middot;</b> <a href="/classic-cinemagraphs.html">Classic Cinemagraphs</a> <b>&middot;</b> <a href="mailto:ms.lilypeng@gmail.com">Email Me</a></p></center>
+        <center><p style="font-style: normal;color:white;"><a href="about.html">About</a> <b>&middot;</b> <a href="classic-cinemagraphs.html">Classic Cinemagraphs</a> <b>&middot;</b> <a href="mailto:ms.lilypeng@gmail.com">Email Me</a></p></center>
         <!--purple color:rgb(73,32,134)
         Enjoy accompanying ambient music!
         <p></p>
         <audio controls="controls"><source src="https://dl.dropboxusercontent.com/u/3092201/Music/2013/7-6-2013%20Night.mp3" type="audio/mpeg" /></audio>
         -->
-        
+
     </body>
 </html>
