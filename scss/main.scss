@@ -65,13 +65,23 @@ a {
 }
 
 .card {
-  color: blue;
+  position: relative;
   img {
     max-width: 100%;
     height: auto;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
   }
-  &:hover {
-
+  img.bottom {
+    position: absolute;
+  }
+  img.top {
+    position: relative;
+  }
+  img.top:hover {
+    opacity: 0;
   }
   &__title {
     font-weight: 700;
@@ -107,6 +117,7 @@ a {
 }
 
 .copyright {
+  margin-top: 2.5em;
   i {
     color: $second-text-color;
   }
@@ -123,6 +134,7 @@ a:link {
 a:visited {
   //color: $second-text-color;
   color: $text-color;
+  text-decoration: underline;
 }
 
 a:hover {
@@ -131,6 +143,7 @@ a:hover {
 }
 
 a:active {
-  //color: $second-text-color;
-  color: $text-color;
+  color: $second-text-color;
+  //color: $text-color;
+  text-decoration: underline;
 }

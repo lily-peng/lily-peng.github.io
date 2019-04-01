@@ -15,6 +15,20 @@
 
 @media only screen and (min-width: 768px) {
   /* For tablets: */
+  .width {
+    max-width: 75%;
+    margin: auto;
+  }
+
+  .about-left {
+    float: right;
+    margin-right: 1em;
+  }
+
+  .about-right {
+    margin-top: 2em;
+  }
+
   .role {
     font-size: 2em;
   }
@@ -57,7 +71,7 @@
 }
 
 @media only screen and (min-width: 1024px) {
-  /* For desktop: */
+  /* For small laptop/desktop: */
   .col-1 {
     width: 8.33%;
   }

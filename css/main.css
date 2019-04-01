@@ -13,6 +13,20 @@
 
 @media only screen and (min-width: 768px) {
   /* For tablets: */
+  .width {
+    max-width: 75%;
+    margin: auto;
+  }
+
+  .about-left {
+    float: right;
+    margin-right: 1em;
+  }
+
+  .about-right {
+    margin-top: 2em;
+  }
+
   .role {
     font-size: 2em;
   }
@@ -66,7 +80,7 @@
   }
 }
 @media only screen and (min-width: 1024px) {
-  /* For desktop: */
+  /* For small laptop/desktop: */
   .col-1 {
     width: 8.33%;
   }
@@ -177,11 +191,24 @@ a {
 }
 
 .card {
-  color: blue;
+  position: relative;
 }
 .card img {
   max-width: 100%;
   height: auto;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+.card img.bottom {
+  position: absolute;
+}
+.card img.top {
+  position: relative;
+}
+.card img.top:hover {
+  opacity: 0;
 }
 .card__title {
   font-weight: 700;
@@ -214,6 +241,9 @@ a {
   color: lightcoral;
 }
 
+.copyright {
+  margin-top: 2.5em;
+}
 .copyright i {
   color: lightcoral;
 }
@@ -227,6 +257,7 @@ a:link {
 
 a:visited {
   color: #333333;
+  text-decoration: underline;
 }
 
 a:hover {
@@ -234,7 +265,8 @@ a:hover {
 }
 
 a:active {
-  color: #333333;
+  color: lightcoral;
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=main.css.map */
