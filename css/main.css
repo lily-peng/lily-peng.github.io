@@ -23,32 +23,24 @@ a {
   text-decoration: none;
 }
 
-a:link {
-  color: #333333;
-}
-
-a:visited {
-  color: #333333;
-  text-decoration: underline;
-}
-
-a:hover {
-  color: lightcoral;
-}
-
-a:active {
-  color: lightcoral;
-  text-decoration: underline;
-}
-
 .header {
   justify-content: center;
-  margin: 20px;
   overflow: hidden;
-  padding: 0px;
+  padding: 20px;
 }
-.header .name {
+.header .name a {
   float: left;
+  color: #333333;
+  font-size: 1.5em;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  text-decoration-color: lightcoral;
+}
+
+.disabled {
+  pointer-events: none;
+  cursor: default;
 }
 
 .menu {
@@ -68,6 +60,21 @@ a:active {
 .projects {
   max-width: 1440px;
   padding-bottom: 3em;
+}
+
+.projects a:link, .contact a:link {
+  color: #333333;
+}
+.projects a:visited, .contact a:visited {
+  color: #333333;
+  text-decoration: underline;
+}
+.projects a:hover, .contact a:hover {
+  color: lightcoral;
+}
+.projects a:active, .contact a:active {
+  color: lightcoral;
+  text-decoration: underline;
 }
 
 .role {
@@ -112,6 +119,7 @@ a:active {
 .contact {
   font-size: 1.25em;
 }
+
 .contact-center {
   text-align: center;
   margin-bottom: 0.5em;
@@ -156,6 +164,68 @@ a:active {
   font-weight: 700;
 }
 
+/* IBM page */
+#ibm {
+  max-width: 100%;
+  background-color: #0062ff;
+}
+#ibm .role {
+  color: white;
+  padding: 2em;
+  font-size: 3em;
+}
+#ibm .copyright {
+  margin-top: 0;
+}
+#ibm .copyright p {
+  color: white;
+}
+
+#ibm-header {
+  max-width: 1290px;
+  margin: 0 auto;
+}
+#ibm-header .name a, #ibm-header .menu a {
+  color: white;
+}
+
+.bpm, .client-vantage, .feb {
+  background: white;
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-bottom: 2em;
+}
+.bpm .width, .client-vantage .width, .feb .width {
+  max-width: 900px;
+}
+.bpm .wide-head, .client-vantage .wide-head, .feb .wide-head {
+  font-weight: 700;
+  font-size: 1.5em;
+  padding-top: 1.5em;
+}
+.bpm p, .client-vantage p, .feb p {
+  text-align: left;
+  line-height: 1.7em;
+}
+.bpm img, .client-vantage img, .feb img {
+  max-width: 900px;
+}
+
+.client-vantage {
+  background-color: #0062ff;
+}
+.client-vantage p {
+  color: white;
+}
+.client-vantage a {
+  color: lightcoral;
+  font-weight: 700;
+}
+
+.feb p {
+  text-align: left;
+}
+
 /* 12-column responsive layout */
 /* Mobile First */
 [class*=col-] {
@@ -196,11 +266,11 @@ a:active {
 
   .about-left {
     float: right;
-    margin-right: 1em;
+    margin-right: 1.75em;
   }
 
   .about-right {
-    margin-top: 2em;
+    margin-top: 1.75em;
   }
 
   body .role {

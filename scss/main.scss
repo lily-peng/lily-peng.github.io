@@ -4,6 +4,9 @@
 $bg-color: #fff4e9; // cream color
 $text-color: #333333; // light black
 $second-text-color: lightcoral;
+$ibm-color: rgb(0, 98, 255);
+//$ibm-color-light:
+//rgb(5,48,173);
 
 // .block__element--modifier
 
@@ -32,36 +35,26 @@ a {
   text-decoration: none;
 }
 
-a:link {
-  //color: $second-text-color;
-  color: $text-color;
-}
-
-a:visited {
-  //color: $second-text-color;
-  color: $text-color;
-  text-decoration: underline;
-}
-
-a:hover {
-  color: $second-text-color;
-  //color: $text-color;
-}
-
-a:active {
-  color: $second-text-color;
-  //color: $text-color;
-  text-decoration: underline;
-}
-
 .header {
   justify-content: center;
-  margin: 20px;
   overflow: hidden;
-  padding: 0px;
+  padding: 20px;
   .name {
-    float: left;
+    a {
+      float: left;
+      color: $text-color;
+      font-size: 1.5em;
+      font-weight: 700;
+      text-decoration: underline;
+      text-decoration-style: dashed;
+      text-decoration-color: $second-text-color;
+    }
   }
+}
+
+.disabled {
+  pointer-events: none;
+  cursor: default;
 }
 
 .menu {
@@ -81,6 +74,30 @@ a:active {
 .projects {
   max-width: 1440px;
   padding-bottom: 3em;
+}
+
+.projects, .contact {
+  a:link {
+    //color: $second-text-color;
+    color: $text-color;
+  }
+
+  a:visited {
+    //color: $second-text-color;
+    color: $text-color;
+    text-decoration: underline;
+  }
+
+  a:hover {
+    color: $second-text-color;
+    //color: $text-color;
+  }
+
+  a:active {
+    color: $second-text-color;
+    //color: $text-color;
+    text-decoration: underline;
+  }
 }
 
 .role {
@@ -126,9 +143,6 @@ a:active {
 
 .contact {
   font-size: 1.25em;
-  a {
-    //text-decoration: underline;
-  }
 }
 
 .contact-center {
@@ -176,8 +190,67 @@ a:active {
   }
 }
 
-/* 12-column responsive layout */
+/* IBM page */
+#ibm {
+  max-width: 100%;
+  background-color: $ibm-color;
+  .role {
+    color: white;
+    padding: 2em;
+    font-size: 3em;
+  }
+  .copyright {
+    margin-top: 0;
+    p {
+      color: white;
+    }
+  }
+}
+#ibm-header {
+  max-width: 1290px;
+  margin: 0 auto;
+  .name a, .menu a {
+    color: white;
+  }
+}
+.bpm, .client-vantage, .feb {
+  background: white;
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-bottom: 2em;
+  .width {
+    max-width: 900px;
+  }
+  .wide-head {
+    font-weight: 700;
+    font-size: 1.5em;
+    padding-top: 1.5em;
+  }
+  p {
+    text-align: left;
+    line-height: 1.7em;
+  }
+  img {
+    max-width: 900px;
+  }
+}
+.client-vantage {
+  background-color: $ibm-color;
+  p {
+    color: white;
+  }
+  a {
+    color: $second-text-color;
+    font-weight: 700;
+  }
+}
+.feb {
+  p {
+    text-align: left;
+  }
+}
 
+/* 12-column responsive layout */
 /* Mobile First */
 [class*="col-"] {
   width: 100%;
