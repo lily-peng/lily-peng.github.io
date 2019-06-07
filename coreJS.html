@@ -1,0 +1,82 @@
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="http://faviconist.com/icons/c2bad45333e36fe1908e695a27753a6b/favicon.ico" />
+		<title>Lily Peng | CoreJS</title>
+		<meta name="description" content="Lily Peng's personal portfolio."/>
+		<meta name="author" content="Lily Peng"/>
+		<meta name="copyright" content="Copyright (c) 2019"/>
+		<link href="https://fonts.googleapis.com/css?family=Oxygen:300,700" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+		<link href="css/main.css" rel="stylesheet">
+	</head>
+
+	<body id="ibm">
+		<div id="ibm-header" class="header">
+			<div class="name"><a href="/index.html">Lily Peng</a></div>
+			<div class="menu">
+				<a href="/index.html#about" class="menu__first">About</a>
+				<a href="/index.html#contact">Contact</a>
+				<a href="assets/Lily Peng - Resume.pdf" target="_blank">Résumé</a>
+			</div>
+		</div>
+
+		<p class="role">HTML/CSS/JS At-a-Glance</p>
+
+    <div class="bpm">
+      <div class="width">
+        <p class="wide-head">Start from Scratch</p>
+				<p></p>
+				<img src="assets/basic1.png"></img>
+				<p>Alternatively, have your JS and CSS in external files:</p>
+				<img src="assets/altbasic.png"></img>
+
+      </div>
+    </div>
+
+    <div class="client-vantage">
+      <div class="width">
+        <p class="wide-head">Script in Head vs Body</p>
+				<p></p>
+				<p>When the browser encounters the script tag, it will block progress on parsing the rest of the HTML on the page as it downloads (if external) the script file and executes it.</p>
+				<p>In the past, this meant putting script tags at the bottom of the body.</p>
+				<p>The modern approach is to use <b>async</b> or <b>defer</b>.</p>
+				<img src="assets/async.png"></img>
+				<p>While the browser is downloading the script, it is also continuing to parse the HTML. It will execute the script as soon as it is done downloading.</p>
+				<p>Keep in mind, async scripts are not guarenteed to run in a specific order, and you should not use document.write. Instead, add event listeners:</p>
+				<img src="event-listen.png"></img>
+				<img src="assets/defer.png"></img>
+				<p>The browser will download and execute the scripts in order after the document has been loaded.</p>
+      </div>
+
+    </div>
+
+    <div class="feb">
+      <div class="width">
+        <p class="wide-head">What makes a website slow?</p>
+
+				<p></p>
+				<p>Cache? Promises? Memoization? Closure?</p>
+        <p>Created two internal-facing websites for the IBM Client Vantage team. This involved designing low-fidelity prototypes and mockups and engineering their front-end layout and configuration. The sites are hosted on IBM Cloud (formerly IBM Bluemix) through Cloud Foundry, using a continuous delivery toolchain integrated with Github.</p>
+
+      </div>
+    </div>
+
+
+    <p></p>
+
+
+		<div class="copyright">
+			<div class="row">
+				<div class="col-12">
+					<p><i class="far fa-copyright"></i> 2019 Lily Peng</p>
+				</div>
+			</div>
+		</div>
+
+		<!--footer class="row"></footer-->
+
+	</body>
+</html>
