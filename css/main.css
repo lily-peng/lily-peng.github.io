@@ -212,7 +212,7 @@ a {
   font-size: 2em;
   padding-top: 1.5em;
 }
-.primary-page-block p, .secondary-page-block p {
+.primary-page-block p, .primary-page-block ul, .secondary-page-block p, .secondary-page-block ul {
   font-family: "Open Sans", sans-serif;
   text-align: left;
   line-height: 1.7em;

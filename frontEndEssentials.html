@@ -38,7 +38,7 @@
       </div>
     </div>
 
-    <div class="secondary-page-block">
+    <div class="primary-page-block">
       <div id="border-top" class="width">
         <p class="wide-head">Script in Head vs Body</p>
 				<p></p>
@@ -52,20 +52,91 @@
 				<img src="assets/defer.png"></img>
 				<p>The browser will download and execute the scripts in order after the document has been loaded.</p>
       </div>
-
     </div>
 
     <div class="primary-page-block">
       <div id="border-top" class="width">
         <p class="wide-head">What makes a website slow?</p>
+				<ul>
+					<li><b>Place CSS tags before JavaScript tags</b>: Load CSS before JS because the browser will stop to load the script before CSS can be displayed</li>
+					<li><b>Minify HTML, CSS, and JS</b>: Remove whitespace and new lines to reduce size and speed up load time. Significant for CSS/JS, as this means less data is sent to the client</li>
+					<li><b>Critical CSS</b>: In-line code the CSS needed to load the first display that the user sees, then load non-critical asynchronously (the JS function is a third-party that loads CSS aynchronously):</li>
+					<img src="assets/critical-css.png"></img>
+					<li><b>Unoptimized Images</b>: Use CSS or SVG instead if possible. JPEG is usually faster (more compressed).</li>
+					<li><b>HTTPS</b> is slower because it's more secure, so browsers allow more options (geolocation, push notifications, etc.)</li>
+					<li><b>Make fewer requests</b> by combining external CSS, JS, etc. files</li>
+					<li><b>Cache-Control</b>: A HTTP header that allows you to cache things (like images, CSS/JS files, etc)</li>
+					<li><b>Prefetching</b>: Tell browser to load other pages in advance after the main one is done, in case the user navigates to it next. (rel="prefetch") </li>
+					<li><b>Use a CDN</b>: Content Delivery Network, edge servers all over the world so a user can fetch content from the one closest to them. Edge servers just store a cache of the pages</li>
+				</ul>
+      </div>
+    </div>
 
-				<p></p>
+		<div class="primary-page-block">
+      <div id="border-top" class="width">
+        <p class="wide-head">etc?</p>
 				<p>Cache? Promises? Memoization? Closure?</p>
         <p>python -m SimpleHTTPServer 3000</p>
 				<p>SCSS: sass --watch input.scss output.css</p>
+				<p>Dot Game</p>
+				<p>https://www.indeed.com/hire/interview-questions/front-end-developer</p>
+				<p>Write an async queing function that execute functions put  in a que. between each function execution, wait 50 mils. (know promise resolution syntax)</p>
+      </div>
+    </div>
 
+		<div class="primary-page-block">
+      <div id="border-top" class="width">
+        <p class="wide-head">Let's Talk Web Design Knowledge</p>
+				<p><b>Accessible</b> and <b>User-Friendly</b></p>
+				<ul>
+					<li>Check <b>screen width for multiple devices</b> using 12-column Responsive design format</li>
+					<li>Tab Order</li>
+					<li>Colorblind</li>
+				</ul>
+      </div>
+    </div>
 
+		<div class="primary-page-block">
+      <div id="border-top" class="width">
+        <p class="wide-head">HTML5 Features</p>
+				<ul>
+					<li>Headers/Footers</li>
+					<li>Nav (can go in Header)</li>
+					<li>Videos</li>
+					<li>Sections</li>
+				</ul>
+      </div>
+    </div>
 
+		<div class="primary-page-block">
+      <div id="border-top" class="width">
+        <p class="wide-head">Browser Compatibility</p>
+				<ul>
+					<li>browser-specific workarounds, how diff browsers render differently, browser-specific problems</li>
+					<li>Also, -webkit for MacOS</li>
+					<li>Internet Explorer / Microsoft Edge is probably least compatible</li>
+				</ul>
+      </div>
+    </div>
+
+		<div class="primary-page-block">
+      <div id="border-top" class="width">
+        <p class="wide-head">Structure your CSS and Javascript for Working with Others</p>
+				<ul>
+					<li>Organization: Folders, External files, etc.</li>
+					<li>Commenting / Documentation</li>
+				</ul>
+      </div>
+    </div>
+
+		<div class="primary-page-block">
+      <div id="border-top" class="width">
+        <p class="wide-head">Always-be-Learning</p>
+				<ul>
+					<li>Learn from MDN Docs</li>
+					<li>Interest in React/Angular</li>
+					<li>NYC Developer Meetups, there's a group called Codesmith that hosts workshops on more advanced concepts such as Closure and Iterators.</li>
+				</ul>
       </div>
     </div>
 
