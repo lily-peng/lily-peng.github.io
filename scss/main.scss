@@ -2,9 +2,22 @@
 
 // Scss Variables
 $bg-color: #fff4e9; // cream color
-$text-color: #333333; // light black
-$second-text-color: lightcoral;
-$ibm-color: rgb(0, 98, 255);
+$text-color: #444444; // dark grey text for friendly reading
+//$text-color: #333333; // light black
+$second-text-color: lightcoral; //coral for urls
+
+$font-header: 'Oxygen', sans-serif;
+$font-body: 'Open Sans', sans-serif;
+
+$ibm-color: rgb(0, 98, 255); //ibm blue
+$ibm-secondary-color: white;
+
+$essentials-color: #fbfbf8;
+$essentials-secondary-color: #fbfbf8;
+
+$default-block-color: darkslategray;
+$default-secondary-color: white;
+
 //$ibm-color-light:
 //rgb(5,48,173);
 
@@ -20,9 +33,11 @@ body {
   background-color: $bg-color;
   margin: 0 auto;
 }
-
+.index .role {
+  font-family: $font-header;
+}
 .basefont, h1, h2, .text h3, h4, h5, p, span, body {
-  font-family: 'Oxygen', sans-serif;
+  font-family: $font-body;
   letter-spacing: 0.05em;
   color: $text-color;
 }
@@ -40,6 +55,7 @@ a {
   overflow: hidden;
   padding: 20px;
   .name {
+    font-family: $font-header;
     a {
       float: left;
       color: $text-color;
@@ -49,6 +65,9 @@ a {
       text-decoration-style: dashed;
       text-decoration-color: $second-text-color;
     }
+  }
+  .menu {
+    font-family: $font-header;
   }
 }
 
@@ -130,6 +149,7 @@ a {
     opacity: 0;
   }
   &__title {
+    font-family: $font-header;
     font-weight: 700;
   }
   &__subtitle {
@@ -167,11 +187,13 @@ a {
   [class*="col-"] {
     padding: 0;
     p {
+      font-family: $font-header;
       font-weight: 700;
       letter-spacing: 0.1em;
       font-size: 1.5em;
     }
     .job {
+      font-family: $font-header;
       font-weight: 700;
     }
     i {
@@ -187,34 +209,28 @@ a {
   }
   p {
     font-weight: 700;
+    font-family: $font-header;
   }
 }
 
-/* IBM page */
-#ibm {
+.project-page {
   max-width: 100%;
-  background-color: $ibm-color;
+  background-color: $default-block-color;
+  .header {
+    max-width: 1290px;
+    margin: 0 auto;
+  }
   .role {
-    color: white;
+    font-family: $font-header;
     padding: 2em;
     font-size: 3em;
   }
   .copyright {
     margin-top: 0;
-    p {
-      color: white;
-    }
   }
 }
-#ibm-header {
-  max-width: 1290px;
-  margin: 0 auto;
-  .name a, .menu a {
-    color: white;
-  }
-}
-.bpm, .client-vantage, .feb {
-  background: white;
+.primary-page-block, .secondary-page-block {
+  background-color: $default-secondary-color;
   padding-left: 20%;
   padding-right: 20%;
   padding-bottom: 2em;
@@ -222,31 +238,77 @@ a {
     max-width: 900px;
   }
   .wide-head {
+    font-family: $font-header;
+    letter-spacing: 0.05em;
+    text-align: center;
     font-weight: 700;
-    font-size: 1.5em;
+    font-size: 2em;
     padding-top: 1.5em;
   }
   p {
+    font-family: $font-body;
     text-align: left;
     line-height: 1.7em;
+    font-size: 20px;
+    margin-bottom: 1.5em;
+    letter-spacing: 0;
   }
   img {
     max-width: 900px;
   }
-}
-.client-vantage {
-  background-color: $ibm-color;
-  p {
-    color: white;
+  span {
+    font-family: $font-body;
+    font-size: 18px;
+    font-style: italic;
+    letter-spacing: 0;
   }
+}
+.secondary-page-block {
+  background-color: $default-block-color;
   a {
     color: $second-text-color;
     font-weight: 700;
   }
 }
-.feb {
-  p {
-    text-align: left;
+
+/* IBM page */
+
+#ibm-page {
+  background-color: $ibm-color;
+  .header {
+    .name a, .menu a {
+      color: white;
+    }
+  }
+  .role {
+    color: white;
+  }
+  .primary-page-block {
+    background-color: $ibm-secondary-color;
+  }
+  .secondary-page-block {
+    background-color: $ibm-color;
+    p {
+      color: white;
+    }
+  }
+  .copyright p {
+    color: white;
+  }
+}
+
+/* Essentials page */
+
+#essentials-page {
+  background-color: $essentials-color;
+  #border-top {
+    border-top: 2px dashed $second-text-color;
+  }
+  .primary-page-block {
+    background-color: $essentials-secondary-color;
+  }
+  .secondary-page-block {
+    background-color: $essentials-color;
   }
 }
 

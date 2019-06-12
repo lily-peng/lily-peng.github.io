@@ -9,10 +9,14 @@ body {
   margin: 0 auto;
 }
 
-.basefont, h1, h2, .text h3, h4, h5, p, span, body {
+.index .role {
   font-family: "Oxygen", sans-serif;
+}
+
+.basefont, h1, h2, .text h3, h4, h5, p, span, body {
+  font-family: "Open Sans", sans-serif;
   letter-spacing: 0.05em;
-  color: #333333;
+  color: #444444;
 }
 
 p {
@@ -28,14 +32,20 @@ a {
   overflow: hidden;
   padding: 20px;
 }
+.header .name {
+  font-family: "Oxygen", sans-serif;
+}
 .header .name a {
   float: left;
-  color: #333333;
+  color: #444444;
   font-size: 1.5em;
   font-weight: 700;
   text-decoration: underline;
   text-decoration-style: dashed;
   text-decoration-color: lightcoral;
+}
+.header .menu {
+  font-family: "Oxygen", sans-serif;
 }
 
 .disabled {
@@ -63,10 +73,10 @@ a {
 }
 
 .projects a:link, .contact a:link {
-  color: #333333;
+  color: #444444;
 }
 .projects a:visited, .contact a:visited {
-  color: #333333;
+  color: #444444;
   text-decoration: underline;
 }
 .projects a:hover, .contact a:hover {
@@ -106,6 +116,7 @@ a {
   opacity: 0;
 }
 .card__title {
+  font-family: "Oxygen", sans-serif;
   font-weight: 700;
 }
 .card__subtitle {
@@ -143,11 +154,13 @@ a {
   padding: 0;
 }
 .about [class*=col-] p, .contact [class*=col-] p {
+  font-family: "Oxygen", sans-serif;
   font-weight: 700;
   letter-spacing: 0.1em;
   font-size: 1.5em;
 }
 .about [class*=col-] .job, .contact [class*=col-] .job {
+  font-family: "Oxygen", sans-serif;
   font-weight: 700;
 }
 .about [class*=col-] i, .contact [class*=col-] i {
@@ -162,68 +175,104 @@ a {
 }
 .copyright p {
   font-weight: 700;
+  font-family: "Oxygen", sans-serif;
 }
 
-/* IBM page */
-#ibm {
+.project-page {
   max-width: 100%;
-  background-color: #0062ff;
+  background-color: darkslategray;
 }
-#ibm .role {
-  color: white;
-  padding: 2em;
-  font-size: 3em;
-}
-#ibm .copyright {
-  margin-top: 0;
-}
-#ibm .copyright p {
-  color: white;
-}
-
-#ibm-header {
+.project-page .header {
   max-width: 1290px;
   margin: 0 auto;
 }
-#ibm-header .name a, #ibm-header .menu a {
-  color: white;
+.project-page .role {
+  font-family: "Oxygen", sans-serif;
+  padding: 2em;
+  font-size: 3em;
+}
+.project-page .copyright {
+  margin-top: 0;
 }
 
-.bpm, .client-vantage, .feb {
-  background: white;
+.primary-page-block, .secondary-page-block {
+  background-color: white;
   padding-left: 20%;
   padding-right: 20%;
   padding-bottom: 2em;
 }
-.bpm .width, .client-vantage .width, .feb .width {
+.primary-page-block .width, .secondary-page-block .width {
   max-width: 900px;
 }
-.bpm .wide-head, .client-vantage .wide-head, .feb .wide-head {
+.primary-page-block .wide-head, .secondary-page-block .wide-head {
+  font-family: "Oxygen", sans-serif;
+  letter-spacing: 0.05em;
+  text-align: center;
   font-weight: 700;
-  font-size: 1.5em;
+  font-size: 2em;
   padding-top: 1.5em;
 }
-.bpm p, .client-vantage p, .feb p {
+.primary-page-block p, .secondary-page-block p {
+  font-family: "Open Sans", sans-serif;
   text-align: left;
   line-height: 1.7em;
+  font-size: 20px;
+  margin-bottom: 1.5em;
+  letter-spacing: 0;
 }
-.bpm img, .client-vantage img, .feb img {
+.primary-page-block img, .secondary-page-block img {
   max-width: 900px;
 }
+.primary-page-block span, .secondary-page-block span {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-style: italic;
+  letter-spacing: 0;
+}
 
-.client-vantage {
-  background-color: #0062ff;
+.secondary-page-block {
+  background-color: darkslategray;
 }
-.client-vantage p {
-  color: white;
-}
-.client-vantage a {
+.secondary-page-block a {
   color: lightcoral;
   font-weight: 700;
 }
 
-.feb p {
-  text-align: left;
+/* IBM page */
+#ibm-page {
+  background-color: #0062ff;
+}
+#ibm-page .header .name a, #ibm-page .header .menu a {
+  color: white;
+}
+#ibm-page .role {
+  color: white;
+}
+#ibm-page .primary-page-block {
+  background-color: white;
+}
+#ibm-page .secondary-page-block {
+  background-color: #0062ff;
+}
+#ibm-page .secondary-page-block p {
+  color: white;
+}
+#ibm-page .copyright p {
+  color: white;
+}
+
+/* Essentials page */
+#essentials-page {
+  background-color: #fbfbf8;
+}
+#essentials-page #border-top {
+  border-top: 2px dashed lightcoral;
+}
+#essentials-page .primary-page-block {
+  background-color: #fbfbf8;
+}
+#essentials-page .secondary-page-block {
+  background-color: #fbfbf8;
 }
 
 /* 12-column responsive layout */

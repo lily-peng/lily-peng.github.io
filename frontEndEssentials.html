@@ -4,17 +4,18 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="shortcut icon" href="http://faviconist.com/icons/c2bad45333e36fe1908e695a27753a6b/favicon.ico" />
-		<title>Lily Peng | CoreJS</title>
+		<title>Lily Peng | Front-End Essentials</title>
 		<meta name="description" content="Lily Peng's personal portfolio."/>
 		<meta name="author" content="Lily Peng"/>
 		<meta name="copyright" content="Copyright (c) 2019"/>
 		<link href="https://fonts.googleapis.com/css?family=Oxygen:300,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 		<link href="css/main.css" rel="stylesheet">
 	</head>
 
-	<body id="ibm">
-		<div id="ibm-header" class="header">
+	<body id="essentials-page" class="project-page">
+		<div id="project-page-header" class="header">
 			<div class="name"><a href="/index.html">Lily Peng</a></div>
 			<div class="menu">
 				<a href="/index.html#about" class="menu__first">About</a>
@@ -23,21 +24,22 @@
 			</div>
 		</div>
 
-		<p class="role">HTML/CSS/JS At-a-Glance</p>
+		<p class="role">HTML/CSS/Vanilla JS</p>
 
-    <div class="bpm">
-      <div class="width">
-        <p class="wide-head">Start from Scratch</p>
+    <div class="primary-page-block">
+      <div id="border-top" class="width">
+        <p class="wide-head">At a Glance</p>
 				<p></p>
+				<p>Starting from Scratch:</p>
 				<img src="assets/basic1.png"></img>
 				<p>Alternatively, have your JS and CSS in external files:</p>
 				<img src="assets/altbasic.png"></img>
-
+				<p></p>
       </div>
     </div>
 
-    <div class="client-vantage">
-      <div class="width">
+    <div class="secondary-page-block">
+      <div id="border-top" class="width">
         <p class="wide-head">Script in Head vs Body</p>
 				<p></p>
 				<p>When the browser encounters the script tag, it will block progress on parsing the rest of the HTML on the page as it downloads (if external) the script file and executes it.</p>
@@ -53,13 +55,16 @@
 
     </div>
 
-    <div class="feb">
-      <div class="width">
+    <div class="primary-page-block">
+      <div id="border-top" class="width">
         <p class="wide-head">What makes a website slow?</p>
 
 				<p></p>
 				<p>Cache? Promises? Memoization? Closure?</p>
-        <p>Created two internal-facing websites for the IBM Client Vantage team. This involved designing low-fidelity prototypes and mockups and engineering their front-end layout and configuration. The sites are hosted on IBM Cloud (formerly IBM Bluemix) through Cloud Foundry, using a continuous delivery toolchain integrated with Github.</p>
+        <p>python -m SimpleHTTPServer 3000</p>
+				<p>SCSS: sass --watch input.scss output.css</p>
+
+
 
       </div>
     </div>
