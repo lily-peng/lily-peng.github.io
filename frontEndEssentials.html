@@ -47,7 +47,7 @@
 				<p>The modern approach is to use <b>async</b> or <b>defer</b>.</p>
 				<img src="assets/async.png"></img>
 				<p>While the browser is downloading the script, it is also continuing to parse the HTML. It will execute the script as soon as it is done downloading.</p>
-				<p>Keep in mind, async scripts are not guarenteed to run in a specific order, and you should not use document.write. Instead, add event listeners:</p>
+				<p>Keep in mind, async scripts are not guarenteed to run in a specific order, and you should not use document.write. Instead, add <b>event listeners</b>:</p>
 				<img src="assets/event-listen.png"></img>
 				<img src="assets/defer.png"></img>
 				<p>The browser will download and execute the scripts in order after the document has been loaded.</p>
@@ -74,8 +74,36 @@
 
 		<div class="primary-page-block">
       <div id="border-top" class="width">
+        <p class="wide-head">Promises</p>
+				<p>An object that may produce a single value some time in the future for if the value is not known when the promise is created.</p>
+				<p>A promise can only be in one of 3 states, and once it reaches a resolved state, it cannot be changed: pending, fulfilled, and rejected.</p>
+				<img src="assets/promise-constructor.png"></img>
+				<p>The promise constructor takes in a function with two parameters, resolve(), and reject().</p>
+				<img src="assets/promise-then.png"></img>
+        <p>Every promise object has a .then() method that takes in 2 optional callback functions for the success and failure cases of the promise. Because .then() returns a new promise object, it is possible to chain promises. This allows us to mimic synchronous code with asynchronous functions.</p>
+				<p>Promises are built on top of callbacks to write sequential asynchronous code with error catching.</p>
+      </div>
+    </div>
+
+		<div class="primary-page-block">
+      <div id="border-top" class="width">
+        <p class="wide-head">Event Delegation</p>
+				<p>Add event listeners to <i>parent</i> instead of child elements. Uses less memory (don't need one for every child) and don't need to unbind and rebind for different children.</p>
+      </div>
+    </div>
+
+		<div class="primary-page-block">
+      <div id="border-top" class="width">
+        <p class="wide-head">JS Modules</p>
+				<p>Sectioning your code into self-contained parts that are not dependent on each other, so you can make changes without disrupting everything else. Allows you to not worry as much about sharing global variable names.</p>
+				<p>CommonJS vs AMD</p>
+      </div>
+    </div>
+
+		<div class="primary-page-block">
+      <div id="border-top" class="width">
         <p class="wide-head">etc?</p>
-				<p>Cache? Promises? Memoization? Closure?</p>
+				<p>Cache? Memoization? Closure? difference between a variable that is: null, undefined or undeclared (also how to check)?</p>
         <p>python -m SimpleHTTPServer 3000</p>
 				<p>SCSS: sass --watch input.scss output.css</p>
 				<p>Dot Game</p>
