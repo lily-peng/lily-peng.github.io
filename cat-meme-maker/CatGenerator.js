@@ -4,17 +4,39 @@ function CatGenerator() {
     const [cat, setCat] = useState("https://i.imgur.com/sjL6mS5.gif");
     const [topText, setTopText] = useState("");
     const [botText, setBotText] = useState("");
+    const [allBreeds, setAllBreeds] = useState([{label: "Random Breed", value: "Random Breed"}]);
+    const [breed, setBreed] = useState("Random Breed");
     
-    function fetchCat() {
+    function fetchBreeds() {
         return (
-            fetch("https://api.thecatapi.com/v1/images/search")
+            fetch("https://api.thecatapi.com/v1/breeds")
                 .then(response => response.json())
-                .then(response => setCat(response[0].url))
+                .then(response => setAllBreeds(
+                    response.map(({name, id}) => ({label: name, value: id}))
+                )
+            )
         )
     }
     
+    function fetchCat() {
+        if (breed === "Random Breed") {
+            return (
+                fetch("https://api.thecatapi.com/v1/images/search")
+                    .then(response => response.json())
+                    .then(response => setCat(response[0].url))
+            )
+        } else {
+            return (
+                fetch("https://api.thecatapi.com/v1/images/search?breed_id=" + breed)
+                    .then(response => response.json())
+                    .then(response => setCat(response[0].url))
+            )
+        }
+    }
+    
     useEffect(() => {
-        fetchCat()
+        fetchBreeds();
+        fetchCat();
     }, []);
     
     function handleSubmit() {
@@ -22,9 +44,13 @@ function CatGenerator() {
         fetchCat();
     }
     
-    function handleChange(event) {
+    function handleText(event) {
         const {name, value} = event.target;
         name === "topText" ? setTopText(value) : setBotText(value);
+    }
+    
+    function handleBreed(event) {
+        setBreed(event.currentTarget.value);
     }
     
     return (
@@ -34,15 +60,29 @@ function CatGenerator() {
                     name="topText" 
                     placeholder="Top Text"
                     value={topText}
-                    onChange={handleChange}
+                    onChange={handleText}
                 />
                 <input 
                     name="botText" 
                     placeholder="Bottom Text"
                     value={botText}
-                    onChange={handleChange}
+                    onChange={handleText}
                 />
                 <button>Next Cat!</button>
+                <div className="break"> </div>
+                <select 
+                    value={breed}
+                    onChange={handleBreed}
+                >
+                    <option key="Random Breed" value="Random Breed">
+                        Random Breed
+                    </option>
+                    {allBreeds.map(({label, value}) => (
+                        <option key={value} value={value}>
+                            {label}
+                        </option>
+                    ))}
+                </select>
             </form>
             <div className="cat-img">
                 <img src={cat} />
