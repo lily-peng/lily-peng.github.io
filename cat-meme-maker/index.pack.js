@@ -500,15 +500,46 @@ function CatGenerator() {
         botText = _useState6[0],
         setBotText = _useState6[1];
 
-    function fetchCat() {
-        return fetch("https://api.thecatapi.com/v1/images/search").then(function (response) {
+    var _useState7 = (0, _react.useState)([{ label: "Random Breed", value: "Random Breed" }]),
+        _useState8 = _slicedToArray(_useState7, 2),
+        allBreeds = _useState8[0],
+        setAllBreeds = _useState8[1];
+
+    var _useState9 = (0, _react.useState)("Random Breed"),
+        _useState10 = _slicedToArray(_useState9, 2),
+        breed = _useState10[0],
+        setBreed = _useState10[1];
+
+    function fetchBreeds() {
+        return fetch("https://api.thecatapi.com/v1/breeds").then(function (response) {
             return response.json();
         }).then(function (response) {
-            return setCat(response[0].url);
+            return setAllBreeds(response.map(function (_ref) {
+                var name = _ref.name,
+                    id = _ref.id;
+                return { label: name, value: id };
+            }));
         });
     }
 
+    function fetchCat() {
+        if (breed === "Random Breed") {
+            return fetch("https://api.thecatapi.com/v1/images/search").then(function (response) {
+                return response.json();
+            }).then(function (response) {
+                return setCat(response[0].url);
+            });
+        } else {
+            return fetch("https://api.thecatapi.com/v1/images/search?breed_id=" + breed).then(function (response) {
+                return response.json();
+            }).then(function (response) {
+                return setCat(response[0].url);
+            });
+        }
+    }
+
     (0, _react.useEffect)(function () {
+        fetchBreeds();
         fetchCat();
     }, []);
 
@@ -517,12 +548,16 @@ function CatGenerator() {
         fetchCat();
     }
 
-    function handleChange(event) {
+    function handleText(event) {
         var _event$target = event.target,
             name = _event$target.name,
             value = _event$target.value;
 
         name === "topText" ? setTopText(value) : setBotText(value);
+    }
+
+    function handleBreed(event) {
+        setBreed(event.currentTarget.value);
     }
 
     return _react2.default.createElement(
@@ -535,18 +570,44 @@ function CatGenerator() {
                 name: "topText",
                 placeholder: "Top Text",
                 value: topText,
-                onChange: handleChange
+                onChange: handleText
             }),
             _react2.default.createElement("input", {
                 name: "botText",
                 placeholder: "Bottom Text",
                 value: botText,
-                onChange: handleChange
+                onChange: handleText
             }),
             _react2.default.createElement(
                 "button",
                 null,
                 "Next Cat!"
+            ),
+            _react2.default.createElement(
+                "div",
+                { className: "break" },
+                " "
+            ),
+            _react2.default.createElement(
+                "select",
+                {
+                    value: breed,
+                    onChange: handleBreed
+                },
+                _react2.default.createElement(
+                    "option",
+                    { key: "Random Breed", value: "Random Breed" },
+                    "Random Breed"
+                ),
+                allBreeds.map(function (_ref2) {
+                    var label = _ref2.label,
+                        value = _ref2.value;
+                    return _react2.default.createElement(
+                        "option",
+                        { key: value, value: value },
+                        label
+                    );
+                })
             )
         ),
         _react2.default.createElement(
