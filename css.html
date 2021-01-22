@@ -1,0 +1,151 @@
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="http://faviconist.com/icons/c2bad45333e36fe1908e695a27753a6b/favicon.ico" />
+		<title>Lily Peng | React</title>
+		<meta name="description" content="Lily Peng's personal portfolio."/>
+		<meta name="author" content="Lily Peng"/>
+		<meta name="copyright" content="Copyright (c) 2019"/>
+		<link href="https://fonts.googleapis.com/css?family=Oxygen:300,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+		<link href="css/main.css" rel="stylesheet">
+	</head>
+
+	<body id="essentials-page" class="project-page">
+		<div id="project-page-header" class="header">
+			<div class="name"><a href="/index.html">Lily Peng</a></div>
+			<div class="menu">
+				<a href="/index.html#about" class="menu__first">About</a>
+				<a href="/index.html#contact">Contact</a>
+				<a href="assets/Lily Peng - Resume.pdf" target="_blank">Résumé</a>
+			</div>
+		</div>
+
+        <p class="role">CSS</p>
+        <p><a href="frontEndEssentials.html">Back to Front-End Essentials</a></p>
+        <p><a href="html.html">HTML</a></p>
+		<p><a href="javascript.html">Javascript</a></p>
+		<p><a href="react.html">React</a></p>
+
+
+
+        <div class="primary-page-block">
+            <div id="border-top" class="width">
+              <p class="wide-head">CSS Basics</p>
+                <ul>
+                    <li><b>Basic</b>: <code>&lt;p style=&quot;font-size: 21px;&quot;&gt;Hello&lt;/p&gt;</code></li>
+                    <li><b>Rule</b>: <code>body { color:black; }</code> &lt;-- This is a rule. Consists of a <b>selector</b> (body,  or .class or #id) and <b>property:value</b> declarations</li>
+                    <li><b>Conventions</b>: 
+                        <ul>
+                            <li>Use classes as much as you can, avoid id</li>
+                            <li><code>&lt;div class=&quot;a-box&quot;&gt;</code> Use lowercase, use hyphens (not underscores or camelCase), numbers only if NOT first character</li>
+                            <li><code>h1, h2, h3, p { margin-top: 0; }</code>: Do this for text elements when starting to stay consistent (because the browser automatically gives these a value on all pages)</li>
+                            <li>When you have multiple selectors, keep those near the top of the css. More general rules at the top. More specific, bottom</li>
+                            <li>Typically, styles on <code>p</code> can be put in <code>body</code>, so it applies to everything, even those that aren't in <code>p</code> (like <code>a</code>)</li>
+                            <li>Use <code>section</code> instead of div when it is understood to be a layout element with an h1, h2, etc title</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="primary-page-block">
+            <div id="border-top" class="width">
+              <p class="wide-head">The Box Model</p>
+                <ul>
+                    <li><b>Elements</b>: By default, they are "block level". Width is 100% of their parent, and height is 0 and grows to the content. Stacks on top of each other.</li>
+                    <li>Setting width and height of an element in CSS does NOT include padding, border, or margin. Just the content itself.</li>
+                    <li><b>Margin</b>: Sets space around the <em>outside</em> of the element. 
+                        <ul>
+                            <li>Heading, paragraphs, text etc. by default have <code>margin-top</code> and <code>margin-bottom</code> set equal to font size.</li>
+                            <li><b>Collapsing Margins</b>: 
+                                <ul>
+                                    <li>If top element has <code>margin-bottom</code>: 25px and bottom element has <code>margin-top</code>: 50px, the margin space is actually 50px and not 75px.</li>
+                                    <li><b>Parent/Child</b> margins will merge with each other where they touch. e.g. If a parent has <code>margin-top: 0px</code>, and its first child has <code>margin-top: 50px</code>, those will merge and the parent will move with the child! To prevent margins touching each other (causing unpredictable behavior), use padding on parent element to separate its margin from its childrens'.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><b>Padding</b>: Sets space <em>inside</em> the element. Uses same format as above. 
+                        <ul>
+                            <li>
+                                Margin and Padding use the same forms:
+                                <ul>
+                                    <li><code>margin: 10px 20px 100px 40px;</code> ==&gt; <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, <code>margin-left</code></li>
+                                    <li><code>margin: 10px;</code> ==&gt; all margins set to 10px</li>
+                                    <li><code>margin: 10px 20px;</code> ==&gt; top&bottom are 10px, left&right are 20px</li>
+                                    <li><code>margin: 0 20px 10px;</code> ==&gt; top is 0px, left&right are 20px, bottom is 10px</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><b>Borders</b>: <code>border: 2px solid pink;</code> Width, style, color (order doesn't matter?). For single side, <code>border-left</code> and so forth. Can also do <code>border-bottom-color: red;</code> to override a property of a single border side</li>
+                    <li><b>Visual:</b><img src="assets/box-model.png" />(If you set a <code>background-color</code> for the content, it would only cover the padding and the content itself.)</li>
+                    <li>The width and height of an element is the sum of the content, paddings, border, and margins.</li>
+                    <li><b>Centering</b>: 
+                        <ul>
+                            <li><code>margin-left: auto</code> will set all available space on the left side (meaning the element is pushed to the right edge of the parent)</li>
+                            <li><code>margin: 0 auto</code> sets both left and right to auto, centering the element inside its parent</li>
+                            <li>HOWEVER, setting margin top/bottom to auto does NOT center vertically</li>
+                        </ul>
+                    </li>
+    
+                </ul>
+            </div>
+        </div>
+    
+        <div class="primary-page-block">
+            <div id="border-top" class="width">
+              <p class="wide-head">CSS Details</p>
+                <ul>
+                    <li>Try to avoid setting the height of an element, as it can lead to annoying overflow problems.</li>
+                    <li><b><code>body {margin: 0;}</code></b>: Background colors, etc will not extend to the edges of the screen because browsers have built-in margin to avoid text starting on the edges. Turn it off at the top of your css, <em>always</em> for every site.</li>
+                    <li><b>Flexbox</b>: has killed <code>float</code>. Setting <code>display:flex;</code> on an element makes all its children become columns. So set it to a div wrapping all your columns.</li>
+                    <li><b>em vs rem vs px</b>: <code>px</code> are absolute. <code>em</code> is relative to the font size of the element (if font size is 10px, 2em is 20px). So if font size changes, <code>em</code> will change accordingly. <code>rem</code> is relative to the root (html) font size, so it is easier to manage/control.</li>
+                    <li><b>Inline elements</b>: Good for decorations where you don't alter size (margin/padding). You can't nest a block element inside one (<code>&lt;span&gt;&lt;div&gt;&lt;/div&gt;&lt;/span&gt;</code>), cannot set margin/padding on top/bottom (only left/right), and cannot set width/height. Use <b>inline block</b> for inline with margin/padding</li>
+                    <li><b>Links</b> - using <em>pseudo-classes</em>, you can target different states. ORDER MATTERS, because the last CSS rules are applied last
+                        <ul>
+                            <li>Setting just <code>a</code> will apply the rule to <em>every</em> state. Usually you'd do this first, then target the individual ones below as needed</li>
+                            <li><code>a:link</code> - default look of <code>&lt;a&gt;. Only applies to NOT visited, NOT focus, etc.</code></li>
+                            <li><code>a:visited</code> - a link that's been visited before. Often the same styling as <code>a:link</code></li>
+                            <li><code>a:focus</code> - using tab; what it looks like tabbed</li>
+                            <li><code>a:hover</code> - cursor hovering over link. Often the same styling as <code>a:focus</code></li>
+                            <li><code>a:active</code> - when mouse is actively pressed down on it; usually a flash</code></li>
+                        </ul>
+                    </li>
+                    <li><b><code>display: inline-block</code></b>: inline, but can set margin/padding. Often for buttons: use padding for the size, not width/height.</li>
+                    <li>Compound selectors: <code>.my-class p { color:red; }</code>. Avoid these (because they cause specificity wars) by making everything their own class</li>
+                    <li>Use multiple classes for an element if you have some styling that's more generic and some more specific: <code>&lt;a class=&quot;btn btn-accent&quot;&gt;</code></li>
+                    <li>Font stack: backup fonts as commas after font-family</li>
+                    <li>Sectioning layout contents:
+                        <ul>
+                            <li><img src="https://i1.wp.com/css-tricks.com/wp-content/uploads/2019/06/sections-diagram.png?resize=1024%2C656&ssl=1" /></li>
+                        </ul>
+                    </li>
+                    <li>Advanced selectors: 
+                        <ul>
+                            <li>* - all the children of</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <p></p>
+
+
+		<div class="copyright">
+			<div class="row">
+				<div class="col-12">
+					<p><i class="far fa-copyright"></i> 2021 Lily Peng</p>
+				</div>
+			</div>
+		</div>
+
+		<!--footer class="row"></footer-->
+
+	</body>
+</html>

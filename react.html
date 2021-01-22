@@ -1,0 +1,106 @@
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="http://faviconist.com/icons/c2bad45333e36fe1908e695a27753a6b/favicon.ico" />
+		<title>Lily Peng | React</title>
+		<meta name="description" content="Lily Peng's personal portfolio."/>
+		<meta name="author" content="Lily Peng"/>
+		<meta name="copyright" content="Copyright (c) 2019"/>
+		<link href="https://fonts.googleapis.com/css?family=Oxygen:300,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+		<link href="css/main.css" rel="stylesheet">
+	</head>
+
+	<body id="essentials-page" class="project-page">
+		<div id="project-page-header" class="header">
+			<div class="name"><a href="/index.html">Lily Peng</a></div>
+			<div class="menu">
+				<a href="/index.html#about" class="menu__first">About</a>
+				<a href="/index.html#contact">Contact</a>
+				<a href="assets/Lily Peng - Resume.pdf" target="_blank">Résumé</a>
+			</div>
+		</div>
+
+		<p class="role">React</p>
+		<p>A Javascript library</p>
+
+        <div class="primary-page-block">
+            <div id="border-top" class="width">
+                <p class="wide-head">Overview</p>
+                    <ul>
+                        <li><p><b>Components</b> - building blocks of reusable HTML code</p></li>
+                        <li><p><b>JSX</b> - React's JS wrapper to build components with HTML</p></li>
+                        <li><p><b>Props</b> - pass data around in you app, commonly function parameters</p></li>
+                        <li><p><b>Virtual DOM</b> - with DOM updates, paints the whole thing then passes to React to process what changes need to be made on the real DOM. Speed!</p></li>
+                    </ul>
+
+                    <pre>
+    ReactDOM.render(what, where);
+    ReactDOM.render(&lt;h1&gt;Hello World!&lt;/h1&gt;, document.getElementById("root"));
+    ReactDOM.render(&lt;div&gt;&lt;h1&gt;hi, &lt;/h1&gt;&lt;span&gt;pohead&lt;/span&gt;&lt;/div&gt;, document.getElementById("root"));
+                    </pre>
+                    <p>(first parameter can only accept 1 <> component, so wrap them in a div)</p>
+
+            </div>
+        </div>
+
+        <div class="primary-page-block">
+            <div id="border-top" class="width">
+                <p class="wide-head">React.memo</p>
+                <p>A <b>higher-order component</b>, which is a function that takes a component and returns a new component. As opposed to a regular component, which transforms props into HTML UI. Uses <a href="frontEndEssentials.html#memo">memoization</a>.</p>
+                <p>Checks for prop changes to signal whether to render or reuse the last rendered result.</p>
+                <pre>
+    const MyComponent = React.memo(function MyComponent(props) {
+        /* given the same props, will not re-render and will just give you the previous result */
+    });
+                </pre>
+            </div>
+        </div>
+
+        <div class="primary-page-block">
+            <div id="border-top" class="width">
+                <p class="wide-head">useCallback()</p>
+                <p>Returns the first instance of the function provided, given an array of dependencies. Stores a function that you don't want to render unnecessarily if the function is the same. Uses <a href="frontEndEssentials.html#memo">memoization</a>.</p>
+                <pre>
+    const eventHandler = useCallback(() =&gt; doSomething(a), [a]);
+    return &lt;App onClick = {eventHandler}/&gt;
+                </pre>
+                <p>If the same value for <code>a</code> is passed more than once, <code>doSomething</code> does not re-render. <code>eventHandler</code> is set to the same as the first time <code>doSomething(a)</code>'s value was (the function itself, not the value).</p>
+            </div>
+        </div>
+
+        <div class="primary-page-block">
+            <div id="border-top" class="width">
+                <p class="wide-head">useMemo()</p>
+                <p>Returns the <i>result</i> of the first instance of the function provided, given an array of dependencies. Recomputes the memoized value when one of the dependencies has changed. On every render, the function passed to <code>useMemo</code> runs. Uses <a href="frontEndEssentials.html#memo">memoization</a>.</p>
+                <pre>
+    const memoizedValue = useMemo(() =&gt; computeExpensiveValue(a, b), [a, b]);
+                </pre>
+                <p>If the same value for <code>a</code> is passed more than once, <code>doSomething</code> does not re-render. <code>eventHandler</code> is set to the same as the first time <code>doSomething(a)</code>'s value was (the function itself, not the value).</p>
+                <pre> 
+    useCallback(() =&gt; console.log('useCallback')) // return the function
+    useMemo(() =&gt; () =&gt; console.log('useMemo')) // return the result of the function
+                </pre>
+                <p>These are equivalent because <code>useMemo</code> returns the result of the function, which is a function.</p>
+            </div>
+        </div>
+
+
+        <p></p>
+
+
+		<div class="copyright">
+			<div class="row">
+				<div class="col-12">
+					<p><i class="far fa-copyright"></i> 2021 Lily Peng</p>
+				</div>
+			</div>
+		</div>
+
+		<!--footer class="row"></footer-->
+
+	</body>
+</html>

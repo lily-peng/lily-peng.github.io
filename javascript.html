@@ -1,0 +1,167 @@
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="http://faviconist.com/icons/c2bad45333e36fe1908e695a27753a6b/favicon.ico" />
+		<title>Lily Peng | React</title>
+		<meta name="description" content="Lily Peng's personal portfolio."/>
+		<meta name="author" content="Lily Peng"/>
+		<meta name="copyright" content="Copyright (c) 2019"/>
+		<link href="https://fonts.googleapis.com/css?family=Oxygen:300,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+		<link href="css/main.css" rel="stylesheet">
+	</head>
+
+	<body id="essentials-page" class="project-page">
+		<div id="project-page-header" class="header">
+			<div class="name"><a href="/index.html">Lily Peng</a></div>
+			<div class="menu">
+				<a href="/index.html#about" class="menu__first">About</a>
+				<a href="/index.html#contact">Contact</a>
+				<a href="assets/Lily Peng - Resume.pdf" target="_blank">Résumé</a>
+			</div>
+		</div>
+
+        <p class="role">Javascript</p>
+        <p><a href="frontEndEssentials.html">Back to Front-End Essentials</a></p>
+        <p><a href="html.html">HTML</a></p>
+		<p><a href="css.html">CSS</a></p>
+		<p><a href="react.html">React</a></p>
+
+
+        <div class="primary-page-block">
+            <div id="border-top" class="width">
+                <p class="wide-head">The DOM</p>
+                    <ul>
+                        <li>Document Object Model - JavaScript object that represents the <code>document</code> (web page). Provides properties and functions for developers to use to manipulate the web page</li>
+                        <li><code>document.getElementById("")</code> returns a JS object that represents the element</li>
+                        <li><code>document.getElementsByClassName()</code> and <code>document.getElementsByTagName()</code> both return an HTMLCollection, which is like an array, of the elements</li>
+                        <li>On the element returned, use <code>textContent</code> (best for text), <code>.innerHTML</code>, or <code>.innerText</code> to access and set values</li>
+                        <li><code>document.querySelector(&quot;div#my-id &gt; p&quot;)</code> - returns the first object that is a child p of a div with id #my-id</li>
+                        <li><code>document.querySelectorAll()</code> - returns a NodeList of objects that match the CSS query. Can conver to array with <code>Array.from(myNodeList);</code></li>
+                        <li><code>document.body.<b>style</b>.textAlign = &quot;center&quot;</code> - the style property is an object with CSS styles. Note text-align is changed to textAlign. (also, this is an easy way to get the body)
+                            <ul>
+                                <li><em>Careful</em>: This adds style in the form of inline HTML. If you try to retrieve style that wasn't added in the HTML inline style tag, it will not be able to!!</li>
+                                <li>In that case, use <code>window.getComputedStyle(myElement)</code> to get a CSSStyleDeclaration that you can call .color, etc on</li>
+                            </ul>
+                        </li>
+                        <li><code>document.querySelector(&quot;#header&quot;).<b>className</b> += &quot; new-class&quot;</code> - add a class to an element, but removal is difficult</li>
+                        <li><code>document.querySelector(&quot;#header&quot;).<b>classList</b>.remove(&quot;my-class&quot;)</code> - use <code>add()</code>, <code>remove()</code>, <code>toggle</code></li>
+                        <li><code>document.<b>createElement</b>("li")</code></li>
+                        <li><code>myList.<b>append</b>(newLi)</code> - append() and prepend() adds the parameter element into the original, either at top or bottom
+                            <ul>
+                                <li><code>appendChild()</code> is similar, but more strict.</li>
+                                <ul>
+                                    <li>With <code>append()</code>, you can use <code>append("some string")</code> into a parent to look like <code>&lt;div&gt;Appending Text&lt;/div&gt;</code>. Not accepted with <code>appendChild()</code></li>
+                                    <li><code>append()</code> does not have a return value, but <code>appendChild()</code> returns the appended Node object</li>
+                                    <li>You can <code>parent.append(child, childTwo)</code> for multiple children, but <code>appendChild()</code> only allows a single child</li>
+                                </ul>
+                            </ul>
+                        </li>
+                        <li>Can also use <code>document.body.innerHTML += &quot;&lt;p&gt;hi&lt;/p&gt;&quot;</code> to append. This doesn't create objects, just takes in a string. Generally okay for simple text where you don't need control over the object</li>
+                        <li>Remove elements with <code>unwantedElement.remove()</code> or <code>parentElement.removeChild(unwantedChild)</code></li>
+                        <li><b>Event Listeners</b> - <code>myElement.addEventListener(&quot;event&quot;, function);</code>
+                            <ul>
+                                <li>Events like &quot;click&quot; or &quot;keypress&quot;</li>
+                                <li>Keep in mind it's the function <em>name</em>, not with ()</li>
+                                <li>Generally recommended over <code>myElement.onclick = () => {...}</code> because it allows multiple events, but onclick is quick and easy.</li>
+                            </ul>
+                        </li>
+
+                    </ul>
+            </div>
+          </div>
+
+        <div class="primary-page-block">
+            <div id="border-top" class="width">
+              <p class="wide-head">Promises</p>
+                      <p>An object that may produce a single value some time in the future for if the value is not known when the promise is created.</p>
+                      <p>A promise can only be in one of 3 states, and once it reaches a resolved state, it cannot be changed: pending, fulfilled, and rejected.</p>
+                      <img src="assets/promise-constructor.png"></img>
+                      <p>The promise constructor takes in a function with two parameters, resolve(), and reject().</p>
+                      <img src="assets/promise-then.png"></img>
+                      <p>Every promise object has a .then() method that takes in 2 optional callback functions for the success and failure cases of the promise. Because .then() returns a new promise object, it is possible to chain promises. This allows us to mimic synchronous code with asynchronous functions.</p>
+                      <p>Promises are built on top of callbacks to write sequential asynchronous code with error catching.</p>
+            </div>
+          </div>
+      
+          <div class="primary-page-block">
+            <div id="border-top" class="width">
+              <p class="wide-head">Event Delegation</p>
+                      <p>Add event listeners to <i>parent</i> instead of child elements. Uses less memory (don't need one for every child) and don't need to unbind and rebind for different children.</p>
+            </div>
+          </div>
+      
+          <div class="primary-page-block">
+            <div id="border-top" class="width">
+              <p class="wide-head">JS Modules</p>
+                      <p>Sectioning your code into self-contained parts that are not dependent on each other, so you can make changes without disrupting everything else. Allows you to not worry as much about sharing global variable names.</p>
+            </div>
+          </div>
+      
+          <div class="primary-page-block">
+            <div id="border-top" class="width">
+              <p class="wide-head">ES6 / ES7 / ES8 / ES9</p>
+                      <p><b>ES6</b>:</p>
+                      <ul>
+                          <li>Arrow Syntax</li>
+                          <li>Classes</li>
+                          <li>Spread Syntax (and Rest)</li>
+                          <li>let and const</li>
+                          <li>Iterators & Generators</li>
+                          <li>Modules</li>
+                          <li>Promises</li>
+                          <li>Tail Calls</li>
+                      </ul>
+                      <p><b>ES7</b>:</p>
+                      <ul>
+                          <li>Array.prototype.includes()</li>
+                          <li>Exponents: x ** y</li>
+                      </ul>
+                      <p><b>ES8</b>:</p>
+                      <ul>
+                          <li>Async Functions: async function foo() {} or const foo = async function () {};</li>
+                          <li>Shared Memory & Atomics</li>
+                      </ul>
+                      <p><b>ES9</b>:</p>
+                      <ul>
+                          <li>Asynchronous Iteration</li>
+                          <li>Rest/Spread Operators working with Objects</li>
+                      </ul>
+            </div>
+          </div>
+      
+          <div class="primary-page-block">
+              <div id="border-top" class="width">
+                  <p class="wide-head">Closure</p>
+                  <p>Closed Over Variable Environment (COVE)</p>
+                  <p>Creating persistent memory (variables/data) from an outer function accessible to an inner, generated function. Every function created receives data from the memory space where the function definition lives (normally global).</p>
+                  <img src="assets/closure.png" />
+              </div>
+          </div>
+          
+          <a name="memo"><div class="primary-page-block">
+              <div id="border-top" class="width">
+                  <p class="wide-head">Memoization</p>
+                  <p>A technique of storing the results of function calls and returning the cached result when it receives the same input again. Helps to optimize performance by not calling expensive functions more than once.</p>
+                  <p>Built upon the concepts of <b>closure</b> and <b>higher-order functions</b> (returning functions from functions).</p>
+              </div>
+          </div></a>
+
+        <p></p>
+
+
+		<div class="copyright">
+			<div class="row">
+				<div class="col-12">
+					<p><i class="far fa-copyright"></i> 2021 Lily Peng</p>
+				</div>
+			</div>
+		</div>
+
+		<!--footer class="row"></footer-->
+
+	</body>
+</html>
