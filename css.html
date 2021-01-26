@@ -104,7 +104,6 @@
                     <li>Try to avoid setting the height of an element, as it can lead to annoying overflow problems.</li>
                     <li><b><code>body {margin: 0;}</code></b>: Background colors, etc will not extend to the edges of the screen because browsers have built-in margin to avoid text starting on the edges. Turn it off at the top of your css, <em>always</em> for every site.</li>
                     <li><b>Flexbox</b>: has killed <code>float</code>. Setting <code>display:flex;</code> on an element makes all its children become columns. So set it to a div wrapping all your columns.</li>
-                    <li><b>em vs rem vs px</b>: <code>px</code> are absolute. <code>em</code> is relative to the font size of the element (if font size is 10px, 2em is 20px). So if font size changes, <code>em</code> will change accordingly. <code>rem</code> is relative to the root (html) font size, so it is easier to manage/control.</li>
                     <li><b>Inline elements</b>: Good for decorations where you don't alter size (margin/padding). You can't nest a block element inside one (<code>&lt;span&gt;&lt;div&gt;&lt;/div&gt;&lt;/span&gt;</code>), cannot set margin/padding on top/bottom (only left/right), and cannot set width/height. Use <b>inline block</b> for inline with margin/padding</li>
                     <li><b>Links</b> - using <em>pseudo-classes</em>, you can target different states. ORDER MATTERS, because the last CSS rules are applied last
                         <ul>
@@ -137,6 +136,27 @@
                 </ul>
             </div>
         </div>
+
+        <div class="primary-page-block">
+            <div id="border-top" class="width">
+              <p class="wide-head">Responsive Design</p>
+                <ul>
+                    <li><b>Absolute units</b>: like px</li>
+                    <li><b>Percentage % units</b> are relative to the parent of the element. Usually used for width.</li>
+                    <li><b>Relative units</b> are usually relative to the font-size, but could also be relative to the viewport (vw, vh, vmin, vmax).
+                        <ul>
+                            <li><b>em</b> is relative to the element's font size (if font size is 10px, 2em is 20px). If applied to an element's font-size, then it is relative its parent's font size. Can cause an unwanted "compounding" effect going through each parent of an element</li>
+                            <li><b>rem</b> is always relative to the root of the document (html element). </li>
+                            <li><b>em vs rem</b>: rem is easier to manage for font-size, but for margins/padding, em makes sense to be relative to the element's font size.</li>
+                        </ul>
+                    </li>
+                    <li><code>max-width</code> and <code>min-width</code>: If your element is width 100% and you don't want it to get too big on big viewpoints, set a max-width to a fixed value like 620px. min-width lets something now get too small in small viewports.</li>
+                    
+                </ul>
+            </div>
+        </div>
+
+
 
         <p></p>
 

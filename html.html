@@ -52,7 +52,7 @@
                       <li><b>Attributes</b>: <code>&lt;a href=&quot;google.com&quot;&gt;</code>: href is an attribute</li>
                       <li><b>External Links</b>: If linking to an external site, make sure to use <b>https://</b> or <b>http://</b> at the beginning of the url in the &lt;a href=&quot;...&quot;&gt; or &lt;img src=&quot;...&quot;&gt; to signal that it is external</li>
                       <li><b>Img alt attribute</b>: <code>&lt;img src=&quot;...&quot; alt=&quot;sad cat in a box&quot;&gt;</code>. Always put an alt attribute on img tags for accessibility reasons. Be descriptive of the intent of the image, but don't put &quot;an image of...&quot;. Can use empty alt if the image is just decorative or doesn't provide meaning</li>
-                      <li>Recommend using <code>&lt;input type=&quot;button&quot; value=&quot;Click Me&quot;/&gt;</code> over <code>&lt;button&gt;Click Me&lt;/button&gt;</code> because without explicitly declaring type, it is assumed to be &quot;submit&quot;, which can cause some problems. Also, some old browsers may not support the second one, may be security risks with the inner text, and does not support things like clickable images too well.</li>
+                      <li>Recommend &lt;button type=&quot;button&quot;&gt;Click Me&lt;/button&gt; over <code>&lt;input type=&quot;button&quot; value=&quot;Click Me&quot;/&gt;</code>. However, make sure to explicitly declare type, otherwise it is assumed to be &quot;submit&quot;. Also, some old browsers may not support the newer button tag and there may be security risks with the inner text</li>
                   </ul>
               </div>
           </div>
