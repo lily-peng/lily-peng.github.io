@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    font-family: Ubuntu, sans-serif;
+    color: #707070;
+    font-weight: 300;
+}
+
+/******************
+Typography
+*******************/
+
+h1 {
+    font-family: Lora, sans-serif;
+    font-weight: 400;
+    color: #143774;
+    /* border: 2px solid magenta; */
+    margin: 0;
+}
+
+a {
+    color: #1792D2;
+}
+
+a:hover,
+a:focus {
+    color: #143774;
+    text-decoration: underline;
+}
+
+.subtitle {
+    color: #1792D2;
+    font-weight: 700;
+    text-transform: uppercase;
+    /* border: 2px solid magenta; */
+    margin-top: 0;
+}
+
+main {
+    line-height: 1.5;
+}
+
+.article-title {
+    color: #143774;
+    font-family: Lora, sans-serif;
+    font-weight: 400;
+}
+
+.article-info,
+.article-continue {
+    font-size: .875rem;
+}
+
+.article-continue {
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/******************
+Layout
+*******************/
+
+.header-text {
+    text-align: center;
+}
+
+img {
+    max-width: 600px;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    background: #F8F8F8;
+    padding: 3em;
+}
+
+.article-featured {
+    padding-bottom: 2em;
+    border-bottom: 1px solid #707070;
+}
+
+/* navigation */
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav li {
+    margin-top: 2em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+nav a {
+    color: #717171;
+    text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus {
+    color: #1792D2;
+}
+
+nav .current-page {
+    padding: .25em 0;
+    border-bottom: 2px solid #717171;
+}
+
+nav .current-page:hover,
+nav .current-page:focus {
+    border-bottom: 2px solid #1792D2;
+}
