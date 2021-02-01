@@ -103,6 +103,7 @@
                 <ul>
                     <li>Try to avoid setting the height of an element, as it can lead to annoying overflow problems.</li>
                     <li><b><code>body {margin: 0;}</code></b>: Background colors, etc will not extend to the edges of the screen because browsers have built-in margin to avoid text starting on the edges. Turn it off at the top of your css, <em>always</em> for every site.</li>
+                    <li><b><code>img {max-width: 100%; display: block;}</code></b> is also a good thing to always use on every site. Images are default inline-block, which leads to weird spacing sometimes.</li>
                     <li><b>Flexbox</b>: has killed <code>float</code>. Setting <code>display:flex;</code> on an element makes all its children become columns. So set it to a div wrapping all your columns.</li>
                     <li><b>Inline elements</b>: Good for decorations where you don't alter size (margin/padding). You can't nest a block element inside one (<code>&lt;span&gt;&lt;div&gt;&lt;/div&gt;&lt;/span&gt;</code>), cannot set margin/padding on top/bottom (only left/right), and cannot set width/height. Use <b>inline block</b> for inline with margin/padding</li>
                     <li><b>Links</b> - using <em>pseudo-classes</em>, you can target different states. ORDER MATTERS, because the last CSS rules are applied last
