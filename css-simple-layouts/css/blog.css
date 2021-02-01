@@ -9,12 +9,23 @@ body {
 Typography
 *******************/
 
+h1, h2, h3, p {
+    margin-top: 0;
+}
+
 h1 {
     font-family: Lora, sans-serif;
     font-weight: 400;
     color: #143774;
-    /* border: 2px solid magenta; */
     margin: 0;
+}
+
+h2 {
+    margin-top: 1em;
+}
+
+h3 {
+    margin-top: 1em;
 }
 
 a {
@@ -31,8 +42,8 @@ a:focus {
     color: #1792D2;
     font-weight: 700;
     text-transform: uppercase;
-    /* border: 2px solid magenta; */
-    margin-top: 0;
+    font-size: .75rem;
+    margin: 0;
 }
 
 main {
@@ -50,6 +61,10 @@ main {
     font-size: .875rem;
 }
 
+.article-info {
+    margin: 2em 0 0 0;
+}
+
 .article-continue {
     font-weight: 700;
     text-decoration: none;
@@ -60,50 +75,75 @@ main {
 Layout
 *******************/
 
-.header-text {
-    text-align: center;
-}
-
 img {
-    max-width: 600px;
+    max-width: 100%;
+    display: block;
 }
 
 .container {
-    width: 80%;
+    width: 90%;
+    max-width: 900px;
     margin: 0 auto;
 }
 
-header {
-    background: #F8F8F8;
-    padding: 3em;
+.container-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .article-featured {
     padding-bottom: 2em;
     border-bottom: 1px solid #707070;
+    margin-bottom: 2em;
 }
 
-/* navigation */
-nav ul {
-    list-style: none;
-    padding: 0;
+.article-past {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+}
+
+.article-past-primary {
+    order: 2;
+}
+
+.article-past-secondary {
+    order: 1;
+}
+
+/* Navigation */
+header {
+    background: #F8F8F8;
+    padding: 2em 0;
     text-align: center;
 }
 
+nav ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+
 nav li {
-    margin-top: 2em;
+    padding: 0;
+    margin: 1em 0 1em 2em;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 nav a {
-    color: #717171;
     text-decoration: none;
+    color: #717171;
+    padding: .25em 0;
 }
 
 nav a:hover,
 nav a:focus {
     color: #1792D2;
+    text-decoration: none;
 }
 
 nav .current-page {
@@ -114,4 +154,27 @@ nav .current-page {
 nav .current-page:hover,
 nav .current-page:focus {
     border-bottom: 2px solid #1792D2;
+}
+
+/******************
+Media Queries
+*******************/
+
+@media (min-width: 675px) {
+    nav ul {
+        flex-direction: row;
+        
+    }
+    
+    .container-flex {
+        flex-direction: row;
+    }
+    
+    main {
+        width: 63%
+    }
+
+    aside {
+        width: 30%;
+    }
 }
