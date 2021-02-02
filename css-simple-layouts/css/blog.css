@@ -9,23 +9,15 @@ body {
 Typography
 *******************/
 
-h1, h2, h3, p {
-    margin-top: 0;
-}
-
-h1 {
+h1, h2, h3 {
     font-family: Lora, sans-serif;
     font-weight: 400;
     color: #143774;
     margin: 0;
 }
 
-h2 {
-    margin-top: 1em;
-}
-
-h3 {
-    margin-top: 1em;
+.about-headers {
+    color: #1792D2;
 }
 
 a {
@@ -46,23 +38,13 @@ a:focus {
     margin: 0;
 }
 
-main {
-    line-height: 1.5;
-}
-
-.article-title {
-    color: #143774;
-    font-family: Lora, sans-serif;
-    font-weight: 400;
-}
-
 .article-info,
 .article-continue {
     font-size: .875rem;
 }
 
 .article-info {
-    margin: 2em 0 0 0;
+    margin: 1em 0 2em 0;
 }
 
 .article-continue {
@@ -96,6 +78,17 @@ img {
     padding-bottom: 2em;
     border-bottom: 1px solid #707070;
     margin-bottom: 2em;
+    display: flex;
+    flex-direction: column;
+}
+
+.article-img {
+    max-height: 300px;
+    order: -2;
+}
+
+.article-info {
+    order: -1;
 }
 
 .article-past {
@@ -112,11 +105,77 @@ img {
     order: 1;
 }
 
+.sidebar-widget {
+    padding: 2em;
+    border: 20px solid #EBEBEB;
+    margin-bottom: 3em;
+}
+
+.sidebar-widget-title {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    margin-bottom: 2em;
+    font-family: Ubuntu, sans-serif;
+    font-weight: 700;
+}
+
+.sidebar-about-img {
+    width: 100%;
+    height: 133px;
+    object-fit: cover;
+}
+
+.sidebar-body {
+    margin-top: 2em;
+    color: #143774;
+}
+
+.sidebar-post {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #707070;
+    margin-bottom: 2em;
+}
+
+.sidebar-img {
+    order: -1;
+    width: 100%;
+    max-height: 87px;
+    object-fit: cover;
+    margin-bottom: 1em;
+}
+
+.sidebar-post:last-child {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+footer {
+    background: #143774;
+    padding: 4em;
+    text-align: center;
+    color: white;
+}
+
+.focus-post {
+    margin-bottom: 5em;
+}
+
+.focus-img {
+    max-height: 300px;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 2.5em;
+}
+
 /* Navigation */
 header {
     background: #F8F8F8;
     padding: 2em 0;
     text-align: center;
+    margin-bottom: 3em;
 }
 
 nav ul {
@@ -148,7 +207,7 @@ nav a:focus {
 
 nav .current-page {
     padding: .25em 0;
-    border-bottom: 2px solid #717171;
+    border-bottom: 1.5px solid #717171;
 }
 
 nav .current-page:hover,
@@ -163,7 +222,6 @@ Media Queries
 @media (min-width: 675px) {
     nav ul {
         flex-direction: row;
-        
     }
     
     .container-flex {
@@ -173,8 +231,35 @@ Media Queries
     main {
         width: 63%
     }
-
+    
+    .article-past {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .article-past-primary {
+        width: 55%;
+    }
+    
+    .article-past-secondary {
+        width: 35%;
+    }
+    
+    .article-img {
+        width: 100%;
+        min-height: 250px;
+        object-fit: cover;
+    }
+    
     aside {
         width: 30%;
+    }
+    
+    .sidebar-widget-title {
+        margin-bottom: 1em;
+    }
+    
+    footer {
+        padding: 3em;
     }
 }

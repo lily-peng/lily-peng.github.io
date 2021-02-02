@@ -99,7 +99,7 @@
     
         <div class="primary-page-block">
             <div id="border-top" class="width">
-              <p class="wide-head">CSS Details</p>
+              <p class="wide-head">CSS Advanced</p>
                 <ul>
                     <li>Try to avoid setting the height of an element, as it can lead to annoying overflow problems.</li>
                     <li><b><code>body {margin: 0;}</code></b>: Background colors, etc will not extend to the edges of the screen because browsers have built-in margin to avoid text starting on the edges. Turn it off at the top of your css, <em>always</em> for every site.</li>
@@ -114,6 +114,7 @@
                             <li><code>a:focus</code> - using tab; what it looks like tabbed</li>
                             <li><code>a:hover</code> - cursor hovering over link. Often the same styling as <code>a:focus</code></li>
                             <li><code>a:active</code> - when mouse is actively pressed down on it; usually a flash</code></li>
+                            <li>Another pseudo-class is <code>:last-child</code>, which means if the targeted element happens to be the last child of its parent.</li>
                         </ul>
                     </li>
                     <li><b><code>display: inline-block</code></b>: inline, but can set margin/padding. Often for buttons: use padding for the size, not width/height.</li>
@@ -183,11 +184,8 @@
                             <img src="assets/column-space-between.png" alt="column-space-between" />
                         </ul>
                     </li>
-                    <li><strong>Ordering</strong>: 
-                        <ul>
-                            <li>For children of flexbox parents, you can change their ordering on the page by setting: <code>order: 2;</code>, etc.</li>
-                        </ul>
-                    </li>
+                    <li><strong>Ordering</strong>: For children of flexbox parents, you can change the order they show up on the page by setting: <code>order: 2;</code>, etc. Default is 0, can use negatives.</li>
+                    <li><strong><code>object-fit</code></strong>: for images, choose how you want it to fit a certain height/width. Most commonly, <code>cover</code> is used to crop the image to the right size instead of stretching it. Also <code>object-position</code> to change where the crop occurs</li>
                     <li><strong>Media Queries</strong>
                         <ul>
                             <li><code>@media media-type and (media-features) { ... }</code> where only media-type or media-features is required (but both can be targeted as well)</li>
@@ -204,7 +202,6 @@
                             <li><code>@media screen and (orientation: portrait) { ... }</code></li>
                             <li>Inside a media query, we need to nest in the selectors (body, etc)</li>
                             <li>Remember to declare your media queries in order to not override anything, especially putting them after the default rules</li>
-                            
                         </ul>
                     </li>
                     <li><strong>Navigation</strong>
@@ -213,8 +210,7 @@
                     <li><strong>Best Practices</strong>
                         <ul>
                             <li>When starting to write the markup, best to look at the most complicated design first. Usually a desktop size</li>
-                            <li>When starting to write the CSS, start with the smaller screens: Mobile-First</li>
-                            
+                            <li>When starting to write the CSS, start with the smaller screens: Mobile-First. Typically you'll be making min-width Media Queries (everything in the query for larger and larger screens)</li>
                         </ul>
                     </li>
                 </ul>

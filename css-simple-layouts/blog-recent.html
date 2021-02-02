@@ -2,10 +2,9 @@
     <head>
         <meta name="author" content="Lily Peng" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link href="https://fonts.googleapis.com/css?family=Lora|Ubuntu:400,700&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="css/normalize.css" />
+        <link href="https://fonts.googleapis.com/css?family=Lora|Ubuntu:300,400,700&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="css/blog.css" />
-        <title>Home Page</title>
+        <title>Recent Posts</title>
     </head>
     
     <body>
@@ -17,24 +16,29 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a class="current-page" href="#">Home</a></li>
+                        <li><a href="blog.html">Home</a></li>
                         <li><a href="blog-about.html">About Me</a></li>
-                        <li><a href="blog-recent.html">Recent Posts</a></li>
+                        <li><a class="current-page" href="#">Recent Posts</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
         
-        
         <div class="container container-flex">
             <main role="main">
-                <article class="article-featured">
-                    <h2 class="article-title">Finding simplicity in life</h2>
-                    <img src="images/life.jpg" alt="desktop with lamp and plant" class="article-img" />
-                    <p class="article-info">July 23, 2019 | 3 Comments</p>
-                    <p class="article-body"><strong>Life can get complicated really quickly</strong>, but it doesn't have to be! There are many ways to simplify your life, <a href="#">a few of which we've explored in the past</a>. This week we're taking a bit of a approach though, in how you can find simplicity in the life you already living.</p>
-                    <a class="article-continue" href="#">Continue reading</a>
+                
+                <article class="article-past">
+                    <div class="article-past-primary">
+                        <h2 class="article-title">Finding simplicity in life</h2>
+                        <p class="article-body"><strong>Life can get complicated really quickly</strong>, but it doesn't have to be! There are many ways to simplify your life, <a href="#">a few of which we've explored in the past</a>. This week we're taking a bit of a approach though, in how you can find simplicity in the life you already living.</p>
+                        <a class="article-continue" href="#">Continue reading</a>
+                    </div>
+                    <div class="article-past-secondary">
+                        <img src="images/life.jpg" alt="desktop with lamp and plant" class="article-img" />
+                        <p class="article-info">July 23, 2019 | 3 Comments</p>  
+                    </div>
                 </article>
+                
                 <article class="article-past">
                     <div class="article-past-primary">
                         <h2 class="article-title">Keeping cooking simple</h2>
@@ -93,7 +97,6 @@
             </aside>
         </div>
        
-        
         <footer>
             <p><strong>Living the Simple Life</strong></p>
             <p>Copyright 2019</p>
