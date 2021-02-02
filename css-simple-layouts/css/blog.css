@@ -188,7 +188,7 @@ nav ul {
 
 nav li {
     padding: 0;
-    margin: 1em 0 1em 2em;
+    margin: 1em 0;
     text-transform: uppercase;
     font-weight: 700;
 }
@@ -222,6 +222,10 @@ Media Queries
 @media (min-width: 675px) {
     nav ul {
         flex-direction: row;
+    }
+
+    nav li {
+        margin-right: 2em;
     }
     
     .container-flex {
