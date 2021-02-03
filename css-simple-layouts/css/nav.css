@@ -1,0 +1,73 @@
+body {
+	margin: 0;
+	font-family: Lora, sans-serif;
+}
+
+h1 {
+	font-weight: 400;
+	margin: .5em 0 1.5em 0;
+	font-size: 3rem;
+}
+
+a {
+	font-family: Ubuntu, sans-serif;
+	color: #717171;
+	text-decoration: none;
+    font-size: 1.25rem;
+}
+
+a:hover, a:focus {
+	color: #143774;
+}
+
+nav {
+	background: #F8F8F8;
+	color: #143774;
+	padding: 1em;
+	display: flex;
+	flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links {
+	display: flex;
+	flex-direction: column;
+	text-transform: uppercase;
+	font-weight: 700;
+	align-items: center;
+}
+
+.nav-link {
+    list-style: none;
+    padding: 0;
+	margin-bottom: 1.5em;
+}
+
+.nav-selected {
+	border-bottom: 2px solid #717171;
+}
+
+.nav-selected:hover, .nav-selected:focus {
+    border-bottom: 2px solid #143774;
+}
+
+@media (min-width: 1030px) {
+	h1 {
+		margin: 0;
+	}
+	
+	nav {
+		flex-direction: row;
+		justify-content: space-between;
+		padding: 3em;
+	}
+	
+	.nav-links {
+		flex-direction: row;
+	}
+	
+	.nav-link {
+		margin: 0 0 0 3em;
+	}
+}
