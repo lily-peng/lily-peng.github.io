@@ -48,6 +48,7 @@
                             <li>Use <code>section</code> instead of div when it is understood to be a layout element with an h1, h2, etc title</li>
                         </ul>
                     </li>
+                    <li>With <code>line-height: 1.6;</code>, usually put on your body, range 1.5-2 (2 is too much). No need for units to keep it responsive</li>
                 </ul>
             </div>
         </div>
@@ -153,7 +154,7 @@
                         </ul>
                     </li>
                     <li><code>max-width</code> and <code>min-width</code>: If your element is width 100% and you don't want it to get too big on big viewpoints, set a max-width to a fixed value like 620px. min-width lets something now get too small in small viewports.</li>
-                    <li><code>justify-content</code>: used in the flexbox parent with display:flex: 
+                    <li><code>justify-content</code>: used in the flexbox parent. Acts on the <strong>main axis</strong>: If the flex parent has the default flex-direction of row, it's the horizontal axis. If flex-direction is set to column, the main axis is the vertical axis.
                         <ul>
                             <li><code>space-between</code> will take empty space and distribute it evenly between the column children</li>
                             <img src="assets/space-between.png" alt="space-between" />
@@ -164,7 +165,7 @@
                             <li><code>flex-end</code> aligns children to the right</li>
                         </ul>
                     </li>
-                    <li><code>align-items</code>: used in the flexbox parent with display:flex:
+                    <li><code>align-items</code>: used in the flexbox parent. Acts on the <strong>cross axis</strong>: If the flex parent has the default flex-direction of row, it's the vertical axis. If flex-direction is set to column, the cross axis is the horizontal axis.
                         <ul>
                             <li><code>stretch</code> is default. The column children will all stretch to match the child with the tallest height</li>
                             <li><code>flex-start</code> will vertically align the children to the top, no longer stretching the children to the tallest one. Each child's height will match its contents.</li>
@@ -174,6 +175,7 @@
                             <li><code>flex-end</code> will vertically align to the bottom</li>
                             <img src="assets/flex-end.png" alt="flex-end" />
                             <li><code>baseline</code> vertically aligns the children by the line where the biggest font sits on, so children with smaller text will shift down accordingly</li>
+                            <li>You can also use <code>align-self</code> on a child to have it individually align on the same axis of align-items</li>
                         </ul>
                     </li>
                     <li><code>flex-direction</code>: set to <code>row</code> by default, meaning the parent is a row and the children are columns
