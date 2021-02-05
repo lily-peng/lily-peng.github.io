@@ -1,0 +1,82 @@
+body {
+    --theme-bright: #ef5839;
+    --theme-dark: #2e354f;
+    --theme-fade: #729c9a;
+    --theme-neutral: #999;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    color: var(--theme-dark);
+}
+
+/* typography */
+
+h1 {
+    margin: 0;
+    font-size: 36px;
+    color: white;
+}
+
+h2 {
+    font-size: 24px;
+    color: var(--theme-bright);
+    font-weight: 700;
+}
+
+a {
+    color: var(--theme-bright);
+}
+
+a:hover, a:focus {
+    color: var(--theme-fade);
+}
+
+/* buttons */
+
+.btn {
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    /* font-weight: 700; */
+    margin: 10px 10px 0 0;
+    font-size: 18px;
+}
+
+.btn-primary {
+    background: var(--theme-bright);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--theme-fade);
+}
+
+.btn-secondary {
+    background: white;
+    color: var(--theme-dark);
+}
+
+.btn-secondary:hover {
+    background: var(--theme-neutral);
+}
+
+/* layout */
+
+.container {
+    width: 620px;
+    margin: 0 auto;
+}
+
+header {
+    background: var(--theme-dark);
+    padding: 45px 0;
+}
+
+section {
+    padding: 45px 0;
+}
+
+.section-two {
+    background: var(--theme-dark);
+    color: white;
+}
