@@ -1,0 +1,200 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif; 
+    font-size: 1rem;
+    color: #404040;
+    text-align: center;
+}
+
+
+/* =================
+   Typography 
+   ================= */
+
+h1 {
+    font-size: 2.25rem;
+    font-weight: 300;
+    color: #fff;
+    margin: 2em 0;
+}
+
+h1 + p {
+    color: #F18119;
+    font-weight: 900;
+    font-size: 1.3125rem;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+h2 {
+    font-size: 1.3125rem;
+    margin: 0;
+}
+
+h2 + p {
+    font-weight: 900;
+    color: #F18119;
+    margin-top: 0;
+    text-transform: uppercase;
+}
+
+.top-text {
+    font-size: 0.625rem;
+    color: #F18119;
+    font-weight: 900;
+    text-transform: uppercase;
+    order: -1;
+    border-top: 5px solid #F18119;
+    margin: 0 auto;
+}
+
+.fine-print {
+    font-size: 0.625rem;
+    letter-spacing: 1px;
+}
+
+strong { 
+    font-weight: 900; 
+}
+
+
+/* =================
+   Intro section 
+   ================= */
+   
+.intro {
+    background-image: url(../images/dark-ribs.jpg);
+    background-color: #404040;
+    padding: 0 .5em 2em;
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* =================
+   main-content section 
+   ================= */
+   
+.main-content {
+    padding: 2em 1em;
+}
+
+.container {
+    max-width: 431px;
+    margin: 0 auto;
+    /* margin-left: auto;
+    margin-right: auto; */
+}
+
+.container-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 50vh;
+}
+
+/************
+Form
+*************/
+
+form {
+    width: 70%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+input,
+button {
+    width: 100%;
+    border-radius: 7px;
+}
+
+input { 
+    padding: .5em;
+    margin-bottom: 1.25em;
+    text-transform: lowercase;
+    border: 1px solid grey;
+    font-family: inherit;
+    text-align: inherit;
+}
+
+button { 
+    display: inline-block;
+    text-transform: uppercase;
+    padding: 1.25em;
+    color: white;
+    background: linear-gradient(to right, #ffa51d, #ff713b);
+    letter-spacing: 2px;
+    font-weight: 900;
+    font-size: .625rem;
+    border: 0;
+    cursor: pointer;
+}
+
+button:hover,
+button:focus {
+    background: linear-gradient(to left, #ffa51d, #ff713b);
+}
+
+/* =================
+   media queries 
+   ================= */
+   
+@media (min-width: 1000px) {
+    body {
+        font-size: 1.125rem;
+        display: flex;
+        min-height: 100vh;
+    }
+    
+    h1 {
+        font-size: 3.5rem;
+        margin: auto 0 .5em 0;
+    }
+    
+    h1 + p {
+        margin-bottom: auto;
+    }
+    
+    h2 {
+        font-size: 1.75rem;
+    }
+    
+    .fine-print {
+        font-size: 0.625rem;
+    }
+    
+    .intro {
+        width: 60%;
+        padding: 0;
+        align-items: center;
+    }
+
+    .container-intro {
+        height: 100%;
+    }
+
+    .top-text {
+        margin: 0 auto;
+    }
+    
+    .main-content {
+        width: 40%;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+    }
+
+    .container-main {
+        display: flex;
+        flex-flow: column wrap;
+    }
+
+    input { 
+        font-size: 1.125rem;
+    }
+}
