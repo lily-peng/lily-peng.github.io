@@ -37,9 +37,9 @@ a:hover, a:focus {
     border: none;
     padding: 10px 25px;
     border-radius: 5px;
-    /* font-weight: 700; */
     margin: 10px 10px 0 0;
     font-size: 18px;
+    cursor: pointer;
 }
 
 .btn-primary {
