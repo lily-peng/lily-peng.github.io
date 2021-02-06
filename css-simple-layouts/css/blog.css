@@ -1,9 +1,11 @@
 body {
     margin: 0;
-    font-family: Ubuntu, sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     color: #707070;
+    font-size: 1.1rem;
     font-weight: 300;
-    line-height: 1.6;
+    line-height: 1.7;
+    /* letter-spacing: 0.5px; */
 }
 
 /******************
@@ -11,10 +13,14 @@ Typography
 *******************/
 
 h1, h2, h3 {
-    font-family: Lora, sans-serif;
+    font-family: 'Lora', sans-serif;
     font-weight: 400;
     color: #143774;
     margin: 0;
+}
+
+h1 {
+    font-size: 2rem;
 }
 
 .about-headers {
@@ -31,12 +37,23 @@ a:focus {
     text-decoration: underline;
 }
 
+strong {
+    font-weight: 700;
+}
+
 .subtitle {
     color: #1792D2;
     font-weight: 700;
     text-transform: uppercase;
-    font-size: .75rem;
+    font-size: .78rem;
     margin: 0;
+    letter-spacing: 1px;
+}
+
+.article-title {
+    padding: 0;
+    margin: 0;
+    font-size: 1.5rem;
 }
 
 .article-info,
@@ -52,6 +69,22 @@ a:focus {
     font-weight: 700;
     text-decoration: none;
     text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-right: auto; /* removes extra width on the right */
+}
+
+.sidebar-widget-title {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    margin-bottom: 2em;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.sidebar-post-title {
+    font-size: 1.1rem;
+    line-height: 1.4;
 }
 
 /******************
@@ -65,7 +98,7 @@ img {
 
 .container {
     width: 90%;
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -84,8 +117,16 @@ img {
 }
 
 .article-img {
-    max-height: 300px;
+    /* max-height: 400px; */
     order: -2;
+}
+
+.article-img-left {
+    object-position: 13%;
+}
+
+.article-img-right {
+    object-position: 75%;
 }
 
 .article-info {
@@ -112,14 +153,6 @@ img {
     margin-bottom: 3em;
 }
 
-.sidebar-widget-title {
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    margin-bottom: 2em;
-    font-family: Ubuntu, sans-serif;
-    font-weight: 700;
-}
-
 .sidebar-about-img {
     width: 100%;
     height: 133px;
@@ -142,7 +175,6 @@ img {
 .sidebar-img {
     order: -1;
     width: 100%;
-    max-height: 87px;
     object-fit: cover;
     margin-bottom: 1em;
 }
@@ -157,7 +189,7 @@ footer {
     background: #143774;
     padding: 4em;
     text-align: center;
-    color: white;
+    color: rgba(255, 255, 255, .75);
 }
 
 .focus-post {
@@ -165,7 +197,7 @@ footer {
 }
 
 .focus-img {
-    max-height: 300px;
+    /* max-height: 300px; */
     width: 100%;
     object-fit: cover;
     margin-bottom: 2.5em;
@@ -190,14 +222,15 @@ nav ul {
 nav li {
     padding: 0;
     margin: 1em 0;
-    text-transform: uppercase;
-    font-weight: 700;
 }
 
 nav a {
     text-decoration: none;
     color: #717171;
     padding: .25em 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 700;
 }
 
 nav a:hover,
@@ -220,7 +253,7 @@ nav .current-page:focus {
 Media Queries
 *******************/
 
-@media (min-width: 675px) {
+@media (min-width: 1000px) {
     nav ul {
         flex-direction: row;
     }
@@ -243,11 +276,11 @@ Media Queries
     }
     
     .article-past-primary {
-        width: 55%;
+        width: 61%;
     }
     
     .article-past-secondary {
-        width: 35%;
+        width: 33%;
     }
     
     .article-img {
