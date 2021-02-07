@@ -6,6 +6,7 @@
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,900&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="css/normalize.css" />
         <link rel="stylesheet" href="css/bbq.css" />
+        <script src="js/bbq.js" async></script>
     </head>
     <body>
         <div class="intro">
@@ -16,15 +17,15 @@
             </div>
         </div>
         
-        <div class="main-content">
+        <div id="main-content" class="main-content">
             <div class="container container-main">
-                <h2>Become a BBQ master! </h2>
+                <h2>Become a BBQ master!</h2>
                 <p>Register Today</p>
-                <p>BBQ isn't just standing in front of your grill with it on full blast and hoping for the best. It's an art! One way to speed up the process is to learn from the best. You can do just that by signing up for this free webinar!</p>
-                <form action="#" method="post">
-                    <input aria-label="First Name" type="text" placeholder="First Name" required />
+                <p class="spacing">BBQ isn't just standing in front of your grill with it on full blast and hoping for the best. It's an art! One way to speed up the process is to learn from the best. You can do just that by signing up for this free webinar!</p>
+                <form id="email-collector" action="#" method="post">
+                    <input name="first-name" aria-label="First Name" type="text" placeholder="First Name" required />
                     <br />
-                    <input aria-label="Email" type="email" placeholder="Email" required />
+                    <input name="email" aria-label="Email" type="email" placeholder="Email" required />
                     <br />
                     <button type="submit">Register</button>
                 </form>

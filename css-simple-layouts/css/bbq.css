@@ -42,14 +42,26 @@ h2 + p {
     text-transform: uppercase;
 }
 
+.spacing {
+    line-height: 1.5;
+    margin-bottom: 1.5em;
+}
+
+.submitted {
+    margin-bottom: .5em;
+}
+
 .top-text {
     font-size: 0.625rem;
     color: #F18119;
     font-weight: 900;
     text-transform: uppercase;
     order: -1;
-    border-top: 5px solid #F18119;
-    margin: 0 auto;
+    margin: 0;
+    padding-top: .5em;
+    letter-spacing: 1.5px;
+    border-top: 5px solid;
+    border-image: linear-gradient(to left, #ff713b, #ffa51d) 1;
 }
 
 .fine-print {
@@ -86,8 +98,6 @@ strong {
 .container {
     max-width: 431px;
     margin: 0 auto;
-    /* margin-left: auto;
-    margin-right: auto; */
 }
 
 .container-intro {
@@ -116,10 +126,23 @@ button {
 input { 
     padding: .5em;
     margin-bottom: 1.25em;
-    text-transform: lowercase;
     border: 1px solid grey;
     font-family: inherit;
     text-align: inherit;
+    transform: scale(1);
+    transition: transform 250ms;
+}
+
+input::placeholder {
+    text-transform: lowercase;
+}
+
+input:focus {
+    transform: scale(1.05);
+}
+
+input[type="email"] {
+    margin-bottom: 1.5em;
 }
 
 button { 
@@ -133,11 +156,13 @@ button {
     font-size: .625rem;
     border: 0;
     cursor: pointer;
+    transform: scale(1);
+    transition: transform 250ms;
 }
 
 button:hover,
 button:focus {
-    background: linear-gradient(to left, #ffa51d, #ff713b);
+    transform: scale(1.05);
 }
 
 /* =================
@@ -164,6 +189,10 @@ button:focus {
         font-size: 1.75rem;
     }
     
+    .spacing {
+        margin-bottom: 2.5em;
+    }
+
     .fine-print {
         font-size: 0.625rem;
     }
