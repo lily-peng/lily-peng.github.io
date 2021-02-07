@@ -36,19 +36,27 @@
             <div id="border-top" class="width">
               <p class="wide-head">CSS Basics</p>
                 <ul>
-                    <li><b>Basic</b>: <code>&lt;p style=&quot;font-size: 21px;&quot;&gt;Hello&lt;/p&gt;</code></li>
+                    <li><b>Basic in-line CSS</b>: <code>&lt;p style=&quot;font-size: 21px;&quot;&gt;Hello&lt;/p&gt;</code></li>
                     <li><b>Rule</b>: <code>body { color:black; }</code> &lt;-- This is a rule. Consists of a <b>selector</b> (body,  or .class or #id) and <b>property:value</b> declarations</li>
+                    <li><strong>Things to Set on Every Site</strong>:
+                        <ul>
+                            <li><code>* {box-sizing: border-box;}</code> - this changes the default (content-box) and allows setting width/height to <em>include</em> the padding and borders of the element</li>
+                            <li><code>body {margin: 0;}</code>: Background colors, etc will not extend to the edges of the screen because browsers have built-in margin to avoid text starting on the edges. Turn it off at the top of your css, <em>always</em> for every site.</li>
+                            <li><code>h1, h2, h3, p { margin-top: 0; }</code>: Do this for text elements when starting to stay consistent (because the browser automatically gives margin-top for these on all pages)</li>
+                            <li><code>img {max-width: 100%; display: block;}</code> is also a good thing to always use on every site. Images are default inline-block, which leads to weird spacing sometimes.</li>
+                        </ul>
+                    </li>
                     <li><b>Conventions</b>: 
                         <ul>
-                            <li>Use classes as much as you can, avoid id</li>
                             <li><code>&lt;div class=&quot;a-box&quot;&gt;</code> Use lowercase, use hyphens (not underscores or camelCase), numbers only if NOT first character</li>
-                            <li><code>h1, h2, h3, p { margin-top: 0; }</code>: Do this for text elements when starting to stay consistent (because the browser automatically gives these a value on all pages)</li>
                             <li>When you have multiple selectors, keep those near the top of the css. More general rules at the top. More specific, bottom</li>
                             <li>Typically, styles on <code>p</code> can be put in <code>body</code>, so it applies to everything, even those that aren't in <code>p</code> (like <code>a</code>)</li>
                             <li>Use <code>section</code> instead of div when it is understood to be a layout element with an h1, h2, etc title</li>
                         </ul>
                     </li>
-                    <li>With <code>line-height: 1.6;</code>, usually put on your body, range 1.5-2 (2 is too much). No need for units to keep it responsive</li>
+                    <li>With <code>line-height: 1.6;</code>, usually put on your body, range 1.5-2 (2 is too much). No need for units to keep it responsive. 1.4 is the default</li>
+                    <li>Because <code>letter-spacing</code> is so small, these are usually done in <code>px</code>, like 1-2px</li>
+                    <li><code>&lt;br&gt;</code> for line break is a-ok</li>
                 </ul>
             </div>
         </div>
@@ -58,7 +66,7 @@
               <p class="wide-head">The Box Model</p>
                 <ul>
                     <li><b>Elements</b>: By default, they are "block level". Width is 100% of their parent, and height is 0 and grows to the content. Stacks on top of each other.</li>
-                    <li>Setting width and height of an element in CSS does NOT include padding, border, or margin. Just the content itself.</li>
+                    <li>By default, setting width and height of an element in CSS does NOT include padding, border, or margin. Just the content itself. This is because <code>box-sizing</code> is set to content-box by default. Change to <code>border-box</code> to have width/height setting include the padding and border</li>
                     <li><b>Margin</b>: Sets space around the <em>outside</em> of the element. 
                         <ul>
                             <li>Heading, paragraphs, text etc. by default have <code>margin-top</code> and <code>margin-bottom</code> set equal to font size.</li>
@@ -103,10 +111,14 @@
               <p class="wide-head">CSS Advanced</p>
                 <ul>
                     <li>Try to avoid setting the height of an element, as it can lead to annoying overflow problems.</li>
-                    <li><b><code>body {margin: 0;}</code></b>: Background colors, etc will not extend to the edges of the screen because browsers have built-in margin to avoid text starting on the edges. Turn it off at the top of your css, <em>always</em> for every site.</li>
-                    <li><b><code>img {max-width: 100%; display: block;}</code></b> is also a good thing to always use on every site. Images are default inline-block, which leads to weird spacing sometimes.</li>
-                    <li><b>Flexbox</b>: has killed <code>float</code>. Setting <code>display:flex;</code> on an element makes all its children become columns. So set it to a div wrapping all your columns.</li>
-                    <li><b>Inline elements</b>: Good for decorations where you don't alter size (margin/padding). You can't nest a block element inside one (<code>&lt;span&gt;&lt;div&gt;&lt;/div&gt;&lt;/span&gt;</code>), cannot set margin/padding on top/bottom (only left/right), and cannot set width/height. Use <b>inline block</b> for inline with margin/padding</li>
+                    <li><b>Flexbox</b>: 
+                        <ul>
+                            <li>has killed <code>float</code></li>
+                            <li>Setting <code>display:flex;</code> on an element makes all its children become columns. So set it to a div wrapping all your columns.</li>
+                            <li>Margins no longer collapse if using flexbox</li>
+                        </ul>
+                    </li>
+                    <li><b>Inline elements</b>: Good for decorations where you don't alter size (margin/padding). You can't nest a block element inside one (<code>&lt;span&gt;&lt;div&gt;&lt;/div&gt;&lt;/span&gt;</code>), cannot set margin/padding on top/bottom (only left/right), and cannot set width/height. Use <b>inline-block</b> for inline with margin/padding</li>
                     <li><b>Links</b> - using <em>pseudo-classes</em>, you can target different states. ORDER MATTERS, because the last CSS rules are applied last
                         <ul>
                             <li>Setting just <code>a</code> will apply the rule to <em>every</em> state. Usually you'd do this first, then target the individual ones below as needed</li>
@@ -119,7 +131,6 @@
                         </ul>
                     </li>
                     <li><b><code>display: inline-block</code></b>: inline, but can set margin/padding. Often for buttons: use padding for the size, not width/height.</li>
-                    <li>Compound selectors: <code>.my-class p { color:red; }</code>. Avoid these (because they cause specificity wars) by making everything their own class</li>
                     <li>Use multiple classes for an element if you have some styling that's more generic and some more specific: <code>&lt;a class=&quot;btn btn-accent&quot;&gt;</code></li>
                     <li>Font stack: backup fonts as commas after font-family</li>
                     <li>Sectioning layout contents:
@@ -127,16 +138,30 @@
                             <li><img src="https://i1.wp.com/css-tricks.com/wp-content/uploads/2019/06/sections-diagram.png?resize=1024%2C656&ssl=1" /></li>
                         </ul>
                     </li>
-                    <li>Advanced selectors: 
-                        <ul>
-                            <li>* - all the children of</li>
-                        </ul>
-                    </li>
                     <li>Position: <code>position: absolute;</code> allows you to place content anywhere on the page. Useful for overlapping</li>
                     <li><code>justify-content: space-between</code> can push children to left/right if using <code>display: flex</code> or inline-flex</li>
                     <li><b>Vertically Align</b>: <code>transform: translateY(-50%);</code> - takes 50% of the height (y) of the div and moves the div up (negative) by that amount. Combine with <code>top: 50%;</code>, this is a way to vertically-align to parent div</li>
                     <li><b>Keyframe Animations</b>: in CSS file, <code>@keyframes animationName {}</code> using js naming convention. In here, specify from 0-100% the steps (like opacity: 0, etc) using 0% {}. Then in the div you want the animation in when it loads, call <code>animation: animationName 0.5s</code>, with seconds last</li>
                 </ul>
+            </div>
+        </div>
+
+        <div class="primary-page-block">
+            <div id="border-top" class="width">
+                <p class="wide-head">Selectors</p>
+                    <ul>
+                        <li>Universal selector (<strong>*</strong>) - all the children of. When used by itself, it selects every single element on the page</li>
+                        <li>Attribute selector - <code>input<strong>[type=&quot;text&quot;]</strong></code> - select inputs with a type of &quot;text&quot;</li>
+                        <li>Selector Combinators: (better to just specify classes instead because combinators can cause specificity wars)
+                            <ul>
+                                <li>Descendant selector: <code>.my-class p</code> means all p that are somewhere inside .my-class</li>
+                                <li>Child selector: <code>.my-class <strong>&gt;</strong> p</code> means all p that are the direct child of .my-class. More specific.</li>
+                                <li>General Sibiling selector: <code>.my-class <strong>~</strong> p</code> means all p that generally follow a .my-class element, and they both have the same parent</li>
+                                <li>Adjacent Sibling selector: <code>.my-class <strong>+</strong> p</code> means all p that directly follows .my-class, and they both have the same parent</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </p>
             </div>
         </div>
 
@@ -163,6 +188,7 @@
                             <li><code>flex-start</code> aligns children to the left -- this is the default</li>
                             <li><code>center</code> aligns children to the horizontal center</li>
                             <li><code>flex-end</code> aligns children to the right</li>
+                            <li>If you want to align individual children on the main axis, you can use <code>margin: auto</code> where appropriate to align a child in the center of whichever direction</li>
                         </ul>
                     </li>
                     <li><code>align-items</code>: used in the flexbox parent. Acts on the <strong>cross axis</strong>: If the flex parent has the default flex-direction of row, it's the vertical axis. If flex-direction is set to column, the cross axis is the horizontal axis.
@@ -205,6 +231,7 @@
                             <li><code>@media screen and (orientation: portrait) { ... }</code></li>
                             <li>Inside a media query, we need to nest in the selectors (body, etc)</li>
                             <li>Remember to declare your media queries in order to not override anything, especially putting them after the default rules</li>
+                            <li>To help determine what widths to put breakpoints, look for a point in which the body text stretches too long to comfortably read</li>
                         </ul>
                     </li>
                     <li><strong>Navigation</strong>
@@ -220,6 +247,81 @@
             </div>
         </div>
 
+        <div class="primary-page-block">
+            <div id="border-top" class="width">
+                <p class="wide-head">Background Images / Gradients</p>
+                    <ul>
+                        <center><img src="assets/background-image.png" alt="use a background image if there will be something on top of your image" /></center>
+                        <li><code>background-image: url(folder/filename.jpg);</code> /* don't forget to use .. as necessary from the css folder */</li>
+                        <li>A background image is just decoration and takes up no HTML, so it doesn't have properties, etc of its own. It fits the space of the element. Tiles by default to fill the space.</li>
+                        <li>Commonly used: <code>background-position: center;</code> and <code>background-size: cover;</code></li>
+                        <li>Good practice to also have a <code>background-color</code> on top, in case the image doesn't load, to ensure text is readable, etc.</li>
+                        <li><code>background-blend-mode: multiply;</code>
+                            <ul>
+                                <li>Blend a <code>background-image</code> with a <code>background-color</code> or another <code>background-image</code></li>
+                                <li>For 2 <code>background-image</code>s, use a comma to separate them on one line</li>
+                                <li><code>multiply</code> - increases darkness so neither has colors brighter than the other</li>
+                                <li><code>screen</code> - increases lightness so neither has colors darker than the other</li>
+                                <li><code>overlay</code> - increases contrast by making dark colors darker and light colors lighter</li>
+                            </ul>
+                        </li>
+                        <li><strong>Gradients</strong> are a type of background image: <br /><code>background-image: linear-gradient(red, blue);</code> (or just <code>background</code> as shorthand)
+                            <ul>
+                                <li>(or radial-gradient)</li>
+                                <li>by default, linear-gradient is top-to-bottom. You can make it left-to-right by adding at the beginning: <code>linear-gradient(to right, red, blue)</code>. Can also say <code>to bottom right</code>, etc</li>
+                                <li>linear-gradient diagonals using degrees: <code>linear-gradient(45deg, red, blue)</code></li>
+                                <li>Can make block colors, stripes, etc. using %: <br/><code>linear-gradient(red 25%, blue 25%, blue 50%, red 50%, red 75%, blue 75%)</code> ... this will make 1/4 red, 1/4 blue, 1/4 red, 1/4 blue.</li>
+                                <li>Can set border gradients by specifying <code>border: 5px solid;</code> first, then <br /><code>border-image: linear-gradient(to left, red, blue) 1;</code> <br /> Putting the <code>1</code> specifies the <code>border-image-slice</code>, which if you're using real images, tells the browser how to position the pieces. Since it's just a gradient, using <code>1</code> is ok</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <div class="primary-page-block">
+            <div id="border-top" class="width">
+                <p class="wide-head">Viewport Units</p>
+                    <ul>
+                        <li><code>vw</code> - viewport width</li>
+                        <li><code>vh</code> - viewport height</li>
+                        <li><code>vmin</code> - viewport min</li>
+                        <li><code>vmax</code> - viewport max. The min/max compare the viewport's height & width and returns the min (smaller) or max (larger)</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <div class="primary-page-block">
+            <div id="border-top" class="width">
+                <p class="wide-head">Forms</p>
+                    <ul>
+                        <li><code>&lt;form action=&quot;/page.html&quot; method=&quot;post&quot;&gt; &lt;/form&gt;</code></li>
+                        <li>To properly connect labels & fields, use the same <code>for</code> and <code>id</code> for them:
+                            <ul>
+                                <li><code>&lt;label for=&quot;fname&quot;&gt;Name:&lt;/label&gt;</code></li>
+                                <li><code>&lt;input id=&quot;fname&quot; type=&quot;text&quot; /&gt;</code></li>
+                                <li>You could also wrap the input inside the label tag for the same functionality (though it could be limiting)</li>
+                            </ul>
+                        </li>
+                        <li>If you are not using labels, using <code>aria-label</code> can fulfil that function from an accessibility viewpoint</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <div class="primary-page-block">
+            <div id="border-top" class="width">
+                <p class="wide-head">Transitions & Transform</p>
+                    <ul>
+                        <li><code>transition: color 1s;</code> - color 1 second transition</li>
+                        <li>Good practice to specify the property being transformed. By default, it is <code>all</code>, which is bad for performance</li>
+                        <li>Common mistake to put transition on a pseudoclass like <code>hover</code> - this will only make the transition happen when the element is being hovered. Off hover, it snaps back to normal. Put transitions on the normal element</li>
+                        <li><code>transform: scale(3);</code> - makes the element look 3x its size; does not affect the layout</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
 
 
         <p></p>

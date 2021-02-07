@@ -41,6 +41,7 @@
 			<p>While the browser is downloading the script, it is also continuing to parse the HTML. It will execute the script as soon as it is done downloading.</p>
 			<p>Keep in mind, async scripts are not guarenteed to run in a specific order, and you should not use document.write. Instead, add <b>event listeners</b>:</p>
 			<img src="assets/event-listen.png"></img>
+			<p><strong>defer:</strong></p>
 			<img src="assets/defer.png"></img>
 			<p>The browser will download and execute the scripts in order after the document has been loaded.</p>
       </div>
@@ -62,7 +63,113 @@
 				<li><b>Use a CDN</b>: Content Delivery Network, edge servers all over the world so a user can fetch content from the one closest to them. Edge servers just store a cache of the pages</li>
 			</ul>
       </div>
-    </div>
+	</div>
+	
+	<div class="primary-page-block">
+		<div id="border-top" class="width">
+			<p class="wide-head">Web Architecture</p>
+				<ul>
+					<img src="assets/the-internet.png" />
+					<li>Basically, your browser asks your router which asks your ISP (Comcast, etc) which searches the DNS (Domain Name System), which finds the computer the desired website is on and returns it to you to connect to. The DNS is like a phonebook: looks up the requested domain name and returns the IP address of the machine it's on.</li>
+					<li><strong>Request</strong> - an ASCII-encoded text sent to a server: <br/><code>POST https://postman-echo.com/get?arg1=value&arg2=query2#fragment_id</code>
+						<ul>
+							<img src="assets/request.png" />
+							<li><strong>Verb/Request Method</strong>: GET, POST, PUT, DELETE. (also HEAD, etc.)
+								<ul>
+									<li><strong>Safe vs Unsafe</strong>: GET and HEAD are safe (do not change anything), while others are unsafe</li>
+									<li><strong>Idempotent vs Not Idempotent</strong>: GET, HEAD, PUT, and DELETE are idempotent, meaning making the same request multiple times will have the same end result</li>
+								</ul>
+							</li>
+							<li><strong>Scheme/Protocol</strong>: tells the browser how to send the request, and how to make sense of the response
+								<ul>
+									<li><code>http://</code> - HyperText Transfer Protocol</li>
+									<li><code>https://</code> - HyperText Transfer Protocol <strong>Secure</strong></li>
+									<li><code>ws://</code> - websocket</li>
+									<li><code>ftp://</code> - file transfer protocol</li>
+								</ul>
+							</li>
+							<li><strong>Hostname</strong>: <code>assets.company.com</code>
+								<ul>
+									<li>subdomain: <code><u>assets</u>.company.com</code></li>
+									<li>domain: <code>assets.<u>company</u>.com</code> (this is the only required one)</li>
+									<li>top level domain (tld): <code>assets.company.<u>com</u></code></li>
+								</ul>
+							</li>
+							<li><strong>Port</strong>: <code>.com(:443)/</code> ...
+								<ul>
+									<li>Every request has a port, even if hidden</li>
+									<li>They allow things on the internet to talk to things on the server</li>
+									<li>http assumes port 80</li>
+									<li>https assumes port 443</li>
+									<li>When developing on local server (<code>http://localhost:8080</code>), try to use a non-privileged port. Ports 1-1023 are special (privileged)</li>
+								</ul>
+							</li>
+							<li><strong>Path</strong>: anything after the url and before the <code>?</code> is the path. It says where to go.</li>
+							<li><strong>Query Arguments/Strings</strong>: <code>?arg1=value&arg2=query2</code>
+								<ul>
+									<li>Start with <code>?</code>, key/value pairs of <code>arg=value</code>, each separated with <code>&</code></li>
+									<li>If there's an <code>=</code> without a value, the key will exist and the value will be an empty string</li>
+									<li>Used to filter the result, for example a site filtering 4k monitors by Dell: <code>.com/monitors?res=4k&make=Dell</code></li>
+								</ul>
+							</li>
+							<li><strong>Fragment Identifier</strong>: <code>#fragment_id</code> like an anchor on a page. The server isn't told this information. Some apps use this to display parts of the app without needing to make network requests.</li>
+							<li><strong>Headers</strong>: not visible in a URL, but it contains information on cookies, the host (domain), etc.</li>
+							<li><strong>Body</strong>: only for POST, PUT, PATCH, (and some) DELETE requests, the body is the "what", or the content of the request.</li>
+						</ul>
+					</li>
+					<li><strong>Response</strong>
+						<ul>
+							<img src="assets/response.png" />
+							<li>First line is the protocol version, status code, and status line</li>
+							<li>Next is the response headers.</li>
+							<li>Then a blank line separating metadata (top) and the body content (bottom).</li>
+							<li>Body can be a JSON payload if sending the request to an API</li>
+							<li>Responses can be from either the web server or the application</li>
+							<li><strong>Status Code</strong>: what the server did with your request
+								<ul>
+									<li><strong>200 OK</strong>, <strong>201 Created</strong>, <strong>204 No Content</strong> - Generally are good, means everything went as expected</li>
+									<li><strong>301 Moved Permanently</strong>, <strong>302 Found</strong>, <strong>304 Not Modified</strong> (when you're downloading something but already have a local copy of it cached) - Redirection. Things weren't where you thought it was</li>
+									<li><strong>400 Bad Request</strong> (request is not understood), <strong>401 Unauthorized</strong> (need to log in), <strong>403 Forbidden</strong> (logged in, no permission), <strong>404 Not Found</strong> (asking for something that's not there), <strong>405 Method Not Allowed</strong> (e.g. sending POST when the endpoint only accepts GET) - server is ok, but you need to modify the request</li>
+									<li><strong>500 Internal Server Error</strong> (code error), <strong>502 Bad Gateway</strong> (code error), <strong>503 Service Unavailable</strong> (server is too busy), <strong>504 Gateway Timeout</strong> (server is too slow) - Server is failing</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li><strong>SSL (now TLS)</strong> - Secure Socket Layer (or Transport Layer Security)
+						<ul>
+							<li>TLS is the modern version of SSL, but since the terminology got stuck, SSL is now referred to for both SSL + TLS</li>
+							<li><strong>HTTPS = HTTP + TLS</strong>: <br/> HTTPS is an implementation of TLS on HTTP to secure the connection</li>
+							<li>TLS is needed because on old HTTP sites that haven't been upgraded yet, the connection is insecure, leading hackers to get your data if they have access to your router info, or your ISP can inject ads, etc.</li>
+							<li>TLS provides integrity (content cannot be tampered with), encryption (content cannot be read by others), and authentication (you connect to the server you should be on)</li>
+							<li>The Process:
+								<ol>
+									<li>The browser requests encryption from the server, and sends the encryption protocols it supports</li>
+									<li>Server agrees, and selects a protocol they can both use. It also sends their SSL certificate (to prove that they're them), and a random string it just generated</li>
+									<li>Browser double-checks the certificate, and sends a generated random string</li>
+									<li>Both ends have both strings. The client has the server's PUBLIC key it got from the certificate, and the server has their own PRIVATE key. Using these, both sides should arrive at the same generated code</li>
+									<li>Browser tells server what code it got, and vice versa</li>
+									<li>If they match, that code is now the key for the session, and everything else will be encrypted with that key</li>
+									<li>Whenever the client asks for something, the request will be encrypted with that key and unintelligible to anyone else that may be looking</li>
+									<li>Similarly, the browser's responses will be encrypted</li>
+								</ol>
+							</li>
+						</ul>
+					</li>
+				</ul>
+		</div>
+	</div>
+
+	<div class="primary-page-block">
+		<div id="border-top" class="width">
+		  <p class="wide-head">Soft Skills Q&A</p>
+			  <ul>
+				  <li><strong>Introduction</strong>: </li>
+				  <li><strong>Why programming?</strong></li>
+				  <li>tell me about your projects, what project did you enjoy the most - why? Note: I was advised to highlight my strengths / past achievements / past work experience irrespective of the field in which you worked (which I was clearly not good at.)</li>
+			  </ul>
+		</div>
+	  </div>
+	  
 
 	<div class="primary-page-block">
       <div id="border-top" class="width">

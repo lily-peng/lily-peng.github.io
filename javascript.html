@@ -76,23 +76,26 @@
 
         <div class="primary-page-block">
             <div id="border-top" class="width">
-              <p class="wide-head">Promises</p>
-                      <p>An object that may produce a single value some time in the future for if the value is not known when the promise is created.</p>
-                      <p>A promise can only be in one of 3 states, and once it reaches a resolved state, it cannot be changed: pending, fulfilled, and rejected.</p>
-                      <img src="assets/promise-constructor.png"></img>
-                      <p>The promise constructor takes in a function with two parameters, resolve(), and reject().</p>
-                      <img src="assets/promise-then.png"></img>
-                      <p>Every promise object has a .then() method that takes in 2 optional callback functions for the success and failure cases of the promise. Because .then() returns a new promise object, it is possible to chain promises. This allows us to mimic synchronous code with asynchronous functions.</p>
-                      <p>Promises are built on top of callbacks to write sequential asynchronous code with error catching.</p>
+                <p class="wide-head">Promises</p>
+                <p>An object that may produce a single value some time in the future for if the value is not known when the promise is created.</p>
+                <p>A promise can only be in one of 3 states, and once it reaches a resolved state, it cannot be changed: pending, fulfilled, and rejected.</p>
+                <img src="assets/promise.png" />
+                <p>The promise constructor takes in a function with two function parameters, resolve(), and reject(). When it reaches either state, the message will be stored in the variable.</p>
+                <p>Every promise object has a <code>.then()</code> method that takes in 2 optional callback functions for the success and failure cases of the promise. Because <code>.then()</code> returns a new promise object, it is possible to chain promises. This allows us to mimic synchronous code with asynchronous functions.</p>
+                <p>Promises are built on top of callbacks to write sequential asynchronous code with error catching.</p>
+                <p>They're used for network requests such as fetching data from an API or in other asynchronous functions.</p>
+                <img src="assets/promise-catch.png" />
+                <p>^ To catch errors that may even occur during the <code>.then()</code>, you can pass only the success parameter in <code>.then()</code>, then chain on a <code>.catch()</code> for the error</p>
             </div>
-          </div>
+        </div>
       
-          <div class="primary-page-block">
+        <div class="primary-page-block">
             <div id="border-top" class="width">
-              <p class="wide-head">Event Delegation</p>
-                      <p>Add event listeners to <i>parent</i> instead of child elements. Uses less memory (don't need one for every child) and don't need to unbind and rebind for different children.</p>
+                <p class="wide-head">Event Delegation</p>
+                <p>Add event listeners to <i>parent</i> instead of child elements. Uses less memory (don't need one for every child) and don't need to unbind and rebind for different children.</p>
+                <p>To avoid <strong>event bubbling</strong> (events playing from bottom element to top), use: <code>event.stopPropogation();</code></p>
             </div>
-          </div>
+        </div>
       
           <div class="primary-page-block">
             <div id="border-top" class="width">
@@ -101,35 +104,105 @@
             </div>
           </div>
       
-          <div class="primary-page-block">
+        <div class="primary-page-block">
             <div id="border-top" class="width">
-              <p class="wide-head">ES6 / ES7 / ES8 / ES9</p>
-                      <p><b>ES6</b>:</p>
-                      <ul>
-                          <li>Arrow Syntax</li>
-                          <li>Classes</li>
-                          <li>Spread Syntax (and Rest)</li>
-                          <li>let and const</li>
-                          <li>Iterators & Generators</li>
-                          <li>Modules</li>
-                          <li>Promises</li>
-                          <li>Tail Calls</li>
-                      </ul>
-                      <p><b>ES7</b>:</p>
-                      <ul>
-                          <li>Array.prototype.includes()</li>
-                          <li>Exponents: x ** y</li>
-                      </ul>
-                      <p><b>ES8</b>:</p>
-                      <ul>
-                          <li>Async Functions: async function foo() {} or const foo = async function () {};</li>
-                          <li>Shared Memory & Atomics</li>
-                      </ul>
-                      <p><b>ES9</b>:</p>
-                      <ul>
-                          <li>Asynchronous Iteration</li>
-                          <li>Rest/Spread Operators working with Objects</li>
-                      </ul>
+                <p class="wide-head">ES6 / ES7 / ES8 / ES9</p>
+                <p><b>ES6</b>:</p>
+                <ul>
+                    <li><strong>Arrow Function</strong>: <code>const myFunc = food =&gt; `I want to eat ${food}`;</code> returns the string. lots of shorthand can be used, like no () and no {}. Can set a default value for parameter(s) in case one was not passed in by setting <code>(param = "defaultValue") =&gt; ...</code></li>
+                    <li><strong>Classes</strong>:
+                        <ul>
+                            <img src="assets/class.png" />
+                            <li><code>get</code> binds an object <em>property</em> to a <em>function</em> that will be called when that property is looked up</li>
+                            <li><code>static</code> function can't be called on an class instance, but on the class itself as a utility (<code>Animal.whatIs()</code>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Spread Operator ...</strong>
+                        <ul>
+                            <li>Can concat or copy array and/or object contents:</li>
+                            <code>const arr = [&quot;a&quot;, &quot;b&quot;];</code>
+                            <br /><code>const arr2 = [...arr, 1, 2];</code>
+                            <br /><code>console.log(arr2); // [&quot;a&quot;, &quot;b&quot;, 1, 2]</code>
+                        </ul>
+                    </li>
+                    <li><strong>Rest Parameter ...</strong>
+                        <ul>
+                            <li>Destructuring an array into smaller arrays:</li>
+                            <code>const arr = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;];</code>
+                            <br /><code>const [first, ...theRest] = arr;</code>
+                            <br /><code>console.log(theRest); // [&quot;b&quot;, &quot;c&quot;]</code>
+                            <li>Also can turn multiple arguments into a single array:<br />
+                                <code>function myFunc(...args) {
+                                <br />//args = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]
+                                <br />}
+                                <br />myFunc(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;);</code>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>let</strong> (block scoped {}, cannot be redeclared) and <strong>const</strong> (can change entries in arrays/objects, but primitives cannot change)
+                        <ul>
+                            <li><code>var</code> sucks because it uses variable hoisting. When js sees a var, it immediately declares it in global scope, even if its initalized value can only be accessed inside something</li>
+                        </ul>
+                    </li>
+                    <li><strong>Import & Export</strong>:
+                        <ul>
+                            <code>export const data = [1,2,3];</code> (in example.js)<br />
+                            <code>import { data } from './example.js';</code> (in main.js)
+                        </ul>
+                    </li>
+                    <li><strong>Fetch</strong>: Returns a Promise, to be chained
+                        <ul>
+                            <img src="assets/fetch.png" />
+                            <li>Fetch post: (header for getting the data back to be console logged)</li>
+                            <img src="assets/fetch-post.png" />
+                        </ul>
+                    </li>
+                    <li><strong>Async & Await</strong>
+                        <ul>
+                            <img src="assets/async-await.png" />
+                            <li>An <code>async</code> function converts the return to a Promise object.</li>
+                            <li>You must use <code>await</code> in an <code>async</code> function. <strong>Await</strong> can be put in front of any async promise-based function to pause your code on that line until the promise fulfills, then return the resulting value</li>
+                            <li>Allows you to write fewer <code>.then()</code> chains</li>
+                            <li>Can use await on fetch, like:
+                                <img src="assets/await-fetch.png" />
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Sets</strong>: an Iterable, can store anything<br/>
+                        <img src="assets/set.png" />
+                    </li>
+                    <li>Iterators & Generators</li>
+                    <li>Modules</li>
+                    <li>Tail Calls</li>
+                    <li><strong>Template Literal</strong> - <code>`${fname} ${lname} has ${num1 + num2} cats.`</code> ... using ${} to access variables, easier to manipulate strings. Can also type multi-line strings inside</li>
+                    <li><strong>Object Destructuring</strong> - <code>const {name, address: {city}} = person;</code> is the same as <code>const name = person.name;</code> and <code>const city = person.address.city;</code></li>
+                    <li><strong>Array Destructuring</strong> - similar to object, <br/><code>const [fName,, lName] = ['Lily', 'n/a', 'Peng'];</code><br/>This names variables index-by-index</li>
+                    <li><strong>Object Literal</strong> - can shorthand create an object
+                        <ul>
+                            <li><code>function address(city, state) {
+                                console.log({city, state});
+                            }
+                            
+                            address('NYC', 'NY');</code></li>
+                            <li>Will print an object <code>{city: NYC, state: NY}</code></li>
+                        </ul>
+                    </li>
+                </ul>
+                <p><b>ES7</b>:</p>
+                <ul>
+                    <li>Array.prototype.includes()</li>
+                    <li>Exponents: x ** y</li>
+                </ul>
+                <p><b>ES8</b>:</p>
+                <ul>
+                    <li>Async Functions: async function foo() {} or const foo = async function () {};</li>
+                    <li>Shared Memory & Atomics</li>
+                </ul>
+                <p><b>ES9</b>:</p>
+                <ul>
+                    <li>Asynchronous Iteration</li>
+                    <li>Rest/Spread Operators working with Objects</li>
+                </ul>
             </div>
           </div>
       
@@ -149,6 +222,99 @@
                   <p>Built upon the concepts of <b>closure</b> and <b>higher-order functions</b> (returning functions from functions).</p>
               </div>
           </div></a>
+
+        <div class="primary-page-block">
+            <div id="border-top" class="width">
+                <p class="wide-head">Types of For Loops</p>
+                    <ul>
+                        <li><p><strong>for</strong>: <code>i</code> = index, <code>arr[i]</code> = item</p></li>
+                        <img src="assets/for-loop.png" />
+                        <li><p><strong>for in</strong>: <code>i</code> = index, <code>arr[i]</code> = item</p></li>
+                        <img src="assets/for-in.png" />
+                        <ul>
+                            <li>Bad to use on arrays because will count array properties as array items (<code>array.test</code> iterated with 'for in' will print that value in the array)</li>
+                        </ul>
+                        <li><p><strong>forEach</strong>: <code>v</code> = item, (optional) <code>i</code> = index</p></li>
+                        <img src="assets/for-each.png" />
+                        <ul>
+                            <li>Use arrow functions with 'forEach' to retain the outside scope's value of <code>this</code> (function context). By default, the 'forEach' <code>this</code> will always be the global object (window)</li>
+                            <li>Does not work well with async/await or generators</li>
+                            <li>Allows chaining since it's a callback</li>
+                            <li>Some style guides (Airbnb) only allow forEach loops</li>
+                        </ul>
+                        <li><p><strong>for of</strong>: <code>v</code> = item, use <code>Array.entries()</code> to access indexes</p></li>
+                        <img src="assets/for-of.png" />
+                        <ul>
+                            <li>Generally the <strong>best</strong> way: more concise than original and not as many edge cases as the others</li>
+                            <img src="assets/for-of-index.png" />
+                            <li>^ Do this to access indexes</li>
+                        </ul>
+                    </ul>
+            </div>
+        </div>
+
+        <div class="primary-page-block">
+            <div id="border-top" class="width">
+                <p class="wide-head">Declare vs. Initialize vs. Instantiate</p>
+                <ul>
+                    <li><p><strong>Declare</strong> - <code>var a;</code></p></li>
+                    <li><p><strong>Initialize</strong> - <code>var a = 10;</code></p></li>
+                    <li><p><strong>Instantiate</strong> - <code>MyObj x = new MyObj();</code> //create a new instance of a class</p></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="primary-page-block">
+            <div id="border-top" class="width">
+                <p class="wide-head">Regular Expressions (RegEx)</p>
+                <ul>
+                    <li>Writing a Regex:</li>
+                        <ul>
+                            <li><code>/ab*c/</code> means 'a' with zero or more 'b's and one 'c'</li>
+                            <li>To search for literally 'a*', you must escape the special character with \ in front of it: <code>/a\*/</code></li>
+                            <li><code>/\d{4}/</code> means a digit, 4 times. Digit is same as: <code>/[0-9]/</code></li>
+                            <li><code>/^[a-zA-Z]+$/</code> matches any English character(s). ^ means beginning, + means 1 or more times, $ means end. So it won't match if the characters are in the middle of the string, only if the string only contains these characters.</li>
+                            <li><code>()</code> means a capture group.</li>
+                        </ul>
+                    <li>Functions:</li>
+                        <ul>
+                            <li><code>regex.test(str)</code> - return true/false if regex in str</li>
+                            <li><code>str.search(regex)</code> - return index of first regex occurence in str</li>
+                            <li><code>str.match(regex)</code> - return an array with value of first match and the capture group(s) (if any) it matched</li>
+                                <ul>
+                                    <img src="assets/regex.png" />
+                                    <li>If <code>g</code> (global flag) was used at the end of the regex, it will return all matches and none of the capturing groups</li>
+                                    <img src="assets/regex2.png" />
+                                </ul>
+                            <li><code>regex.exec(str)</code></li>
+                        </ul>
+                </ul>
+            </div>
+        </div>
+
+        <div class="primary-page-block">
+            <div id="border-top" class="width">
+                <p class="wide-head">Sample Challenges</p>
+                <ul>
+                    <li><p><code>arrayReplace(array, elemToReplace, substitutionElem)</code> - write 1 line of code to solve: e.g. [1,2,1] elemToReplace 1 & substitutionElem 3 = [3,2,3]</p>
+                        <ul>
+                            <li>ans: <code style="color:white;">return array.map(e => e === elemToReplace ? substitutionElem : e);</code></li>
+                        </ul>
+                    </li>
+                    <li><code>caseInsensitivePalindrome(str)</code>: 1 solution using array/string functions, and 1 solution using smallest big-O
+                        <ul>
+                            <img src="assets/palindrome-1.png" />
+                            <img src="assets/palindrome-2.png" />
+                        </ul>
+                    </li>
+                    <li>Factorial(num): 
+                        <ul>
+                            <img src="assets/factorial.png" />
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
         <p></p>
 
