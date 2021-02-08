@@ -91,23 +91,7 @@
       
         <div class="primary-page-block">
             <div id="border-top" class="width">
-                <p class="wide-head">Event Delegation</p>
-                <p>Add event listeners to <i>parent</i> instead of child elements. Uses less memory (don't need one for every child) and don't need to unbind and rebind for different children.</p>
-                <p>To avoid <strong>event bubbling</strong> (events playing from bottom element to top), use: <code>event.stopPropogation();</code></p>
-            </div>
-        </div>
-      
-          <div class="primary-page-block">
-            <div id="border-top" class="width">
-              <p class="wide-head">JS Modules</p>
-                      <p>Sectioning your code into self-contained parts that are not dependent on each other, so you can make changes without disrupting everything else. Allows you to not worry as much about sharing global variable names.</p>
-            </div>
-          </div>
-      
-        <div class="primary-page-block">
-            <div id="border-top" class="width">
-                <p class="wide-head">ES6 / ES7 / ES8 / ES9</p>
-                <p><b>ES6</b>:</p>
+                <p class="wide-head">Advanced ES6+</p>
                 <ul>
                     <li><strong>Arrow Function</strong>: <code>const myFunc = food =&gt; `I want to eat ${food}`;</code> returns the string. lots of shorthand can be used, like no () and no {}. Can set a default value for parameter(s) in case one was not passed in by setting <code>(param = "defaultValue") =&gt; ...</code></li>
                     <li><strong>Classes</strong>:
@@ -171,9 +155,6 @@
                     <li><strong>Sets</strong>: an Iterable, can store anything<br/>
                         <img src="assets/set.png" />
                     </li>
-                    <li>Iterators & Generators</li>
-                    <li>Modules</li>
-                    <li>Tail Calls</li>
                     <li><strong>Template Literal</strong> - <code>`${fname} ${lname} has ${num1 + num2} cats.`</code> ... using ${} to access variables, easier to manipulate strings. Can also type multi-line strings inside</li>
                     <li><strong>Object Destructuring</strong> - <code>const {name, address: {city}} = person;</code> is the same as <code>const name = person.name;</code> and <code>const city = person.address.city;</code></li>
                     <li><strong>Array Destructuring</strong> - similar to object, <br/><code>const [fName,, lName] = ['Lily', 'n/a', 'Peng'];</code><br/>This names variables index-by-index</li>
@@ -187,21 +168,9 @@
                             <li>Will print an object <code>{city: NYC, state: NY}</code></li>
                         </ul>
                     </li>
-                </ul>
-                <p><b>ES7</b>:</p>
-                <ul>
-                    <li>Array.prototype.includes()</li>
-                    <li>Exponents: x ** y</li>
-                </ul>
-                <p><b>ES8</b>:</p>
-                <ul>
-                    <li>Async Functions: async function foo() {} or const foo = async function () {};</li>
-                    <li>Shared Memory & Atomics</li>
-                </ul>
-                <p><b>ES9</b>:</p>
-                <ul>
-                    <li>Asynchronous Iteration</li>
-                    <li>Rest/Spread Operators working with Objects</li>
+                    <li>Iterators & Generators</li>
+                    <li>Modules</li>
+                    <li>Tail Calls</li>
                 </ul>
             </div>
           </div>
@@ -222,6 +191,21 @@
                   <p>Built upon the concepts of <b>closure</b> and <b>higher-order functions</b> (returning functions from functions).</p>
               </div>
           </div></a>
+
+        <div class="primary-page-block">
+            <div id="border-top" class="width">
+                <p class="wide-head">Event Delegation</p>
+                <p>Add event listeners to <i>parent</i> instead of child elements. Uses less memory (don't need one for every child) and don't need to unbind and rebind for different children.</p>
+                <p>To avoid <strong>event bubbling</strong> (events playing from bottom element to top), use: <code>event.stopPropogation();</code></p>
+            </div>
+        </div>
+    
+        <div class="primary-page-block">
+            <div id="border-top" class="width">
+                <p class="wide-head">JS Modules</p>
+                <p>Sectioning your code into self-contained parts that are not dependent on each other, so you can make changes without disrupting everything else. Allows you to not worry as much about sharing global variable names.</p>
+            </div>
+        </div>
 
         <div class="primary-page-block">
             <div id="border-top" class="width">
@@ -307,11 +291,31 @@
                             <img src="assets/palindrome-2.png" />
                         </ul>
                     </li>
-                    <li>Factorial(num): 
+                    <li><code>factorial(num)</code>: 
                         <ul>
                             <img src="assets/factorial.png" />
                         </ul>
                     </li>
+                    <li><code>duplicate([1,2,3]);</code> // [1,2,3,1,2,3]
+                        <ul>
+                            <li>ans: <span style="color:white;">use <code>.concat()</code></span></li>
+                        </ul>
+                    </li>
+                    <li><code>FizzBuzz</code> (print numbers, but multiples of 3 are "Fizz" and multiples of 5 are "Buzz")</li>
+                    <li><code>pangram(str)</code> // pangram is a string that contains every letter of the alphabet at least once
+                        <img src="assets/pangram.png" />
+                    </li>
+                    <li>Currying: <code>add(2)(3)</code>, which gives sum of both numbers. Functions are first-class objects, meaning they are treated like any other variable. So calling <code>add(2)</code> returns a function that takes in a parameter <code>(3)</code> and that one returns the result.
+                        <ul>    
+                            <img src="assets/currying.png" />
+                        </ul>
+                    </li>
+                    <li>Given: an array of numbers, the first 'a' elements to find, and 'b' exactly how many times they should occur. Write a program that returns the first 'a' elements that occurs exactly 'b' times. <br/> e.g. arr = [2, 3, 6, 8, 2, 6, 7, 2, 8], a = 2, b = 2  -----> [6,8]
+                        <ul>
+                            <li>ans: <span style="color:white">use a <code>Map()</code></span></li>
+                        </ul>
+                    </li>
+                    <li>Data Structs: Array, HashSet, HashMap, Linked List, Graphs</li>
                 </ul>
             </div>
         </div>
