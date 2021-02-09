@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #51bbc9;
+    font-family: 'Permanent Marker', sans-serif;
+    font-size: 1.5rem;
+    padding: 1em 3em 1em 1em;
+}
+
+h1 { 
+    display: block;
+    position: relative;
+}
+h1::before {
+    content: '';
+    position: absolute;
+    height: 6px;
+    width: 100%;
+    background: white;
+    bottom: 4px;
+    z-index: -1;
+}
+
+button {
+    margin-bottom: 1em;
+    border: 3px solid black;
+    background: #8cd4de;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    padding: 1em 2em;
+    width: fit-content;
+}
+
+.hidden {
+    display: none;
+}
+
+.joke {
+    display: flex;
+    flex-direction: column;
+}
+
+.bubble {
+    display: inline-block;
+    position: relative;
+    padding: 1em 2em;
+    border-radius: 10px;
+    border: 3px solid black;
+    background: white;
+    margin-bottom: 3.5em;
+}
+.bubble::before { 
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -50px;
+    height: 50px;
+    width: 90px;
+    border-radius: 0 0 100%;
+    box-shadow: -2px -2px 0 0 #000 inset, -23px 0 0 0 #fff inset,
+    -25px -2px 0 0 #000 inset;
+}
+
+@media (min-width: 1000px) {
+    h1 {
+        display: inline-block;
+    }
+    .bubble {
+        width: fit-content;
+    }
+}
