@@ -62,6 +62,11 @@
                         </li>
                         <li>Can also use <code>document.body.innerHTML += &quot;&lt;p&gt;hi&lt;/p&gt;&quot;</code> to append. This doesn't create objects, just takes in a string. Generally okay for simple text where you don't need control over the object</li>
                         <li>Remove elements with <code>unwantedElement.remove()</code> or <code>parentElement.removeChild(unwantedChild)</code></li>
+                        <li>Basic div creation in js: 
+                            <ul>
+                                <img src="assets/createElement.png" />
+                            </ul>
+                        </li>
                         <li><b>Event Listeners</b> - <code>myElement.addEventListener(&quot;event&quot;, function);</code>
                             <ul>
                                 <li>Events like &quot;click&quot; or &quot;keypress&quot;</li>
@@ -134,10 +139,11 @@
                             <code>import { data } from './example.js';</code> (in main.js)
                         </ul>
                     </li>
-                    <li><strong>Fetch</strong>: Returns a Promise, to be chained
+                    <li><strong>Fetch</strong>: Returns a Promise, so use the <code>.then()</code> method to chained asynchronously
                         <ul>
+                            <li>The first <code>response</code> is a js Response object, which you can call methods <code>.text()</code>, <code>.json()</code>, <code>.blob()</code>, etc. to get the data in the format you want. These methods return Promises containing the data, so you need to chain another <code>.then()</code>:</li>
                             <img src="assets/fetch.png" />
-                            <li>Fetch post: (header for getting the data back to be console logged)</li>
+                            <li>Fetch POST: (header for getting the data back to be console logged)</li>
                             <img src="assets/fetch-post.png" />
                         </ul>
                     </li>
@@ -149,6 +155,13 @@
                             <li>Allows you to write fewer <code>.then()</code> chains</li>
                             <li>Can use await on fetch, like:
                                 <img src="assets/await-fetch.png" />
+                            </li>
+                            <li>Error handling. Can wrap all the code in a <code>try/catch</code> block, or do the following:
+                                <ul>
+                                    <img src="assets/async-await-error.png" />
+                                    <li><code>Response.ok</code> - boolean of whether the response was successful</li>
+                                    <li><code>Response.status</code> - status code of the response (200 for success). Alternatively, <code>Response.statusText</code> will return "OK" for 200.</li>
+                                </ul>
                             </li>
                         </ul>
                     </li>
