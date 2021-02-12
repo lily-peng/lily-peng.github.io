@@ -12,22 +12,34 @@ function toggleButtons() {
 }
 
 async function getJoke() {
-    // Gets the joke from the API
-    const jokePromise = await fetch('https://official-joke-api.appspot.com/jokes/programming/random');
-    const joke = await jokePromise.json();
-
-    // Inserts the joke setup into the div
-    setupDiv.innerHTML = joke[0].setup;
-
     // Clears and hides the previous punchline div
     punchlineDiv.innerHTML = "";
     punchlineDiv.classList.remove('bubble');
 
-    // Populates the punchline for the current joke
-    punchline = joke[0].punchline;
-
     //Toggles button visibility
     toggleButtons();
+
+    // Gets the joke from the API
+    const jokePromise = await fetch('https://official-joke-api.appspot.com/jokes/programming/random');
+
+    // Error Handling - check if jokePromise was successful
+    if (jokePromise.ok) {
+        // Retrieves the joke as an array from JSON
+        const joke = await jokePromise.json();
+
+        // Inserts the joke setup into the div
+        setupDiv.innerHTML = joke[0].setup;
+
+        // Populates the punchline for the current joke
+        punchline = joke[0].punchline;
+    } else {
+        // Display the error on the page
+        setupDiv.innerHTML = `Sorry, an error from the server has occured: ${jokePromise.status} ${jokePromise.statusText}. Please refresh the page and try again.`;
+
+        // Disable buttons
+        punchlineBtn.disabled = true;
+        newJokeBtn.disabled = true;
+    }
 }
 
 function getPunchline() {

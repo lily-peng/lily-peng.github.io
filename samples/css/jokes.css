@@ -35,6 +35,10 @@ button {
     padding: 1em 2em;
     width: fit-content;
 }
+button:disabled {
+    background-color:#ddd;
+    cursor:default
+}
 
 .hidden {
     display: none;
