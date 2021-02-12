@@ -91,6 +91,10 @@
                 <p>They're used for network requests such as fetching data from an API or in other asynchronous functions.</p>
                 <img src="assets/promise-catch.png" />
                 <p>^ To catch errors that may even occur during the <code>.then()</code>, you can pass only the success parameter in <code>.then()</code>, then chain on a <code>.catch()</code> for the error</p>
+                <p>To create a timeout promise that will invoke if the other(s) are taking too long, use <code>Promise.race()</code>:</p>
+                <img src="assets/promise-race.png" />
+                <p>^ This also uses <strong>IIFE</strong> (Immediately-Invoked Function Expression), which is an anonymous function that immediately invokes because of the <code>()</code>.</p>
+                <p>Use <code>Promise.all()</code> to run Promises synchronously, to return an array of their responses after they are all done</p>
             </div>
         </div>
       
