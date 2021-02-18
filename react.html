@@ -42,8 +42,27 @@
     ReactDOM.render(&lt;h1&gt;Hello World!&lt;/h1&gt;, document.getElementById("root"));
     ReactDOM.render(&lt;div&gt;&lt;h1&gt;hi, &lt;/h1&gt;&lt;span&gt;pohead&lt;/span&gt;&lt;/div&gt;, document.getElementById("root"));
                     </pre>
-                    <p>(first parameter can only accept 1 <> component, so wrap them in a div)</p>
+                    <p>(first parameter can only accept 1 component, so wrap them in a div or empty tag &lt;&gt;)</p>
 
+            </div>
+        </div>
+
+        <div class="primary-page-block">
+            <div id="border-top" class="width">
+                <p class="wide-head">React Basics</p>
+                <p>When writing JSX, remember that <code>class</code> turns into <code>className</code></p>
+                <p>Use curly braces {} to reference variables within JSX: &lt;button onClick={handleClick}&gt;&lt;/button&gt;</p>
+            </div>
+        </div>
+
+        <div class="primary-page-block">
+            <div id="border-top" class="width">
+                <p class="wide-head">Hooks: useState()</p>
+                <p>A good way to track state in a functional component without needing to use class-based components (which are becoming obsolete)</p>
+                <p><code>useState('default')</code> takes in a default value as its parameter</p>
+                <p>It returns an array with two entries: [theVariableToTrack, functionThatUpdatesTheState]</p>
+                <p><code>const [query, setQuery] = useState('');</code> uses array destructing to set <code>count</code> to the tracked variable, and a function <code>setCount</code> that will update the count like so: <code>setCount(2)</code></p>
+                <p><code>&lt;input type=&quot;text&quot; value={query} onChange={e =&gt; setQuery(e.target.value)} /&gt;</code><br/>If you set the value of a form field, you must provide an onChange or else it will be read-only. For our input to reflect the state, we would set value to the state <code>query</code> and the onChange to a function that uses <code>setQuery(e.target.value)</code></p>
             </div>
         </div>
 
