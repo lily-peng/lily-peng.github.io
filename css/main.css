@@ -37,12 +37,9 @@ a {
 }
 .header .name a {
   float: left;
-  color: #444444;
+  color: lightcoral;
   font-size: 1.5em;
   font-weight: 700;
-  text-decoration: underline;
-  text-decoration-style: dashed;
-  text-decoration-color: lightcoral;
 }
 .header .menu {
   font-family: "Oxygen", sans-serif;
@@ -65,6 +62,9 @@ a {
 }
 .menu a:first-child, .menu a:nth-child(2) {
   margin-right: 1em;
+}
+.menu a:hover, .menu a:focus {
+  color: #444444;
 }
 
 .projects {
@@ -91,6 +91,9 @@ a {
 .projects a:active, .contact a:active {
   color: lightcoral;
   text-decoration: underline;
+}
+.projects i, .contact i {
+  color: lightcoral;
 }
 
 .role {

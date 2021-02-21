@@ -58,12 +58,9 @@ a {
     font-family: $font-header;
     a {
       float: left;
-      color: $text-color;
+      color: $second-text-color;
       font-size: 1.5em;
       font-weight: 700;
-      text-decoration: underline;
-      text-decoration-style: dashed;
-      text-decoration-color: $second-text-color;
     }
   }
   .menu {
@@ -87,6 +84,9 @@ a {
   }
   a:first-child, a:nth-child(2) {
     margin-right: 1em;
+  }
+  a:hover, a:focus {
+    color: $text-color;
   }
 }
 
@@ -122,6 +122,10 @@ a {
     color: $second-text-color;
     //color: $text-color;
     text-decoration: underline;
+  }
+
+  i {
+    color: $second-text-color;
   }
 }
 
