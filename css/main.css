@@ -27,10 +27,6 @@ a {
   text-decoration: none;
 }
 
-pre {
-  border-left: 11px solid #ccc;
-}
-
 .header {
   justify-content: center;
   overflow: hidden;
@@ -74,6 +70,12 @@ pre {
 .projects {
   max-width: 1440px;
   padding-bottom: 3em;
+}
+
+.projects-header {
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
 }
 
 .projects a:link, .contact a:link {
@@ -221,6 +223,7 @@ pre {
   text-align: left;
   line-height: 1.7em;
   font-size: 20px;
+  margin-bottom: 1.5em;
   letter-spacing: 0;
 }
 .primary-page-block img, .secondary-page-block img {
