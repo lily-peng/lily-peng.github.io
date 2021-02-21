@@ -28,7 +28,9 @@ a {
 }
 
 .header {
-  justify-content: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   overflow: hidden;
   padding: 20px;
 }
