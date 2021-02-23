@@ -179,41 +179,6 @@
                         </ul>
                     </li>
                     <li><code>max-width</code> and <code>min-width</code>: If your element is width 100% and you don't want it to get too big on big viewpoints, set a max-width to a fixed value like 620px. min-width lets something now get too small in small viewports.</li>
-                    <li><code>justify-content</code>: used in the flexbox parent. Acts on the <strong>main axis</strong>: If the flex parent has the default flex-direction of row, it's the horizontal axis. If flex-direction is set to column, the main axis is the vertical axis.
-                        <ul>
-                            <li><code>space-between</code> will take empty space and distribute it evenly between the column children</li>
-                            <img src="assets/space-between.png" alt="space-between" />
-                            <li><code>space-around</code> will also distribute the space around the leftmost and rightmost columns as well. It gives equal space to both sides of each column, meaning the middle spaces will be double as wide as the edge spaces.</li>
-                            <li><code>space-evenly</code> like space-around except each column has visually the same amount of space on left and right</li>
-                            <li><code>flex-start</code> aligns children to the left -- this is the default</li>
-                            <li><code>center</code> aligns children to the horizontal center</li>
-                            <li><code>flex-end</code> aligns children to the right</li>
-                            <li>If you want to align individual children on the main axis, you can use <code>margin: auto</code> where appropriate to align a child in the center of whichever direction</li>
-                        </ul>
-                    </li>
-                    <li><code>align-items</code>: used in the flexbox parent. Acts on the <strong>cross axis</strong>: If the flex parent has the default flex-direction of row, it's the vertical axis. If flex-direction is set to column, the cross axis is the horizontal axis.
-                        <ul>
-                            <li><code>stretch</code> is default. The column children will all stretch to match the child with the tallest height</li>
-                            <li><code>flex-start</code> will vertically align the children to the top, no longer stretching the children to the tallest one. Each child's height will match its contents.</li>
-                            <img src="assets/flex-start.png" alt="flex-start" />
-                            <li><code>center</code> will vertically align the children to the center, which is a great way to vertically center elements</li>
-                            <img src="assets/align-items-center.png" alt="align-items-center" />
-                            <li><code>flex-end</code> will vertically align to the bottom</li>
-                            <img src="assets/flex-end.png" alt="flex-end" />
-                            <li><code>baseline</code> vertically aligns the children by the line where the biggest font sits on, so children with smaller text will shift down accordingly</li>
-                            <li>You can also use <code>align-self</code> on a child to have it individually align on the same axis of align-items</li>
-                        </ul>
-                    </li>
-                    <li><code>flex-direction</code>: set to <code>row</code> by default, meaning the parent is a row and the children are columns
-                        <ul>
-                            <li><code>flex-direction: column</code> sets the parent to a column, which children being rows</li>
-                            <li>This switches the main axis, so <code>justify-content</code> will now add horizontal space between children, and <code>align-items</code> will now horizontally align the children</li>
-                            <img src="assets/flex-direction-column.png" alt="flex-direction-column" />
-                            <img src="assets/column-space-between.png" alt="column-space-between" />
-                        </ul>
-                    </li>
-                    <li><code>flex-flow: row wrap;</code>: includes <code>flex-direction</code> and <code>flex-wrap</code>. <code>flex-wrap</code> default (<code>nowrap</code>) forces flex items onto one line (can cause scrollbar, etc), while setting it to <code>wrap</code> allows flex items to wrap onto multiple lines, maintaining a nice width and more height.</li>
-                    <li><strong>Ordering</strong>: For children of flexbox parents, you can change the order they show up on the page by setting: <code>order: 2;</code>, etc. Default is 0, can use negatives.</li>
                     <li><strong><code>object-fit</code></strong>: for images, choose how you want it to fit a certain height/width. Most commonly, <code>cover</code> is used to crop the image to the right size instead of stretching it. Also <code>object-position</code> to change where the crop occurs</li>
                     <li><strong>Media Queries</strong>
                         <ul>
@@ -244,6 +209,63 @@
                         </ul>
                     </li>
                 </ul>
+            </div>
+        </div>
+
+        <div class="primary-page-block">
+            <div id="border-top" class="width">
+                <p class="wide-head">Flexbox</p>
+                    <ul>
+                        <li><code>justify-content</code>: used in the flexbox parent. Acts on the <strong>main axis</strong>: If the flex parent has the default flex-direction of row, it's the horizontal axis. If flex-direction is set to column, the main axis is the vertical axis.
+                            <ul>
+                                <li><code>space-between</code> will take empty space and distribute it evenly between the column children</li>
+                                <img src="assets/space-between.png" alt="space-between" />
+                                <li><code>space-around</code> will also distribute the space around the leftmost and rightmost columns as well. It gives equal space to both sides of each column, meaning the middle spaces will be double as wide as the edge spaces.</li>
+                                <li><code>space-evenly</code> like space-around except each column has visually the same amount of space on left and right</li>
+                                <li><code>flex-start</code> aligns children to the left -- this is the default</li>
+                                <li><code>center</code> aligns children to the horizontal center</li>
+                                <li><code>flex-end</code> aligns children to the right</li>
+                                <li>If you want to align individual children on the main axis, you can use <code>margin: auto</code> where appropriate to align a child in the center of whichever direction</li>
+                            </ul>
+                        </li>
+                        <li><code>align-items</code>: used in the flexbox parent. Acts on the <strong>cross axis</strong>: If the flex parent has the default flex-direction of row, it's the vertical axis. If flex-direction is set to column, the cross axis is the horizontal axis.
+                            <ul>
+                                <li><code>stretch</code> is default. The column children will all stretch to match the height of the flexbox if a height is set, or the child with the tallest height (as this will cause the parent's height to be that height)</li>
+                                <li><code>flex-start</code> will vertically align the children to the top, no longer stretching the children to the tallest one. Each child's height will match its contents.</li>
+                                <img src="assets/flex-start.png" alt="flex-start" />
+                                <li><code>center</code> will vertically align the children to the center, which is a great way to vertically center elements</li>
+                                <img src="assets/align-items-center.png" alt="align-items-center" />
+                                <li><code>flex-end</code> will vertically align to the bottom</li>
+                                <img src="assets/flex-end.png" alt="flex-end" />
+                                <li><code>baseline</code> vertically aligns the children by the line where the biggest font sits on, so children with smaller text will shift down accordingly</li>
+                                <li>You can also use <code>align-self</code> on a child to have it individually align on the same axis of align-items</li>
+                            </ul>
+                        </li>
+                        <li><code>flex-direction</code>: set to <code>row</code> by default, meaning the parent is a row and the children are columns
+                            <ul>
+                                <li><code>flex-direction: column</code> sets the parent to a column, which children being rows</li>
+                                <li>This switches the main axis, so <code>justify-content</code> will now add horizontal space between children, and <code>align-items</code> will now horizontally align the children</li>
+                                <img src="assets/flex-direction-column.png" alt="flex-direction-column" />
+                                <img src="assets/column-space-between.png" alt="column-space-between" />
+                            </ul>
+                        </li>
+                        <li><code><strong>flex-wrap: wrap;</strong></code> default is <code>nowrap</code>, which forces flex items onto one line (can cause scrolling, etc), while setting it to <code>wrap</code> allows flex items to wrap to multiple lines within the flexbox, staying within the width and adding height.
+                            <img src="assets/flex-wrap-nowrap.png" />
+                            <img src="assets/flex-wrap.png" />
+                        </li>
+                        <li><code><strong>flex-flow: row wrap;</strong></code>: includes <code>flex-direction</code> and <code>flex-wrap</code></li>
+                        <li><code><strong>align-content</strong></code>: only works when the flexbox has multiple lines of children (flex-wrap) 
+                            <ul>
+                                <li>If the parent flexbox has a set height, on default all children (including multi-line) will stretch to fit the whole parent</li>
+                                <li><code>align-content</code> can make the (multi-line) children keep their size and organize themselves, such as at at the <code>flex-start</code> (leaving empty space at the end of the parent)</li>
+                                <li>In multi-line scenarios, <code>align-items</code> is only concerned with aligning the items vertically within each row</li>
+                                <li>When multi-line, <code>align-content</code> will act as the <code>align-items</code> for all the children as one unit</li>
+                                <img src="assets/align-content.png" />
+                            </ul> 
+                        </li>
+                        <li><strong>Ordering</strong>: For children of flexbox parents, you can change the order they show up on the page by setting: <code>order: 2;</code>, etc. Default is 0, can use negatives.</li>
+                    </ul>
+                </p>
             </div>
         </div>
 
