@@ -395,10 +395,37 @@
                         <li>Like flexbox, margins will no longer collapse and direct children become grid items</li>
                         <li>Put <code>display: grid;</code> on the parent</li>
                         <li><code>grid-template-columns: 200px 200px 350px;</code> - creates 3 columns of specified widths</li>
-                        <li><code>grid-template-rows: 50px 200px;</code> - creates 2 rows of specified heights</li>
+                        <li><code>grid-template-rows: 50px auto;</code> - creates a rows of 50px, and <strong><code>auto</code></strong> creates a row that will be as tall as its tallest child (it's also the default)</li>
                         <img src="assets/css-grid.png" />
                         <li>Shorthand: <code>grid-template: 50px 200px / 200px 200px 350px;</code> - starts with rows. Accomplishes the same thing as the above two lines</li>
-                        <li>Will place the first # of children as specified, then the rest overflow into automatically created rows/columns</li>
+                        <li>Will automatically place the first # of children as specified, then the rest overflow into automatically created rows/columns</li>
+                        <li>You can also specify the exact positioning of a child within a grid. On the <em>child</em>:
+                            <img src="assets/grid-row-column.png" />
+                            <ul>
+                                <li><code>grid-column: 1 / -1;</code> is a way to make a child stretch the whole width of the parent grid. Negatives are counted from the last row/column at -1, -2, -3...</li>
+                                <li>Alternatively, <code>grid-column: span 2;</code> means to have the content take up 2 cells. Can also specify starting location like <code>grid-column: 3 / span 2;</code> </li>
+                                <li>Children can overlap if you explicitly set their row/columns to</li>
+                            </ul>
+                        </li>
+                        <li>By default, grid items will stretch to the size of the tallest & widest children of that row
+                            <ul>
+                                <li>Setting <code>width: 100%;</code> and <code>height: 100%;</code> will cause the content to match the size of its cell (and won't allow overflow)</li>
+                            </ul>
+                        </li>
+                        <li><strong><code>align-items: start;</code></strong> is concerned with the up/down-ness of the rows.
+                            <ul>
+                                <img src="assets/grid-align-items.png" />
+                                <li>Acts like flex-start and have the children now be their own content size and align to the top of the row</li>
+                                <li>Can also say <code>end</code>, <code>center</code>, etc</li>
+                                <li><strong><code>align-self: baseline;</code></strong> can align the up/down-ness of an individual child in its row</li>
+                            </ul>
+                        </li>
+                        <li><strong><code>justify-content: end;</code></strong> is concerned with the left/right-ness of the columns. 
+                            <ul>
+                                <img src="assets/grid-justify.png" />
+                                <li><strong><code>justify-self: start;</code></strong> can align the left/right-ness of an individual child in its column</li>
+                            </ul>
+                        </li>
                     </ul>
                 </p>
             </div>
