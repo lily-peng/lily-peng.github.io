@@ -426,11 +426,43 @@
                                 <li><strong><code>justify-self: start;</code></strong> can align the left/right-ness of an individual child in its column</li>
                             </ul>
                         </li>
+                        <li><strong>Grid Gap</strong>
+                            <ul>
+                                <img src="assets/grid-gap.png" />
+                                <li>Adds space <em>between</em> cells, not <em>around</em> (for those cases, make smaller empty rows/columns)</li>
+                                <li>Commonly you'll find something like <code>grid-gap: 0 2em;</code> for touching row content but space between columns</li>
+                                <li>In the future, this will be replaced with just <code>gap</code> and will be able to work with flexbox too</li>
+                            </ul>
+                        </li>
                     </ul>
                 </p>
             </div>
         </div>
 
+        <div class="primary-page-block">
+            <div id="border-top" class="width">
+                <p class="wide-head">Flexbox vs. Grid</p>
+                    <ul>
+                        <li><strong>Grid</strong></li>
+                            <ul>
+                                <li>Making literal grids & layouts in 2 dimensions (x & y) instead of just one</li>
+                                <li>Layout-first: e.g. You create a layout and then place items into it</li>
+                                <li>Better at positioning cells in exact placements</li>
+                                <li>Better at asymmetrical and overlapping layouts</li>
+                                <li>Usually preferred for whole-page layouts</li>
+                                <li>Needing fewer media queries thanks to auto layout, <code>minmax()</code>, <code>repeat()</code>, and <code>auto-fill</code></li>
+                            </ul>
+                        <li><strong>Flexbox</strong></li>
+                            <ul>
+                                <li>Content-first: e.g. You have a set of items and want to space them out evenly in a container</li>
+                                <li>More suited for layouts that need to be flexible with content sizes, rather than planned fixed spaces</li>
+                                <li>Better at being flexible with placement for different viewports</li>
+                            </ul>
+                        <li><strong>Combining both</strong> can be very powerful: A grid's children can be flexboxes, etc.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
 
         <p></p>
 
