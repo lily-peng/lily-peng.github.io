@@ -438,8 +438,39 @@
                             <ul>
                                 <li>If you create children in locations that are not explicitly specified by you through <code>grid-template</code>, the grid will automatically create implicit rows/columns for them to live in</li>
                                 <li>These have a default <code>auto</code> height and width</li>
+                                <li>Can actually specify for your implicit grid: <code>grid-auto-rows: 100px; </code> and <code>grid-auto-columns: 100px;</code></li>
                             </ul>
                         </li>
+                        <li><strong>Grid Areas</strong>
+                            <ul>
+                                <img src="assets/grid-area.png" />
+                                <em>Unassigned grid items appear below the rest in their own implicit row</em>
+                                <li>Essentially, name different parts of your grid and assign items to those areas</li>
+                                <li>With <strong>media queries</strong>, this becomes powerful because you don't have to refine the positions of the children</li>
+                                <img src="assets/grid-area-media2.png" />
+                                <em>Periods are unnamed cells intended to be empty (may have as many .. as you want for readability)</em>
+                            </ul>
+                        </li>
+                        <li><strong><code>fr</code> - fraction</strong>
+                            <ul>
+                                <li>New <em>unit</em> that can be used with grid</li>
+                                <li><code>grid-template-columns: 1fr 2fr;</code> creates two columns that grow & shrink. 2fr will grow twice as fast</li>
+                                <li><code>fr</code> cannot be used as the minimum size in a <code>minmax()</code></li>
+                            </ul>
+                        </li>
+                        <li><strong><code>minmax(2em, 50%)</code></strong>
+                            <ul>
+                                <li>New <em>value</em> that can be used with grid</li>
+                                <li><code>grid-template-columns: 100px minmax(200px, 500px);</code> to define the second column as willing to shrink to 200px and willing to grow to 500px</li>
+                            </ul>
+                        </li>
+                        <li><strong><code>min-content</code> & <code>max-content</code></strong>
+                            <ul>
+                                <li><code>grid-template-columns: 1fr min-content;</code> will have the second column's content shrink its width as much as it can</li>
+                                <li><code>grid-template-columns: 1fr max-content;</code> will have the second column's content expand its width (such as having text all on one line) as much as it can. Won't add whitespace, just sets width to its max content</li>
+                            </ul>
+                        </li>
+
                     </ul>
                 </p>
             </div>
