@@ -160,6 +160,11 @@
                             <li>Can use await on fetch, like:
                                 <img src="assets/await-fetch.png" />
                             </li>
+                            <li>Remember, an <code>async</code> function returns a Promise, so to access a return from an async function, use: 
+                                <ul>
+                                    <li><code>ayncFunc().then(result => console.log(result));</code></li>
+                                    <li>(with console.log being what you want to do with the data)</li>
+                                </ul>
                             <li>Error handling. Can wrap all the code in a <code>try/catch</code> block, or do the following:
                                 <ul>
                                     <img src="assets/async-await-error.png" />

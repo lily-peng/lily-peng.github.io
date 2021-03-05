@@ -449,12 +449,14 @@
                                 <li>With <strong>media queries</strong>, this becomes powerful because you don't have to refine the positions of the children</li>
                                 <img src="assets/grid-area-media2.png" />
                                 <em>Periods are unnamed cells intended to be empty (may have as many .. as you want for readability)</em>
+                                <li><code>grid-area: 1 / 2 / -1 / 3;</code> can be used as shorthand for <code>grid-row-start / grid-column-start / grid-row-end / grid-column-end</code></li>
                             </ul>
                         </li>
                         <li><strong><code>fr</code> - fraction</strong>
                             <ul>
                                 <li>New <em>unit</em> that can be used with grid</li>
                                 <li><code>grid-template-columns: 1fr 2fr;</code> creates two columns that grow & shrink. 2fr will grow twice as fast</li>
+                                <li><em>Approximately</em> (not exact), <code>grid-template-columns: 3fr 2fr;</code> would mean left column of size 3/5 and right column of size 2/5.</li>
                                 <li><code>fr</code> cannot be used as the minimum size in a <code>minmax()</code></li>
                             </ul>
                         </li>
@@ -466,11 +468,33 @@
                         </li>
                         <li><strong><code>min-content</code> & <code>max-content</code></strong>
                             <ul>
+                                <li>New <em>value</em> that can be used with grid</li>
                                 <li><code>grid-template-columns: 1fr min-content;</code> will have the second column's content shrink its width as much as it can</li>
                                 <li><code>grid-template-columns: 1fr max-content;</code> will have the second column's content expand its width (such as having text all on one line) as much as it can. Won't add whitespace, just sets width to its max content</li>
                             </ul>
                         </li>
-
+                        <li><strong><code>repeat()</code></strong>
+                            <ul>
+                                <li>New <em>value</em> that can be used with grid</li>
+                                <li><code>grid-template-columns: repeat(3, 1fr);</code> makes 3 columns of size <code>1fr</code></li>
+                                <li><code>auto-fill</code> vs <code>auto-fit</code>
+                                    <ul>
+                                        <li>Both will fill the element with as many columns of children as possible given the minimum size specified</li>
+                                        <li><code>repeat(<strong>auto-fill</strong>, minmax(200px, 1fr));</code>
+                                            <ul>
+                                                <li><em>Even if there are no grid children in them</em>, new columns will be added if there is space</li>
+                                                <img src="assets/grid-auto-fill.png" />
+                                            </ul>
+                                        </li>
+                                        <li><code>repeat(<strong>auto-fit</strong>, minmax(200px, 1fr));</code>
+                                            <ul>
+                                                <li>Will avoid the above by only creating as many columns as needed (no empty columns)</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </p>
             </div>
