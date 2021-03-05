@@ -318,6 +318,9 @@
                                 <img src="assets/flex-end.png" alt="flex-end" />
                                 <li><code>baseline</code> vertically aligns the children by the line where the biggest font sits on, so children with smaller text will shift down accordingly</li>
                                 <li>You can also use <code>align-self</code> on a child to have it individually align on the same axis of align-items</li>
+                                    <ul>
+                                        <li><code>.flex-child:nth-of-type(3) { align-self: flex-end; }</code> will target the 3rd flex-child</li>
+                                    </ul>
                             </ul>
                         </li>
                         <li><strong><code>flex-direction</code></strong>: set to <code>row</code> by default, meaning the parent is a row and the children are columns
