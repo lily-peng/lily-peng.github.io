@@ -317,10 +317,11 @@
                                 <li><code>flex-end</code> will vertically align to the bottom</li>
                                 <img src="assets/flex-end.png" alt="flex-end" />
                                 <li><code>baseline</code> vertically aligns the children by the line where the biggest font sits on, so children with smaller text will shift down accordingly</li>
-                                <li>You can also use <code>align-self</code> on a child to have it individually align on the same axis of align-items</li>
+                                <li>You can also use <code>align-self</code> on a child to have it individually align on the same axis of align-items
                                     <ul>
                                         <li><code>.flex-child:nth-of-type(3) { align-self: flex-end; }</code> will target the 3rd flex-child</li>
                                     </ul>
+                                </li>
                             </ul>
                         </li>
                         <li><strong><code>flex-direction</code></strong>: set to <code>row</code> by default, meaning the parent is a row and the children are columns
@@ -331,9 +332,13 @@
                                 <img src="assets/column-space-between.png" alt="column-space-between" />
                             </ul>
                         </li>
-                        <li><code><strong>flex-wrap: wrap;</strong></code> default is <code>nowrap</code>, which forces flex items onto one line (can cause scrolling, etc), while setting it to <code>wrap</code> allows flex items to wrap to multiple lines within the flexbox, staying within the width and adding height.
-                            <img src="assets/flex-wrap-nowrap.png" />
-                            <img src="assets/flex-wrap.png" />
+                        <li><code><strong>flex-wrap: wrap;</strong></code> default is <code>nowrap</code>, which forces flex items onto one line (can cause scrolling, etc)
+                            <ul>
+                                <li><code>wrap</code> allows flex items to wrap to multiple lines within the flexbox if there's not enough space to fit on one line, staying within the width and adding height (if <code>flex-direction: row</code>).</li>
+                                <li><code>wrap-reverse</code> reverses <code>align-items</code> direction and the direction of new lines when wrapped</li>
+                                <img src="assets/flex-wrap-nowrap.png" />
+                                <img src="assets/flex-wrap.png" />
+                            </ul>
                         </li>
                         <li><code><strong>flex-flow: row wrap;</strong></code>: includes <code>flex-direction</code> and <code>flex-wrap</code></li>
                         <li><code><strong>align-content</strong></code>: only works when the flexbox has multiple lines of children (flex-wrap) 
@@ -347,9 +352,18 @@
                         </li>
                         <li><strong>Flexbox Children Properties</strong>
                             <ul>
-                                <li><strong>Ordering</strong>: For children of flexbox parents, you can change the order they show up on the page by setting: <code>order: 2;</code>, etc. Default is 0, can use negatives.</li>
+                                <li><strong><code>order: 2;</code></strong>
+                                    <ul>
+                                        <li>Change the order a child shows up on the page</li>
+                                        <li>Default is 0</li>
+                                        <li>Does not affect <code>nth-of-type()</code> selector, which looks at HTML only</li>
+                                    </ul>
+                                </li>
                                 <li><strong><code>flex-grow: 0;</code></strong> allows children to grow to fit available space on the main axis if parent's width (if <code>flex-direction: row</code>) or height (if <code>flex-direction: column</code>) is set. 0 by default. Setting 1, 2, 3, ... changes the relative sizes of the children's growth
                                     <img src="assets/flex-grow.png" />
+                                    <ul>
+                                        <li>Because <code>flex-grow</code> works on the main axis, <code>justify-content</code> won't work anymore if grow is on</li>
+                                    </ul>
                                 </li>
                                 <li><strong><code>flex-shrink: 1;</code></strong> when the flexbox parent is too small to handle its children, they will start to shrink (even if their width/heights are set). You can control which children shrink more than others. Default is 1, setting to 0 will not allow that child to shrink.</li>
                                 <li><strong><code>flex-basis: auto;</code></strong> works on the main axis, setting the ideal width (if <code>flex-direction: row</code>) or height (if <code>flex-direction: column</code>) of the child
@@ -358,7 +372,7 @@
                                         <li>Default is <code>auto</code>, so it will match the child's size to its content. But if a width/height is set, it will use that</li>
                                         <li>If <code>flex-basis</code> is set to a value (like 300px), it will override any width/height and use that</li>
                                         <li><code>flex-basis: 1;</code> will cause the item to shrink rapidly to reach as small as possible</li>
-                                        <li>Can be overridden with <code>min-height</code> and <code>min-width</code>, because those take precedence. So be careful with those</li>
+                                        <li>Can be overridden with <code>min/max-height</code> and <code>min/max-width</code>, because those take precedence. So be careful with those</li>
                                         <li>If you just set <code>flex: 100px;</code>, that is the same as setting <code>flex-basis: 100px;</code> but also with <code>flex-grow: 1;</code></li>
                                         <li>Useful when using media queries and changing flex direction, as a width value can switch to the height seamlessly</li>
                                     </ul>
