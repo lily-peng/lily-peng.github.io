@@ -38,6 +38,15 @@
                 <ul>
                     <li><b>Basic in-line CSS</b>: <code>&lt;p style=&quot;font-size: 21px;&quot;&gt;Hello&lt;/p&gt;</code></li>
                     <li><b>Rule</b>: <code>body { color:black; }</code> &lt;-- This is a rule. Consists of a <b>selector</b> (body,  or .class or #id) and <b>property:value</b> declarations</li>
+                    <li>Because <code>letter-spacing</code> is so small, these are usually done in <code>px</code>, like 1-2px</li>
+                    <li><b>Conventions</b>: 
+                        <ul>
+                            <li><code>&lt;div class=&quot;a-box&quot;&gt;</code> Use lowercase, use hyphens (not underscores or camelCase), numbers only if NOT first character</li>
+                            <li>When you have multiple selectors, keep those near the top of the css. More general rules at the top. More specific, bottom</li>
+                            <li>Typically, styles on <code>p</code> can be put in <code>body</code>, so it also applies to everything that aren't in <code>p</code> (like <code>a</code>)</li>
+                            <li>Use <code>section</code> instead of div when it is understood to be a layout element with an h1, h2, etc title</li>
+                        </ul>
+                    </li>
                     <li><strong>Things to Set on Every Site</strong>:
                         <ul>
                             <li><code>* {box-sizing: border-box;}</code> - this changes the default (content-box) and allows setting width/height to <em>include</em> the padding and borders of the element</li>
@@ -46,17 +55,14 @@
                             <li><code>img {max-width: 100%; display: block;}</code> is also a good thing to always use on every site. Images are default inline-block, which leads to weird spacing sometimes.</li>
                         </ul>
                     </li>
-                    <li><b>Conventions</b>: 
+                    <li><strong>4-Step Starting Point</strong>
                         <ul>
-                            <li><code>&lt;div class=&quot;a-box&quot;&gt;</code> Use lowercase, use hyphens (not underscores or camelCase), numbers only if NOT first character</li>
-                            <li>When you have multiple selectors, keep those near the top of the css. More general rules at the top. More specific, bottom</li>
-                            <li>Typically, styles on <code>p</code> can be put in <code>body</code>, so it applies to everything, even those that aren't in <code>p</code> (like <code>a</code>)</li>
-                            <li>Use <code>section</code> instead of div when it is understood to be a layout element with an h1, h2, etc title</li>
+                            <li><code>line-height: 1.6;</code> for body, from 1.4 to less than 2. Smaller for headers</li>
+                            <li><code>#eee</code> or off-white for background, <code>#444</code> or off-black for text</li>
+                            <li><code>font-size: 18px;</code> at least for body</li>
+                            <li><code>max-width: 650px;</code> around that for main text container</li>
                         </ul>
                     </li>
-                    <li>With <code>line-height: 1.6;</code>, usually put on your body, range 1.5-2 (2 is too much). No need for units to keep it responsive. 1.4 is the default</li>
-                    <li>Because <code>letter-spacing</code> is so small, these are usually done in <code>px</code>, like 1-2px</li>
-                    <li><code>&lt;br&gt;</code> for line break is a-ok</li>
                 </ul>
             </div>
         </div>
@@ -173,7 +179,7 @@
                     <li><b>Percentage % units</b> are relative to the parent of the element. Usually used for width.</li>
                     <li><b>Relative units</b> are usually relative to the font-size, but could also be relative to the viewport (vw, vh, vmin, vmax).
                         <ul>
-                            <li><b>em</b> is relative to the element's font size (if font size is 10px, 2em is 20px). If applied to an element's font-size, then it is relative its parent's font size. Can cause an unwanted "compounding" effect going through each parent of an element</li>
+                            <li><b>em</b> is relative to the element's font size (default font size is 16px, 2em is 32px). If applied to an element's font-size, then it is relative its parent's font size. Can cause an unwanted "compounding" effect going through each parent of an element</li>
                             <li><b>rem</b> is always relative to the root of the document (html element). </li>
                             <li><b>em vs rem</b>: rem is easier to manage for font-size, but for margins/padding, em makes sense to be relative to the element's font size.</li>
                         </ul>
