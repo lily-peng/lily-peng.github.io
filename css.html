@@ -354,6 +354,7 @@
                                 <li>In multi-line scenarios, <code>align-items</code> is only concerned with aligning the items vertically within each row</li>
                                 <li>When multi-line, <code>align-content</code> will act as the <code>align-items</code> for all the children as one unit</li>
                                 <img src="assets/align-content.png" />
+                                <li><code>space-between</code>, <code>space-around</code>, and <code>space-evenly</code> are valid values as well</li>
                             </ul> 
                         </li>
                         <li><strong>Flexbox Children Properties</strong>
@@ -385,11 +386,14 @@
                                 </li>
                                 <li><strong><code>flex: grow shrink basis;</code></strong> - shorthand for all three
                                     <ul>
+                                        <li><code>grow</code> is the only one you have to specify, the others are optional</li>
+                                        <li>If you don't specify a <code>basis</code>, it will be <code>0px</code>, NOT <code>auto</code></li>
                                         <li><code>flex: initial;</code> is the same as the default, which is <code>flex: 0 1 auto;</code></li>
                                         <li><code>flex: auto;</code> is the same as <code>flex: 1 1 auto;</code>, which is VERY common</li>
-                                        <li><code>flex: 5;</code> - grow: 5, shrink: 1, basis: 0</li>
+                                        <li><code>flex: none;</code> is the same as <code>flex: 0 0 auto;</code></li>
+                                        <li><code>flex: 5;</code> - grow: 5, shrink: 1, basis: 0px</li>
                                         <li><code>flex: 30%;</code> - grow: 1, basis: 30%</li>
-                                        <li><code>flex: 3 4;</code> - grow: 3, shrink: 4</li>
+                                        <li><code>flex: 3 4;</code> - grow: 3, shrink: 4, basis: 0px</li>
                                         <li><code>flex: 1 30px;</code> - grow: 1, basis: 30px</li>
                                     </ul>
                                 </li>
