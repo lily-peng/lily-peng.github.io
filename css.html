@@ -125,17 +125,6 @@
                         </ul>
                     </li>
                     <li><b>Inline elements</b>: Good for decorations where you don't alter size (margin/padding). You can't nest a block element inside one (<code>&lt;span&gt;&lt;div&gt;&lt;/div&gt;&lt;/span&gt;</code>), cannot set margin/padding on top/bottom (only left/right), and cannot set width/height. Use <b>inline-block</b> for inline with margin/padding</li>
-                    <li><b>Links</b> - using <em>pseudo-classes</em>, you can target different states. ORDER MATTERS, because the last CSS rules are applied last
-                        <ul>
-                            <li>Setting just <code>a</code> will apply the rule to <em>every</em> state. Usually you'd do this first, then target the individual ones below as needed</li>
-                            <li><code>a:link</code> - default look of <code>&lt;a&gt;. Only applies to NOT visited, NOT focus, etc.</code></li>
-                            <li><code>a:visited</code> - a link that's been visited before. Often the same styling as <code>a:link</code></li>
-                            <li><code>a:focus</code> - using tab; what it looks like tabbed</li>
-                            <li><code>a:hover</code> - cursor hovering over link. Often the same styling as <code>a:focus</code></li>
-                            <li><code>a:active</code> - when mouse is actively pressed down on it; usually a flash</code></li>
-                            <li>Another pseudo-class is <code>:last-child</code>, which means if the targeted element happens to be the last child of its parent.</li>
-                        </ul>
-                    </li>
                     <li><b><code>display: inline-block</code></b>: inline, but can set margin/padding. Often for buttons: use padding for the size, not width/height.</li>
                     <li>Use multiple classes for an element if you have some styling that's more generic and some more specific: <code>&lt;a class=&quot;btn btn-accent&quot;&gt;</code></li>
                     <li>Font stack: backup fonts as commas after font-family</li>
@@ -157,13 +146,70 @@
                 <p class="wide-head">Selectors</p>
                     <ul>
                         <li>Universal selector (<strong>*</strong>) - all the children of. When used by itself, it selects every single element on the page</li>
-                        <li>Attribute selector - <code>input<strong>[type=&quot;text&quot;]</strong></code> - select inputs with a type of &quot;text&quot;</li>
+                        <li>Attribute selector - <code>input<strong>[type=&quot;text&quot;]</strong></code> - select inputs with a type attribute of &quot;text&quot;</li>
                         <li>Selector Combinators: (better to just specify classes instead because combinators can cause specificity wars)
                             <ul>
                                 <li>Descendant selector: <code>.my-class p</code> means all p that are somewhere inside .my-class</li>
                                 <li>Child selector: <code>.my-class <strong>&gt;</strong> p</code> means all p that are the direct child of .my-class. More specific.</li>
                                 <li>General Sibiling selector: <code>.my-class <strong>~</strong> p</code> means all p that generally follow a .my-class element, and they both have the same parent</li>
                                 <li>Adjacent Sibling selector: <code>.my-class <strong>+</strong> p</code> means all p that directly follows .my-class, and they both have the same parent</li>
+                            </ul>
+                        </li>
+                        <li><strong>Pseudo-Classes</strong>: keyword added to a selector to target different states of the element. ORDER MATTERS, because the last CSS rules are applied last
+                            <ul>
+                                <li>Link-related:
+                                    <ul>
+                                        <li>Setting just <code>a</code> will apply the rule to <em>every</em> state. Usually you'd do this first, then target the individual ones below as needed</li>
+                                        <li><code>a:link</code> - only <code>&lt;a&gt;</code> with a <code>href</code>. Same as <code>a[href]</code>. Changes the default look. Only applies to NOT visited, NOT focus, etc.</li>
+                                        <li><code>a:visited</code> - a link that's been visited before. Often the same styling as <code>a:link</code></li>
+                                        <li><code>a:hover</code> - cursor hovering over link. Often the same styling as <code>a:focus</code></li>
+                                        <li><code>a:active</code> - when mouse is actively pressed down on it; usually a flash</code></li>
+                                        <li><code>a:focus</code> - using tab; what it looks like tabbed. Applies to text input etc, not just links</li>
+                                        <li><code>#id:target</code> - when used with a hash ID, <code>target</code> will match that ID whenever the current URL has that hash. e.g. at URL yoursite.com/#home, <code>#home:target</code> will match</li>
+                                    </ul>
+                                </li>
+                                <li>Position-related: 
+                                    <ul>
+                                        <li><code>:root</code> - root of the document;  almost always the <code>html</code> element</li>
+                                        <li><code>:first-child</code> / <code>:last-child</code> - if the targeted element is the first/last child of its parent</li>
+                                        <li><code>:nth-child()</code> (<code>:nth-last-child()</code> is the same, but counts from the bottom)
+                                            <ul>
+                                                <li><code>:nth-child(3)</code> - selects the 3rd child</li>
+                                                <li><code>:nth-child(even)</code> / <code>:nth-child(odd)</code> - selects even/odd children</li>
+                                                <li><code>:nth-child(3n)</code> - selects every 3rd child</li>
+                                                <li><code>:nth-child(4n-1)</code> - (4x0)–1 = -1 (no match). (4 x 1)–1 = <u>3rd</u> Element. (4x2)–1 = <u>7th</u> Element ...etc.</li>
+                                            </ul>
+                                        </li>
+                                        <li><code>:nth-of-type()</code> - like above, but if there are children of different types. e.g. <code>img:nth-of-type(odd)</code></li>
+                                        <li><code>:nth-last-of-type()</code> - like above, but counts from the bottom instead of the top</li>
+                                        <li><code>:first-of-type</code> / <code>:last-of-type</code> - <code>div img:first-of-type</code> would select the first image inside the first div and the first image inside the second div, etc.</li>
+                                        <li><code>:only-of-type</code> - if the element is the only one of its own inside the parent</li>
+                                    </ul>
+                                </li>
+                                <li>Others:
+                                    <ul>
+                                        <li><code>:not()</code> - e.g. <code>div:not(.music)</code> = all divs except those with a class of “music”. e.g. <code>input:not([disabled])</code></li>
+                                        <li><code>:empty()</code> - elements with no text and no children: e.g. <code>&lt;p&gt;&lt;/p&gt;</code></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong>Pseudo-Elements</strong>: like pseudo-classes, because they don't select any "real" elements on the page
+                            <ul>
+                                <li><code>::first-letter</code> - selects the first letter of the text in the element</li>
+                                <li><code>::first-line</code> – selects the first line of text in the element (responsive)</li>
+                                <li><code>::before</code> / <code>::after</code> - add content before/after the rest of the content inside the element
+                                    <ul>
+                                        <li><code>div::before { content: "before"; }</code> will result in</li>
+                                        <li><code>&lt;div&gt;</code>
+                                            <ul>
+                                                <li class="no-bullet"><code>before</code></li>
+                                                <li class="no-bullet"><code>&lt;!-- Rest of stuff inside the div --&gt;</code></li>
+                                            </ul>
+                                            <code>&lt;/div&gt;</code>
+                                        </li>
+                                    </ul>
+                                </li>
                             </ul>
                         </li>
                     </ul>

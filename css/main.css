@@ -228,7 +228,6 @@ a {
   text-align: left;
   line-height: 1.7em;
   font-size: 20px;
-  margin-bottom: 1.5em;
   letter-spacing: 0;
 }
 .primary-page-block img, .secondary-page-block img {
@@ -239,6 +238,9 @@ a {
   font-size: 18px;
   font-style: italic;
   letter-spacing: 0;
+}
+.primary-page-block li .no-bullet, .secondary-page-block li .no-bullet {
+  list-style-type: none;
 }
 
 .secondary-page-block {

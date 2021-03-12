@@ -262,7 +262,7 @@ a {
     text-align: left;
     line-height: 1.7em;
     font-size: 20px;
-    margin-bottom: 1.5em;
+    // margin-bottom: 1.5em;
     letter-spacing: 0;
   }
   img {
@@ -273,6 +273,9 @@ a {
     font-size: 18px;
     font-style: italic;
     letter-spacing: 0;
+  }
+  li .no-bullet {
+    list-style-type: none;
   }
 }
 .secondary-page-block {
