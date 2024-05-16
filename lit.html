@@ -1,0 +1,195 @@
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="http://faviconist.com/icons/c2bad45333e36fe1908e695a27753a6b/favicon.ico" />
+		<title>Lily Peng | Lit</title>
+		<meta name="description" content="Lily Peng's personal portfolio."/>
+		<meta name="author" content="Lily Peng"/>
+		<meta name="copyright" content="Copyright (c) 2024"/>
+		<link href="https://fonts.googleapis.com/css?family=Oxygen:300,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+		<link href="css/main.css" rel="stylesheet">
+	</head>
+
+	<body id="essentials-page" class="project-page">
+		<div id="project-page-header" class="header">
+			<div class="name"><a href="/index.html">Lily Peng</a></div>
+			<div class="menu">
+				<a href="/index.html#about" class="menu__first">About</a>
+				<a href="/index.html#contact">Contact</a>
+				<a href="assets/Lily Peng - Resume.pdf" target="_blank">Résumé</a>
+			</div>
+		</div>
+
+		<p class="role">Lit</p>
+		<p>A Javascript library</p>
+        <p><a href="frontEndEssentials.html">Back to Front-End Essentials</a></p>
+        <p><a href="html.html">HTML</a></p>
+		<p><a href="javascript.html">Javascript</a></p>
+		<p><a href="react.html">React</a></p>
+
+        <div class="primary-page-block">
+            <div id="border-top" class="width">
+                <p class="wide-head">Overview</p>
+                    <ul><li>Lit components are <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_components">web components</a>.</li></ul>
+                    <ul>
+                        <li><p><b><a href="https://lit.dev/docs/components/shadow-dom/">Shadow DOM</a></b> - Custom components have their own isolated & encapsulated DOM</p></li>
+                        <li><p><b>Component:</b></p></li></ul>
+                        <pre>import {LitElement, html} from 'lit';
+import {customElement} from 'lit/decorators.js';
+                            
+@customElement('my-element')
+export class MyElement extends LitElement {
+    render() {
+        return html`
+            &lt;p>Hello world! From my-element.&lt;/p>
+        `;
+    }
+}</pre><ul>
+    
+                    <li><b><a href="https://lit.dev/docs/components/properties/">Reactive Properties</a></b> - <code>@property</code> or <code>@state</code>. Changing a reactive property triggers the component to update. </li>    
+                    <li><p><b><a href="https://lit.dev/docs/components/decorators/">Decorators</a></b> - <code>@customElement</code>, <code>@property</code>, <code>@state</code>, etc. </p></li>
+                        <ul><li><code>@property</code>: public properties that are part of the component's API and accessible/controllable via attributes:</li>
+                                <code>    @property() <br />
+    message: string = 'Hello.';<br /></code>
+    use <code>this.message</code> or <code>${this.message}</code> in HTML return
+                        <li><code>@state</code>: private internal state that should not be exposed to consumers of the component</li>
+                        
+                        
+                            <li><code>@query</code>: converts a class property into a getter that executes a querySelector on the element's renderRoot:
+                            <br /><code>@query('#newitem')<br />
+
+                                input!: HTMLInputElement;</code>
+                            <br />So <code>input</code> is now a getter of type HTMLInputElement</li>
+                        </ul>
+                        
+                        <li><p><b>Declarative event listener</b>:</p></li>
+                    </ul>
+
+                    
+                    <pre>   &lt;input @input=${this.changeName} placeholder="Enter your name"></pre>
+                    <p>"<code>this.changeName</code>" is a event handler method you can define, like:</p>
+                    <pre>changeName(event: Event) {
+    const input = event.target as HTMLInputElement;
+    this.name = input.value;
+}</pre>
+                    <p>"<code>@input</code>" can be replaced with any event name and "<code>this.changeName</code>" with any JavaScript expression that evaluates to an event handler, like:</p>
+                    <pre>   &lt;button @click=${this.handleClick}>Click me!&lt;/button></pre>
+
+                <ul>
+                    <li><b><a href="https://lit.dev/docs/templates/expressions/">Expressions</a></b> - dynamically set HTML attributes, properties, event listeners such as above, etc.</li>
+                    <ul>
+                        <li><a href="https://lit.dev/docs/templates/expressions/#boolean-attribute-expressions">Boolean attributes</a>: <br /><code>html`&lt;div <b>?hidden</b>=${!show}>&lt;/div>`</code></li>
+                        <li><a href="https://lit.dev/docs/templates/expressions/#property-expressions">Properties</a>: <br /><code>html`&lt;input <b>.value</b>=${value}>`</code> <br>(which is the same as <code>inputEl.value = this.itemCount;</code>)</br></li>
+                    </ul>
+                    <li><b><a href="https://lit.dev/docs/components/styles/">Encapsulated Styles</a></b> - affects the component only by using the shadow DOM<br />
+                        <code>static styles = css`<br />
+                        &nbsp;&nbsp;.completed {<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;text-decoration-line: line-through;<br />
+                            &nbsp;&nbsp;}<br />
+                          `;</code>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="primary-page-block">
+            <div id="border-top" class="width">
+                <p class="wide-head">Attribute Binding (Expressions)</p>
+                <ul>
+                    <li>Dynamically set HTML attributes to react to changes in the component's properties or state</li>
+                    <li><strong><code>.</code></strong> - Property binding, such as <code>html`&lt;input <b>.value</b>=${value}>`</code></li>
+                    <li><strong><code>?</code></strong> - Boolean attribute binding, such as <code>html`&lt;div <b>?hidden</b>=${!show}>&lt;/div>`</code></li>
+                    <li><strong><code>@</code></strong> - Event binding, such as event listeners: <code>&lt;button <b>@click</b>=${this.handleClick}></code></li>
+                </ul>
+
+            </div>
+        </div>
+
+        <div class="primary-page-block">
+            <div id="border-top" class="width">
+                <p class="wide-head">Event Handling</p>
+                <ul>
+                    <li>Use the <code>@</code> prefix in your template to bind event listeners to DOM events:<br /> <code>&lt;button <b>@click</b>=${this.handleClick}></code></li>
+                    <li>Define methods in your component class to handle these events:<br /> <code>handleClick() { ... }</code></li>
+                    <li>Update component properties within event handlers to trigger re-rendering:<br /> <code>@property()<br /> buttonText: string = 'Click me';<br />... <br />handleClick() { <br />&nbsp;&nbsp;this.buttonText = 'Clicked!'; <br /> }</code></li>
+                </ul>
+
+            </div>
+        </div>
+
+        <div class="primary-page-block">
+            <div id="border-top" class="width">
+                <p class="wide-head">Slotting</p>
+                <ul>
+                    <li><a href="https://lit.dev/docs/components/shadow-dom/#slots">Docs</a></li>
+                    <li>Necessary for your component to render children</li>
+                    <code>render() {<br />
+                        &nbsp;&nbsp;return html`<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="header"><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>&lt;slot name="header"></b>&lt;/slot><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="content"><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>&lt;slot></b>Fallback content if no children assigned to this slot.&lt;/slot><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="footer"><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>&lt;slot name="footer"></b>&lt;/slot><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div><br />
+                        &nbsp;&nbsp;`;<br />
+                      }</code>
+                    <br />Usage:<br />
+                    <code>&lt;my-element><br />
+                        &nbsp;&nbsp;&lt;p>This will go in the unnamed slot.&lt;/p><br />
+                        &nbsp;&nbsp;&lt;span <b>slot="header"</b>>This will go into the header slot.&lt;/span><br />
+                        &nbsp;&nbsp;&lt;span <b>slot="footer"</b>>This will go into the footer slot.&lt;/span><br />
+                        &lt;/my-element>
+                      </code>
+
+                    <li>Accessing slotted children:</li>
+                    <ul>
+                        <li>Use <code>slot.assignedNodes</code> or <code>slot.assignedElements</code> methods with the <code>slotchange</code> event</li>
+                        <li>Example getter:<br/>
+                            <code>get _slottedChildren() {<br/>
+                                &nbsp;&nbsp;const slot = this.shadowRoot.querySelector('slot');<br/>
+                                &nbsp;&nbsp;return <b>slot.assignedElements</b>({flatten: true});<br/>
+                            }
+                            </code>
+                        </li>
+                        <li>Call an event if slot changes:<br />
+                            <code>
+                                handleSlotchange(e) {<br />
+                                    &nbsp;&nbsp;const childNodes = e.target.<b>assignedNodes</b>({flatten: true});<br />
+                                  }<br />
+                                  render() {<br />
+                                    &nbsp;&nbsp;return html`&lt;slot <b>@slotchange=${this.handleSlotchange}</b>>&lt;/slot>`;<br />
+                                  }<br />
+                            </code>
+
+                        </li>
+                    </ul>
+                </ul>
+
+            </div>
+        </div>
+
+        
+
+
+        <p></p>
+
+
+		<div class="copyright">
+			<div class="row">
+				<div class="col-12">
+					<p><i class="far fa-copyright"></i> 2021 Lily Peng</p>
+				</div>
+			</div>
+		</div>
+
+		<!--footer class="row"></footer-->
+
+	</body>
+</html>

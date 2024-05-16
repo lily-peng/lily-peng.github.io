@@ -251,6 +251,10 @@ a {
   font-weight: 700;
 }
 
+code, pre {
+  color: olivedrab;
+}
+
 /* IBM page */
 #ibm-page {
   background-color: #0062ff;
